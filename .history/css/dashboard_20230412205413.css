@@ -1,0 +1,22 @@
+
+.elements {
+    display: flex;
+    margin: 3rem 0;
+    justify-content: center;
+    flex-direction: column;
+}
+@media (min-width: 767px) {
+    .elements {
+        gap: 30px;
+        flex-direction: row;
+    }
+}
+.card-title {
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+    .card {
+        text-align: center;
+    }
+}
