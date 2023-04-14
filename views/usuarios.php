@@ -28,10 +28,10 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
 
 <body>
     <?php include("../views/assets/header.php"); ?>
+    
+
+    <section class="container-fluid">
     <h2>Usuarios</h2>
-
-    <section>
-
         <table class="table">
             <thead>
                 <tr>
@@ -40,7 +40,7 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
                     <th scope="col">Usuario</th>
                     <th scope="col">Rol</th>
                     <th scope="col">Accion</th>
-                    <th scope="col">Eliminar</th>
+                
                 </tr>
             </thead>
             <!-- Codigo PHP -->
@@ -49,13 +49,18 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
 <?php
     if(!$_GET){
         header('Location:usuarios.php?pagina=1');
+    }if ($_GET['pagina']>$paginas || $_GET['pagina']<=0 ){
+        header('Location:usuarios.php?pagina=1');
     }
 
     $iniciar = ($_GET['pagina']-1) * $usuarios_x_pagina;
    
-    $sql_usuarios = "SELECT * FROM usuarios LIMIT $iniciar,$usuarios_x_pagina";
+    $sql_usuarios = "SELECT * FROM usuarios LIMIT :iniciar,:nusuarios";
     $stm_usuario = $conn->prepare($sql_usuarios);
+    $stm_usuario->bindParam(':iniciar' , $iniciar,PDO::PARAM_INT);
+    $stm_usuario->bindParam(':nusuarios' , $usuarios_x_pagina,PDO::PARAM_INT);
     $stm_usuario->execute();
+
 
     $resultado_usuario = $stm_usuario->fetchAll();
 
@@ -71,8 +76,8 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
                         <td><?php echo $usuario['nombre']; ?></td>
                         <td><?php echo $usuario['user']; ?></td>
                         <td><?php echo $usuario['rol']; ?></td>
-                        <td><input type="button" value="Modificar"><?php $usuario['rol']; ?></td>
-                        <td><input type="button" value="Eliminar"><?php $usuario['rol']; ?></td>
+                        <td><a href="editarUser.php?userid='.<?php $usuario['user']; ?>.'">Ver </a></td>
+                       
                     </tr>
             </tbody>
         <?php endforeach ?>
@@ -91,7 +96,7 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
 
 
                 <li class="page-item
-                <?php echo $_GET['pagina'] > $paginas ? ' disabled' : '' ?> 
+                <?php echo $_GET['pagina'] >= $paginas ? ' disabled' : '' ?> 
                 "><a class="page-link" href="usuarios.php?pagina=<?php echo $_GET['pagina'] + 1; ?>">Siguiente</a></li>
             </ul>
         </nav>
