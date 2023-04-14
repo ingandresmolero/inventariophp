@@ -8,10 +8,10 @@ $resultado = $stmt->fetchAll();
 
 $usuarios_x_pagina = 3;
 
-$total_usuario =$stmt->rowCount();
+$total_usuario = $stmt->rowCount();
 
 
-$paginas = ceil($total_usuario/$usuarios_x_pagina);
+$paginas = ceil($total_usuario / $usuarios_x_pagina);
 
 ?>
 
@@ -44,31 +44,55 @@ $paginas = ceil($total_usuario/$usuarios_x_pagina);
                 </tr>
             </thead>
             <!-- Codigo PHP -->
-<tbody>
-<?php foreach($resultado as $usuario):   ?>
-    <tr>
-      <th scope="row"><?php echo $usuario['id_usuario'];  ?></th>
-      <td><?php echo $usuario['nombre']; ?></td>
-      <td><?php echo $usuario['user']; ?></td>
-      <td><?php echo $usuario['rol']; ?></td>
-      <td><input type="button" value="Modificar"><?php $usuario['rol']; ?></td>
-      <td><input type="button" value="Eliminar"><?php $usuario['rol']; ?></td>
-    </tr>
-</tbody>
-<?php endforeach ?>
+            <tbody>
+
+<?php
+    if(!$_GET){
+        header('Location:usuarios.php?pagina=1');
+    }
+
+    $iniciar = ($_GET['pagina']-1) * $usuarios_x_pagina;
+   
+    $sql_usuarios = "SELECT * FROM usuarios LIMIT $iniciar,$usuarios_x_pagina";
+    $stm_usuario = $conn->prepare($sql_usuarios);
+    $stm_usuario->execute();
+
+    $resultado_usuario = $stm_usuario->fetchAll();
+
+
+
+?>
+
+
+
+                <?php foreach ($resultado_usuario as $usuario) :   ?>
+                    <tr>
+                        <th scope="row"><?php echo $usuario['id_usuario'];  ?></th>
+                        <td><?php echo $usuario['nombre']; ?></td>
+                        <td><?php echo $usuario['user']; ?></td>
+                        <td><?php echo $usuario['rol']; ?></td>
+                        <td><input type="button" value="Modificar"><?php $usuario['rol']; ?></td>
+                        <td><input type="button" value="Eliminar"><?php $usuario['rol']; ?></td>
+                    </tr>
+            </tbody>
+        <?php endforeach ?>
 
         </table>
 
         <nav aria-label="Page navigation example">
             <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="usuarios.php?pagina=<?php echo $_GET['pagina']-1 ;?>">Anterior</a></li>
+                <li class="page-item 
+                <?php echo $_GET['pagina'] < $paginas ? ' disabled' : '' ?> 
+                "><a class="page-link" href="usuarios.php?pagina=<?php echo $_GET['pagina'] - 1; ?>">Anterior</a></li>
 
-<?php for($i=0; $i<$paginas; $i++):?>
-                <li class="page-item <?php echo $_GET['pagina']==$i+1 ? ' active' : '' ?>"><a class="page-link" href="usuarios.php?pagina=<?php echo $i+1; ?>"><?php echo $i+1; ?></a></li>
-<?php endfor  ?>
+                <?php for ($i = 0; $i < $paginas; $i++) : ?>
+                    <li class="page-item <?php echo $_GET['pagina'] == $i + 1 ? ' active' : '' ?>"><a class="page-link" href="usuarios.php?pagina=<?php echo $i + 1; ?>"><?php echo $i + 1; ?></a></li>
+                <?php endfor  ?>
 
 
-                <li class="page-item"><a class="page-link" href="usuarios.php?pagina=<?php echo $_GET['pagina']+1 ;?>">Siguiente</a></li>
+                <li class="page-item
+                <?php echo $_GET['pagina'] > $paginas ? ' disabled' : '' ?> 
+                "><a class="page-link" href="usuarios.php?pagina=<?php echo $_GET['pagina'] + 1; ?>">Siguiente</a></li>
             </ul>
         </nav>
     </section>
