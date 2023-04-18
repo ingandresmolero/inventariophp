@@ -1,3 +1,8 @@
+<?php
+
+include("../php/functions/validar.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
