@@ -33,7 +33,7 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
 
     <section id="users-page" class="container-fluid">
     <h2>Usuarios</h2>
-        <table class="table table-style">
+        <table class="table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -73,7 +73,7 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
                         <td><?php echo $usuario['nombre']; ?></td>
                         <td><?php echo $usuario['user']; ?></td>
                         <td><?php echo $usuario['rol']; ?></td>
-                        <td class="action"><a class="table-btn" href="editarUser.php?userid='.<?php $usuario['user']; ?>.'">Ver </a></td>
+                        <td><a class="table-btn" href="editarUser.php?userid='.<?php $usuario['user']; ?>.'">Ver </a></td>
                        
                     </tr>
                 <?php endforeach ?>
