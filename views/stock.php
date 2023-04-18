@@ -1,18 +1,18 @@
 <?php
-include("./php/functions/validar.php");
+include("../php/functions/validar.php");
 include_once("../php/dbconn.php");
-$sql = 'SELECT * FROM usuarios';
+$sql = 'SELECT * FROM stock';
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 
 $resultado = $stmt->fetchAll();
 
-$usuarios_x_pagina = 3;
+$stock_x_pagina = 10;
 
-$total_usuario = $stmt->rowCount();
+$total_stock = $stmt->rowCount();
 
 
-$paginas = ceil($total_usuario / $usuarios_x_pagina);
+$paginas = ceil($total_stock / $stock_x_pagina);
 
 ?>
 
@@ -24,7 +24,7 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <title>Usuarios</title>
+    <title>Inventario</title>
 </head>
 
 <body>
@@ -37,9 +37,11 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
             <thead>
                 <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Codigo</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Usuario</th>
-                    <th scope="col">Rol</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Existencia</th>
+                    <th scope="col">Costo</th>
                     <th scope="col">Accion</th>
                 
                 </tr>
@@ -49,21 +51,21 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
 
 <?php
     if(!$_GET){
-        header('Location:usuarios.php?pagina=1');
+        header('Location:stock.php?pagina=1');
     }if ($_GET['pagina']>$paginas || $_GET['pagina']<=0 ){
-        header('Location:usuarios.php?pagina=1');
+        header('Location:stock.php?pagina=1');
     }
 
-    $iniciar = ($_GET['pagina']-1) * $usuarios_x_pagina;
+    $iniciar = ($_GET['pagina']-1) * $stock_x_pagina;
    
-    $sql_usuarios = "SELECT * FROM usuarios LIMIT :iniciar,:nusuarios";
-    $stm_usuario = $conn->prepare($sql_usuarios);
-    $stm_usuario->bindParam(':iniciar' , $iniciar,PDO::PARAM_INT);
-    $stm_usuario->bindParam(':nusuarios' , $usuarios_x_pagina,PDO::PARAM_INT);
-    $stm_usuario->execute();
+    $sql_stock = "SELECT * FROM stock LIMIT :iniciar,:nusuarios";
+    $stm_stock = $conn->prepare($sql_stock);
+    $stm_stock->bindParam(':iniciar' , $iniciar,PDO::PARAM_INT);
+    $stm_stock->bindParam(':nusuarios' , $stock_x_pagina,PDO::PARAM_INT);
+    $stm_stock->execute();
 
 
-    $resultado_usuario = $stm_usuario->fetchAll();
+    $resultado_stock = $stm_stock->fetchAll();
 
 
 
@@ -71,13 +73,19 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
 
 
 
-                <?php foreach ($resultado_usuario as $usuario) :   ?>
+                <?php foreach ($resultado_stock as $stock) :   
+                    
+                    $id=$stock['id_stock'];
+                    ?>
                     <tr>
-                        <th scope="row"><?php echo $usuario['id_usuario'];  ?></th>
-                        <td><?php echo $usuario['nombre']; ?></td>
-                        <td><?php echo $usuario['user']; ?></td>
-                        <td><?php echo $usuario['rol']; ?></td>
-                        <td><a href="editarUser.php?userid='.<?php $usuario['user']; ?>.'">Ver </a></td>
+                        <th scope="row"><?php echo $stock['id_stock'];  ?></th>
+                        <td><?php echo $stock['codigo']; ?></td>
+                        <td><?php echo $stock['nombre']; ?></td>
+                        <td><?php echo $stock['descripcion']; ?></td>
+                        <td><?php echo $stock['existencia']; ?></td>
+                        <td><?php echo $stock['costo']; ?></td>
+                        <td><a href="editarstock.php?stockid=<?php echo $id ?>">Ver </a></td>
+                        
                        
                     </tr>
             </tbody>
@@ -89,16 +97,16 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
             <ul class="pagination">
                 <li class="page-item 
                 <?php echo $_GET['pagina'] < $paginas ? ' disabled' : '' ?> 
-                "><a class="page-link" href="usuarios.php?pagina=<?php echo $_GET['pagina'] - 1; ?>">Anterior</a></li>
+                "><a class="page-link" href="stock.php?pagina=<?php echo $_GET['pagina'] - 1; ?>">Anterior</a></li>
 
                 <?php for ($i = 0; $i < $paginas; $i++) : ?>
-                    <li class="page-item <?php echo $_GET['pagina'] == $i + 1 ? ' active' : '' ?>"><a class="page-link" href="usuarios.php?pagina=<?php echo $i + 1; ?>"><?php echo $i + 1; ?></a></li>
+                    <li class="page-item <?php echo $_GET['pagina'] == $i + 1 ? ' active' : '' ?>"><a class="page-link" href="stock.php?pagina=<?php echo $i + 1; ?>"><?php echo $i + 1; ?></a></li>
                 <?php endfor  ?>
 
 
                 <li class="page-item
                 <?php echo $_GET['pagina'] >= $paginas ? ' disabled' : '' ?> 
-                "><a class="page-link" href="usuarios.php?pagina=<?php echo $_GET['pagina'] + 1; ?>">Siguiente</a></li>
+                "><a class="page-link" href="stock.php?pagina=<?php echo $_GET['pagina'] + 1; ?>">Siguiente</a></li>
             </ul>
         </nav>
     </section>
