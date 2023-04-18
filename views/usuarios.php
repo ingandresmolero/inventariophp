@@ -1,5 +1,5 @@
 <?php
-include("./php/functions/validar.php");
+include("../php/functions/validar.php");
 include_once("../php/dbconn.php");
 $sql = 'SELECT * FROM usuarios';
 $stmt = $conn->prepare($sql);
@@ -77,7 +77,7 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
                         <td><?php echo $usuario['nombre']; ?></td>
                         <td><?php echo $usuario['user']; ?></td>
                         <td><?php echo $usuario['rol']; ?></td>
-                        <td><a href="editarUser.php?userid='.<?php $usuario['user']; ?>.'">Ver </a></td>
+                        <td><a href="../views/operacion/editarUser.php?userid=<?php echo $usuario['id_usuario'] ?>">Ver</a></td>
                        
                     </tr>
             </tbody>

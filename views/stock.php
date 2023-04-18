@@ -32,7 +32,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
     
 
     <section class="container-fluid">
-    <h2>Usuarios</h2>
+    <h2>Inventario</h2>
         <table class="table">
             <thead>
                 <tr>
