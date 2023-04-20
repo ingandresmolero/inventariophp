@@ -12,6 +12,7 @@
         $nombre=$_POST['nombre'];
         $descripcion=$_POST['descripcion'];
         $existencia=$_POST['existencia'];
+        $lote=$_POST['lote'];
         $costo=$_POST['costo'];
         $precio_1=$_POST['precio_1'];
         $precio_2=$_POST['precio_2'];
@@ -30,7 +31,7 @@
         $peso_bruto=$_POST['peso_bruto'];
         $peso_kilo_gramo=$_POST['peso_kg_cobre'];
 
-        $newstock="INSERT INTO stock (codigo, nombre, descripcion, existencia, costo, precio_1, precio_2, precio_3,tasa, tasa_variable,iva,  color, voltaje, medida, calibre, N_hilos, unidades, serials, largo, peso_bruto, peso_kg_cobre, usuario, fecha_creacion) VALUES ('$codigo','$nombre','$descripcion','$existencia','$costo','$precio_1','$precio_2','$precio_3','$tasa','$tasa_variable','$iva','$color','$voltaje','$medida','$calibre','$n_hilos','$unidad','$serials','$largo','$peso_bruto','$peso_kilo_gramo','$username','$fecha_dia')";
+        $newstock="INSERT INTO stock (codigo, nombre, descripcion, existencia,lote, costo, precio_1, precio_2, precio_3,tasa, tasa_variable,iva,  color, voltaje, medida, calibre, N_hilos, unidades, serials, largo, peso_bruto, peso_kg_cobre, usuario, fecha_creacion) VALUES ('$codigo','$nombre','$descripcion','$existencia','$lote','$costo','$precio_1','$precio_2','$precio_3','$tasa','$tasa_variable','$iva','$color','$voltaje','$medida','$calibre','$n_hilos','$unidad','$serials','$largo','$peso_bruto','$peso_kilo_gramo','$username','$fecha_dia')";
 
         $add = $conn->prepare("$newstock");
         $add->execute();

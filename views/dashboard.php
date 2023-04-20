@@ -25,8 +25,8 @@ include("../php/functions/validar.php");
 
                     <div class="card-body">
                         <h5 class="card-title">Inventario</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="stock.php" class="btn btn-primary">Go somewhere</a>
+                       
+                        <a href="stock.php" class="btn btn-primary ">Go somewhere</a>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@ include("../php/functions/validar.php");
 
                     <div class="card-body">
                         <h5 class="card-title">Actualizar Tasa</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                       
                         <a href="tasa.php" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ include("../php/functions/validar.php");
 
                     <div class="card-body">
                         <h5 class="card-title">Operaciones</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                       
                         <a href="operaciones.php" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
@@ -58,7 +58,7 @@ include("../php/functions/validar.php");
 
                     <div class="card-body">
                         <h5 class="card-title">Reportes</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                       
                         <a href="reportes.php" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ include("../php/functions/validar.php");
 
                     <div class="card-body">
                         <h5 class="card-title">Usuarios</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                       
                         <a href="usuarios.php" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
@@ -78,7 +78,7 @@ include("../php/functions/validar.php");
 
                     <div class="card-body">
                         <h5 class="card-title">Configuracion</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                       
                         <a href="configuracion.php" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>

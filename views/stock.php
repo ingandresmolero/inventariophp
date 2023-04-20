@@ -84,7 +84,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                         <td><?php echo $stock['descripcion']; ?></td>
                         <td><?php echo $stock['existencia']; ?></td>
                         <td><?php echo $stock['costo']; ?></td>
-                        <td><a href="editarstock.php?stockid=<?php echo $id ?>">Ver </a></td>
+                        <td><a href="operacion/editarstock.php?stockid=<?php echo $id ?>">Ver </a></td>
                         
                        
                     </tr>
