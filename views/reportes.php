@@ -1,18 +1,18 @@
 <?php
-// include("../php/functions/validar.php");
-// include_once("../php/dbconn.php");
-// $sql = 'SELECT * FROM reportes join ';
-// $stmt = $conn->prepare($sql);
-// $stmt->execute();
+include("../php/functions/validar.php");
+include_once("../php/dbconn.php");
+$sql = 'SELECT * FROM reportes ';
+$stmt = $conn->prepare($sql);
+$stmt->execute();
 
-// $resultado = $stmt->fetchAll();
+$resultado = $stmt->fetchAll();
 
-// $stock_x_pagina = 10;
+$report_x_pagina = 10;
 
-// $total_stock = $stmt->rowCount();
+$total_report = $stmt->rowCount();
 
 
-// $paginas = ceil($total_stock / $stock_x_pagina);
+$paginas = ceil($total_report / $report_x_pagina);
 
 ?>
 
@@ -38,10 +38,10 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Codigo</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Descripcion</th>
-                    <th scope="col">Existencia</th>
-                    <th scope="col">Costo</th>
+                    <th scope="col">Egreso</th>
+                    <th scope="col">Ingreso</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Fecha Creacion</th>
                     <th scope="col">Accion</th>
                 
                 </tr>
@@ -56,16 +56,16 @@
         header('Location:reportes.php?pagina=1');
     }
 
-    $iniciar = ($_GET['pagina']-1) * $stock_x_pagina;
+    $iniciar = ($_GET['pagina']-1) * $report_x_pagina;
    
-    $sql_stock = "SELECT * FROM stock LIMIT :iniciar,:nusuarios";
-    $stm_stock = $conn->prepare($sql_stock);
-    $stm_stock->bindParam(':iniciar' , $iniciar,PDO::PARAM_INT);
-    $stm_stock->bindParam(':nusuarios' , $stock_x_pagina,PDO::PARAM_INT);
-    $stm_stock->execute();
+    $sql_report = "SELECT * FROM reportes LIMIT :iniciar,:nusuarios";
+    $stm_report = $conn->prepare($sql_report);
+    $stm_report->bindParam(':iniciar' , $iniciar,PDO::PARAM_INT);
+    $stm_report->bindParam(':nusuarios' , $report_x_pagina,PDO::PARAM_INT);
+    $stm_report->execute();
 
 
-    $resultado_stock = $stm_stock->fetchAll();
+    $resultado_report = $stm_report->fetchAll();
 
 
 
@@ -73,18 +73,18 @@
 
 
 
-                <?php foreach ($resultado_stock as $stock) :   
+                <?php foreach ($resultado_report as $report) :   
                     
-                    $id=$stock['id_stock'];
+                    $id=$report['id_reporte'];
                     ?>
                     <tr>
-                        <th scope="row"><?php echo $stock['id_stock'];  ?></th>
-                        <td><?php echo $stock['codigo']; ?></td>
-                        <td><?php echo $stock['nombre']; ?></td>
-                        <td><?php echo $stock['descripcion']; ?></td>
-                        <td><?php echo $stock['existencia']; ?></td>
-                        <td><?php echo $stock['costo']; ?></td>
-                        <td><a href="editarreporte.php?reporteid=<?php echo $id ?>">Ver </a></td>
+                        <th scope="row"><?php echo $report['id_reporte'];  ?></th>
+                        <td><?php echo $report['codigo']; ?></td>
+                        <td><?php echo $report['egreso']; ?></td>
+                        <td><?php echo $report['ingreso']; ?></td>
+                        <td><?php echo $report['usuario']; ?></td>
+                        <td><?php echo $report['fecha_creacion']; ?></td>
+                        <td><a href="editarreporte.php?reporteid=<?php echo $id ?>">Detalles </a></td>
                         
                        
                     </tr>

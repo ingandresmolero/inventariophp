@@ -42,7 +42,7 @@ include("../../php/dbconn.php");
                     </div>
             </div>
             </form>
-            <?php include("../operacion/consultacodigo.php");
+            <?php include("../operacion/consultacodigoadd.php");
              
             ?>
             </div>
