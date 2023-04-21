@@ -1,6 +1,6 @@
 <?php include('php/login.php'); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -17,19 +17,15 @@
         <form action="" method="post">
             
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <label for="exampleInputEmail1" class="form-label">Usuario</label>
                     <input type="text" class="form-control" name="usuario" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="text" class="form-control" name="passw" id="exampleInputPassword1">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" name="passw" id="exampleInputPassword1">
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" name="login
-                    " id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
+                
                 <p><input type="submit" name="login" value="Entrar"></p>
           
             
