@@ -34,16 +34,15 @@ include("../../php/dbconn.php");
             <div class="container-sm">
                 <form action="" method="post">
                     <div class="row">
-                        <h3>Creacion de Item</h3>
                         <div class="col-lg-3 ">
                             <label for="" class="form-label">Codigo:</label>
                             <input type="tex" class="form-control" name="codigo" id="">
-                            <input type="submit" class="btn btn-primary" value="buscar" name="buscar">
+                            <input type="submit" value="buscar" name="buscar">
                         </div>
                     </div>
             </div>
             </form>
-            <?php include("../operacion/consultacodigocrear.php");
+            <?php include("../operacion/consultacodigoadd.php");
              
             ?>
             </div>

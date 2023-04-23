@@ -13,13 +13,26 @@
     ?>
     <section>
         <div class="row justify-content-center mt-5">
+        <div class="col-3">
+                <div class="card" style="width: 18rem;">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Crear Codigo</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="./operacion/add_stock.php" class="btn btn-primary">Entrar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center mt-5">
             <div class="col-3">
                 <div class="card" style="width: 18rem;">
 
                     <div class="card-body">
                         <h5 class="card-title">Orden de Carga</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="./operacion/add_stock.php" class="btn btn-primary">Entrar</a>
+                        
+                        <a href="./operacion/anadir_stock.php" class="btn btn-primary">Entrar</a>
                     </div>
                 </div>
             </div>
@@ -28,11 +41,14 @@
 
                     <div class="card-body">
                         <h5 class="card-title">Orden de Retiro</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        
                         <a href="./operacion/out_stock.php" class="btn btn-primary">Entrar</a>
                     </div>
                 </div>
             </div>
+
+            
+            
           
         </div>
 

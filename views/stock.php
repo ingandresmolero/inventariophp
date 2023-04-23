@@ -32,7 +32,8 @@ $paginas = ceil($total_stock / $stock_x_pagina);
     
 
     <section class="container-fluid">
-    <h2>Usuarios</h2>
+    <h2>Inventario</h2>
+    <a href="./operacion/add_stock.php" class="btn btn-primary">Crear Item</a>
         <table class="table">
             <thead>
                 <tr>
@@ -84,7 +85,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                         <td><?php echo $stock['descripcion']; ?></td>
                         <td><?php echo $stock['existencia']; ?></td>
                         <td><?php echo $stock['costo']; ?></td>
-                        <td><a href="editarstock.php?stockid=<?php echo $id ?>">Ver </a></td>
+                        <td><a href="operacion/editarstock.php?stockid=<?php echo $id ?>">Detalles/Modificar </a></td>
                         
                        
                     </tr>

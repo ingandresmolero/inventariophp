@@ -1,5 +1,5 @@
 <?php
-include("./php/functions/validar.php");
+include("../php/functions/validar.php");
 include_once("../php/dbconn.php");
 $sql = 'SELECT * FROM usuarios';
 $stmt = $conn->prepare($sql);
@@ -24,7 +24,6 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/styles.min.css">
     <title>Usuarios</title>
 </head>
 
@@ -32,9 +31,9 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
     <?php include("../views/assets/header.php"); ?>
     
 
-    <section id="users-page" class="container-fluid">
+    <section class="container-fluid">
     <h2>Usuarios</h2>
-        <table class="table table-style">
+        <table class="table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -66,7 +65,11 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
 
     $resultado_usuario = $stm_usuario->fetchAll();
 
+
+
 ?>
+
+
 
                 <?php foreach ($resultado_usuario as $usuario) :   ?>
                     <tr>
@@ -74,11 +77,12 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
                         <td><?php echo $usuario['nombre']; ?></td>
                         <td><?php echo $usuario['user']; ?></td>
                         <td><?php echo $usuario['rol']; ?></td>
-                        <td class="action"><a class="table-btn" href="editarUser.php?userid='.<?php $usuario['user']; ?>.'">Ver </a></td>
+                        <td><a href="../views/operacion/editarUser.php?userid=<?php echo $usuario['id_usuario'] ?>">Ver</a></td>
                        
                     </tr>
-                <?php endforeach ?>
-        </tbody>
+            </tbody>
+        <?php endforeach ?>
+
         </table>
 
         <nav aria-label="Page navigation example">
