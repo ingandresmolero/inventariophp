@@ -31,14 +31,14 @@ include("../../php/dbconn.php");
 
 
         <section>
-            <div class="container-sm">
+            <div class="container-sm " id="prueba1">
                 <form action="" method="post">
                     <div class="row">
                         <h3>Creacion de Item</h3>
                         <div class="col-lg-3 ">
                             <label for="" class="form-label">Codigo:</label>
                             <input type="tex" class="form-control" name="codigo" id="">
-                            <input type="submit" class="btn btn-primary" value="buscar" name="buscar">
+                            <input type="button" class="btn btn-primary" id="buscar" value="buscar" name="buscar">
                         </div>
                     </div>
             </div>
@@ -57,4 +57,12 @@ include("../../php/dbconn.php");
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+    
+</script>
+
+<script>
+// let boton = document.getElementById("buscar");
+// boton.addEventListener("click",function(){
+//     document.getElementById("prueba1").setAttribute("class"," visually-hidden");
+// });
 </script>

@@ -35,6 +35,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
     <section class="container">
     <h1 class="page-heading">Inventario</h1>
     <a href="./operacion/add_stock.php" class="btn btn-style-1">Crear Item</a>
+     <?php include("../views/operacion/costototal.php"); ?>
     <div class="table-responsive-sm">
         <table class="table table-style">
             <thead>
@@ -46,6 +47,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                     <th scope="col">Existencia</th>
                     <th scope="col">Costo</th>
                     <th scope="col">Accion</th>
+                    
                 
                 </tr>
             </thead>
