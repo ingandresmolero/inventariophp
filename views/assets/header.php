@@ -23,6 +23,9 @@
             <li><a class="dropdown-item" href="../views/configuracion.php">Configuracion</a></li>
           </ul>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../views/stock.php">Tasa del dia: <?php echo "$tasadia Fecha: $tasafecha "; ?></a>
+        </li>
     </div>
   </div>
 </nav>

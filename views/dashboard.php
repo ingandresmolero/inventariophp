@@ -1,6 +1,8 @@
 <?php
 
 include("../php/functions/validar.php");
+include("../php/dbconn.php");
+include("../php/functions/tasa.php");
 ?>
 
 <!DOCTYPE html>
