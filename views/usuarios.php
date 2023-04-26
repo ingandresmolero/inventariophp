@@ -1,5 +1,7 @@
 <?php
 include("../php/functions/validar.php");
+
+include("../php/functions/tasa.php");
 include_once("../php/dbconn.php");
 $sql = 'SELECT * FROM usuarios';
 $stmt = $conn->prepare($sql);

@@ -1,12 +1,14 @@
-<?php include("../php/functions/validar.php");?>
+<?php include("../php/functions/validar.php");
+
+include("../php/functions/tasa.php");?>
 <?php 
 if (isset($_POST['guardar'])) {
 
 include("../php/dbconn.php");
-$fecha = date("Ymd");
+$fecha = date("d.m.y");
 $tasa=$_POST['tasa'];
 $tasa2=$_POST['tasa2'];
-$sql = "INSERT INTO tasabs( fecha_creacion, monto_bcv, monto_paral) VALUES ('$fecha','$tasa','$tasa2')";
+$sql = "UPDATE tasabs SET fecha_creacion='$fecha',monto_bcv='$tasa',monto_paral='$tasa2'";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 
@@ -16,8 +18,9 @@ $add = $stmt->fetchAll();
 
     if($add > 0){
         echo '<script>alert("Se agrego tasa '.$tasa.'Bs.S y '.$tasa2.'Bs.S")</script>';
+        header("Location: dashboard.php");
     }else{
-        echo 'prueba2';
+        echo 'Hubo un error!';
     }
 
 

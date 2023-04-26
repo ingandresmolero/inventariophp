@@ -1,4 +1,6 @@
-<?php include("../php/functions/validar.php"); ?>
+<?php include("../php/functions/validar.php");
+
+include("../php/functions/tasa.php"); ?>
 <?php
 include("../php/dbconn.php");
 include("../views/operacion/addparametros.php");
@@ -24,10 +26,10 @@ include("../views/operacion/addparametros.php");
             <div class="container-fluid">
                 <h2>Datos Empresa</h2>
                 <hr>
-                
+
                 <form action="" method="post">
                     <label for="" class="form-label">Nombre:</label>
-                    <input type="tex" class="form-control" name="nombre" id="" >
+                    <input type="tex" class="form-control" name="nombre" id="">
                     <label for="" class="form-label">Razon Social:</label>
                     <input type="tex" class="form-control" name="rif" id="">
                     <label for="" class="form-label">Direccion:</label>
@@ -39,7 +41,7 @@ include("../views/operacion/addparametros.php");
 
                     <input type="submit" class="btn btn-primary mb-3" value="Guardar" name="guardar">
                 </form>
-              
+
             </div>
         </section>
     </main>

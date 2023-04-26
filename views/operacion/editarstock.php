@@ -1,9 +1,11 @@
-<?php include("../../php/functions/validar.php"); ?>
+<?php include("../../php/functions/validar.php");
+?>
 <?php
+
 include("../../php/dbconn.php");
 $stockid = $_GET['stockid'];
 $sql = "SELECT * FROM stock where id_stock='$stockid' ";
-$
+
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 

@@ -27,7 +27,7 @@
                 <div class="row card container-sm p-5 justify-content-center mx-auto">
                 <div class="col-sm">
                     <label for="" class="form-label">Codigo: </label>
-                    <input type="text" class="form-control" value="'.$codigo.'" name="codigo2" disabled >
+                    <input type="text" class="form-control" value="'.$codigo.'" name="codigo2"  >
                 </div>
                 <div class="col-sm">
                     <label for="" class="form-label">Nombre: </label>
@@ -44,6 +44,10 @@
             <div class="col-sm">
             <label for="" class="form-label">Costo: </label>
             <input type="text" class="form-control" name="costo" id="">
+        </div>
+        <div class="col-sm">
+            <label for="" class="form-label">Precio: </label>
+            <input type="text" class="form-control" name="precio_1" id="">
         </div>
         <input type="submit" name="crear" class="btn btn-primary" value="Crear">
             </div>

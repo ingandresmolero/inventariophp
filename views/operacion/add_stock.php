@@ -1,15 +1,5 @@
-<?php include("../../php/functions/validar.php"); ?>
-<?php
-include("../../php/dbconn.php");
-
-
-
-
-
-
-
-
-
+<?php 
+include("../../php/functions/validar.php"); 
 
 ?>
 <!DOCTYPE html>
@@ -38,7 +28,7 @@ include("../../php/dbconn.php");
                         <div class="col-lg-3 ">
                             <label for="" class="form-label">Codigo:</label>
                             <input type="tex" class="form-control" name="codigo" id="">
-                            <input type="button" class="btn btn-primary" id="buscar" value="buscar" name="buscar">
+                            <input type="submit" class="btn btn-primary" id="buscar" value="buscar" name="buscar">
                         </div>
                     </div>
             </div>

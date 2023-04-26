@@ -1,5 +1,7 @@
 <?php
 include("../php/functions/validar.php");
+
+include("../php/functions/tasa.php");
 include_once("../php/dbconn.php");
 $sql = 'SELECT * FROM stock';
 $stmt = $conn->prepare($sql);
@@ -46,6 +48,8 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                     <th scope="col">Descripcion</th>
                     <th scope="col">Existencia</th>
                     <th scope="col">Costo</th>
+                    <th scope="col">Precio $</th>
+                    <th scope="col">Precio BS</th>
                     <th scope="col">Accion</th>
                     
                 
@@ -78,6 +82,9 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                 <?php foreach ($resultado_stock as $stock) :   
                     
                     $id=$stock['id_stock'];
+                    $tasa=floatval($tasadia);
+                    $precio=floatval($stock['precio_1']);
+                    $variable = $precio * $tasa;
                     ?>
                     <tr>
                         <th scope="row"><?php echo $stock['id_stock'];  ?></th>
@@ -86,7 +93,9 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                         <td><?php echo $stock['descripcion']; ?></td>
                         <td><?php echo $stock['existencia']; ?></td>
                         <td><?php echo $stock['costo']; ?></td>
-                        <td class="action"><a class="table-btn" href="operacion/editarstock.php?stockid=<?php echo $id ?>">Detalles/Modificar </a></td>
+                        <td><?php echo $stock['precio_1']; ?></td>
+                        <td><?php echo $variable ?>Bs.S</td>
+                        <td class="action"><a class="table-btn" href="operacion/editarstock.php?stockid=<?php echo $id ?>">Detalles  </a></td>
                         
                     </tr>
                     <?php endforeach ?>
