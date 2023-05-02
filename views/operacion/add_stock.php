@@ -16,7 +16,7 @@ include("../../php/dbconn.php");
 </head>
 
 <body>
-    <?php include("../assets/header.php"); ?>
+    <?php include("../assets/headersintasa.php"); ?>
 
     <main>
 

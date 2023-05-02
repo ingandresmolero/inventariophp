@@ -1,16 +1,6 @@
 <?php include("../../php/functions/validar.php"); ?>
 <?php
 include("../../php/dbconn.php");
-
-
-
-
-
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +14,7 @@ include("../../php/dbconn.php");
 </head>
 
 <body>
-    <?php include("../assets/header.php"); ?>
+    <?php include("../assets/headersintasa.php"); ?>
 
     <main>
 

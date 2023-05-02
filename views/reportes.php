@@ -26,6 +26,8 @@ $paginas = ceil($total_report / $report_x_pagina);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.min.css">
+
     <title>Reportes</title>
 </head>
 
@@ -35,7 +37,8 @@ $paginas = ceil($total_report / $report_x_pagina);
 
     <section class="container-fluid">
     <h2>Reportes</h2>
-        <table class="table">
+    <div class="table-responsive-sm">
+        <table class="table table-style">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -86,7 +89,7 @@ $paginas = ceil($total_report / $report_x_pagina);
                         <td><?php echo $report['ingreso']; ?></td>
                         <td><?php echo $report['usuario']; ?></td>
                         <td><?php echo $report['fecha_creacion']; ?></td>
-                        <td><a href="editarreporte.php?reporteid=<?php echo $id ?>">Detalles </a></td>
+                        <td class="action"><a class="table-btn" href="editarreporte.php?reporteid=<?php echo $id ?>">Detalles </a></td>
                         
                        
                     </tr>
@@ -94,7 +97,7 @@ $paginas = ceil($total_report / $report_x_pagina);
         <?php endforeach ?>
 
         </table>
-
+        </div>
         <nav aria-label="Page navigation example">
             <ul class="pagination">
                 <li class="page-item 
