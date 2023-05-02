@@ -1,5 +1,7 @@
 <?php 
-include("../../php/functions/validar.php"); 
+include("../../php/functions/validar.php");
+include("../../php/dbconn.php"); 
+
 
 ?>
 <!DOCTYPE html>
