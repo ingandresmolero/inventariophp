@@ -42,21 +42,9 @@
 }
 
 .submit-btn {
-    background-color: $accentColor;
-    border: 1px solid $accentColor;
-    color: #fff;
-    display: inline-block;
+    .btn-style-1;
+    padding: unset;
     width: 100%;
     border-radius: 30px;
     height: 36px;
-    text-decoration: none;
-    transition: .3s;
-    margin-bottom: 12px;
-    line-height: 22px;
-    &:hover,
-    &:active {
-        border: 1px solid $accentColor;
-        background-color: transparent;
-        color: #fff;
-    }
 }

@@ -13,7 +13,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
         width: fit-content;
-        min-width: 270px;
         margin: 0 auto;
         background-color: rgba(255,255,255,.09);
         padding: 20px 40px 30px;
@@ -31,12 +30,6 @@
     }
 
     .box form {
-        margin-bottom: 0 !important;
         width: fit-content;
-
-        .user input,
-        .password input {
-            margin-bottom: 20px;
-        }
     }
 }

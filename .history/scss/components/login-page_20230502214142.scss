@@ -31,11 +31,9 @@
     }
 
     .box form {
-        margin-bottom: 0 !important;
         width: fit-content;
 
-        .user input,
-        .password input {
+        .user {
             margin-bottom: 20px;
         }
     }

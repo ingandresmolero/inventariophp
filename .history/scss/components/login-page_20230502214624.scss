@@ -31,12 +31,18 @@
     }
 
     .box form {
-        margin-bottom: 0 !important;
         width: fit-content;
 
-        .user input,
-        .password input {
+        .user,
+        .password {
             margin-bottom: 20px;
+        }
+
+        .submit-btn {
+            .btn-style-1;
+            width: 100%;
+            border-radius: 30px;
+            height: 36px;
         }
     }
 }

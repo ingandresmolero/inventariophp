@@ -22,7 +22,7 @@
         header("Location:views/dashboard.php");
      
     }
-    echo "<center><div class='alert alert-danger' role='alert'>El usuario y contraseña no coinciden.</div></center>";
+    echo "<p class='alert-message'>El usuario y contraseña no coinciden.</p>";
   }
 
 }
