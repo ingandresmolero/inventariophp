@@ -39,13 +39,19 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
     <section class="container">
         <h1 class="page-heading">Usuarios</h1>
         <!-- Button trigger modal -->
+
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Nuevo Usuario
         </button>
-        <form action="" method="post">
-            <input type="text" name="campo" placeholder="Usuario, nombre, rol...." id="">
-            <input type="submit" value="busqueda" name="busqueda">
-        </form>
+        <div class="row b-3">
+            <div class="col-md">
+                <form action="" method="post">
+                    <input type="text" class="form-control" name="campo" placeholder="Usuario, nombre, rol...." id="">
+                    <input type="submit" class="table-btn" value="busqueda" name="busqueda">
+                    <a href="usuarios.php" class="table-btn">Mostrar Todos</a>
+                </form>
+            </div>
+        </div>
         <div class="table-responsive-sm">
             <table class="table table-style">
                 <thead>
@@ -95,33 +101,33 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
 
                             </tr>
                         <?php endforeach  ?>
-                    <?php } else {
-                        if(isset($_POST['busqueda'])){
-                        $busqueda = $_POST['campo'];
-                        $iniciar = ($_GET['pagina'] - 1) * $usuarios_x_pagina;
+                        <?php } else {
+                        if (isset($_POST['busqueda'])) {
+                            $busqueda = $_POST['campo'];
+                            $iniciar = ($_GET['pagina'] - 1) * $usuarios_x_pagina;
 
-                        $sql_usuarios = "SELECT * FROM usuarios WHERE (nombre = '$busqueda') OR (rol='$busqueda') LIMIT :iniciar,:nusuarios";
-                        $stm_usuario = $conn->prepare($sql_usuarios);
-                        $stm_usuario->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
-                        $stm_usuario->bindParam(':nusuarios', $usuarios_x_pagina, PDO::PARAM_INT);
-                        $stm_usuario->execute();
-                        var_dump($sql_usuarios);
+                            $sql_usuarios = "SELECT * FROM usuarios WHERE (nombre = '$busqueda') OR (rol='$busqueda') LIMIT :iniciar,:nusuarios";
+                            $stm_usuario = $conn->prepare($sql_usuarios);
+                            $stm_usuario->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
+                            $stm_usuario->bindParam(':nusuarios', $usuarios_x_pagina, PDO::PARAM_INT);
+                            $stm_usuario->execute();
 
 
-                        $resultado_usuario = $stm_usuario->fetchAll();
-                    ?>
 
-                        <?php foreach ($resultado_usuario as $usuario) :   ?>
-                            <tr>
-                                <th scope="row"><?php echo $usuario['id_usuario'];  ?></th>
-                                <td><?php echo $usuario['nombre']; ?></td>
-                                <td><?php echo $usuario['user']; ?></td>
-                                <td><?php echo $usuario['rol']; ?></td>
-                                <td class="action"><a class="table-btn" href="../views/operacion/editarUser.php?userid=<?php echo $usuario['id_usuario'] ?>">Ver</a></td>
-                                <td class="action"><a class="table-btn" href="../views/operacion/eliminarusuario.php?userid=<?php echo $usuario['id_usuario'] ?>">Eliminar</a></td>
+                            $resultado_usuario = $stm_usuario->fetchAll();
+                        ?>
 
-                            </tr>
-                        <?php endforeach  ?>
+                            <?php foreach ($resultado_usuario as $usuario) :   ?>
+                                <tr>
+                                    <th scope="row"><?php echo $usuario['id_usuario'];  ?></th>
+                                    <td><?php echo $usuario['nombre']; ?></td>
+                                    <td><?php echo $usuario['user']; ?></td>
+                                    <td><?php echo $usuario['rol']; ?></td>
+                                    <td class="action"><a class="table-btn" href="../views/operacion/editarUser.php?userid=<?php echo $usuario['id_usuario'] ?>">Ver</a></td>
+                                    <td class="action"><a class="table-btn" href="../views/operacion/eliminarusuario.php?userid=<?php echo $usuario['id_usuario'] ?>">Eliminar</a></td>
+
+                                </tr>
+                            <?php endforeach  ?>
                         <?php } ?>
                     <?php } ?>
                 </tbody>
