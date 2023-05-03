@@ -42,6 +42,10 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Nuevo Usuario
         </button>
+        <form action="" method="post">
+            <input type="text" name="campo" placeholder="Usuario, nombre, rol...." id="">
+            <input type="submit" value="busqueda" name="busqueda">
+        </form>
         <div class="table-responsive-sm">
             <table class="table table-style">
                 <thead>
@@ -66,29 +70,60 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
                         header('Location:usuarios.php?pagina=1');
                     }
 
-                    $iniciar = ($_GET['pagina'] - 1) * $usuarios_x_pagina;
+                    if (!isset($_POST['busqueda'])) {
 
-                    $sql_usuarios = "SELECT * FROM usuarios LIMIT :iniciar,:nusuarios";
-                    $stm_usuario = $conn->prepare($sql_usuarios);
-                    $stm_usuario->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
-                    $stm_usuario->bindParam(':nusuarios', $usuarios_x_pagina, PDO::PARAM_INT);
-                    $stm_usuario->execute();
+                        $iniciar = ($_GET['pagina'] - 1) * $usuarios_x_pagina;
+
+                        $sql_usuarios = "SELECT * FROM usuarios LIMIT :iniciar,:nusuarios";
+                        $stm_usuario = $conn->prepare($sql_usuarios);
+                        $stm_usuario->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
+                        $stm_usuario->bindParam(':nusuarios', $usuarios_x_pagina, PDO::PARAM_INT);
+                        $stm_usuario->execute();
 
 
-                    $resultado_usuario = $stm_usuario->fetchAll();
+                        $resultado_usuario = $stm_usuario->fetchAll();
                     ?>
 
-                    <?php foreach ($resultado_usuario as $usuario) :   ?>
-                        <tr>
-                            <th scope="row"><?php echo $usuario['id_usuario'];  ?></th>
-                            <td><?php echo $usuario['nombre']; ?></td>
-                            <td><?php echo $usuario['user']; ?></td>
-                            <td><?php echo $usuario['rol']; ?></td>
-                            <td class="action"><a class="table-btn" href="../views/operacion/editarUser.php?userid=<?php echo $usuario['id_usuario'] ?>">Ver</a></td>
-                            <td class="action"><a class="table-btn" href="../views/operacion/eliminarusuario.php?userid=<?php echo $usuario['id_usuario'] ?>">Eliminar</a></td>
+                        <?php foreach ($resultado_usuario as $usuario) :   ?>
+                            <tr>
+                                <th scope="row"><?php echo $usuario['id_usuario'];  ?></th>
+                                <td><?php echo $usuario['nombre']; ?></td>
+                                <td><?php echo $usuario['user']; ?></td>
+                                <td><?php echo $usuario['rol']; ?></td>
+                                <td class="action"><a class="table-btn" href="../views/operacion/editarUser.php?userid=<?php echo $usuario['id_usuario'] ?>">Ver</a></td>
+                                <td class="action"><a class="table-btn" href="../views/operacion/eliminarusuario.php?userid=<?php echo $usuario['id_usuario'] ?>">Eliminar</a></td>
 
-                        </tr>
-                    <?php endforeach ?>
+                            </tr>
+                        <?php endforeach  ?>
+                    <?php } else {
+                        if(isset($_POST['busqueda'])){
+                        $busqueda = $_POST['campo'];
+                        $iniciar = ($_GET['pagina'] - 1) * $usuarios_x_pagina;
+
+                        $sql_usuarios = "SELECT * FROM usuarios WHERE (nombre = '$busqueda') OR (rol='$busqueda') LIMIT :iniciar,:nusuarios";
+                        $stm_usuario = $conn->prepare($sql_usuarios);
+                        $stm_usuario->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
+                        $stm_usuario->bindParam(':nusuarios', $usuarios_x_pagina, PDO::PARAM_INT);
+                        $stm_usuario->execute();
+                        var_dump($sql_usuarios);
+
+
+                        $resultado_usuario = $stm_usuario->fetchAll();
+                    ?>
+
+                        <?php foreach ($resultado_usuario as $usuario) :   ?>
+                            <tr>
+                                <th scope="row"><?php echo $usuario['id_usuario'];  ?></th>
+                                <td><?php echo $usuario['nombre']; ?></td>
+                                <td><?php echo $usuario['user']; ?></td>
+                                <td><?php echo $usuario['rol']; ?></td>
+                                <td class="action"><a class="table-btn" href="../views/operacion/editarUser.php?userid=<?php echo $usuario['id_usuario'] ?>">Ver</a></td>
+                                <td class="action"><a class="table-btn" href="../views/operacion/eliminarusuario.php?userid=<?php echo $usuario['id_usuario'] ?>">Eliminar</a></td>
+
+                            </tr>
+                        <?php endforeach  ?>
+                        <?php } ?>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
@@ -112,37 +147,37 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
 
 
     <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form action="operacion/crearusuario.php" method="post">
-            <label class="form-label" for="">Nombre</label>
-            <input class="form-control" type="text" name="nombre" id="">
-            <label class="form-label" for="">Usuario</label>
-            <input class="form-control" type="text" name="usuario" id="">
-            <label class="form-label" for="">Contrasena</label>
-            <input class="form-control" type="password" name="clave" id="">
-            <label class="form-label" for="">Rol</label>
-            <select class="form-control" name="rol" id="">
-                <option value="master">Master</option>
-                <option value="usuario">Usuario</option>
-            </select>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="operacion/crearusuario.php" method="post">
+                        <label class="form-label" for="">Nombre</label>
+                        <input class="form-control" type="text" name="nombre" id="">
+                        <label class="form-label" for="">Usuario</label>
+                        <input class="form-control" type="text" name="usuario" id="">
+                        <label class="form-label" for="">Contrasena</label>
+                        <input class="form-control" type="password" name="clave" id="">
+                        <label class="form-label" for="">Rol</label>
+                        <select class="form-control" name="rol" id="">
+                            <option value="master">Master</option>
+                            <option value="usuario">Usuario</option>
+                        </select>
 
-            <input type="submit"class="btn btn-primary" name="crear" value="Guardar">
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        
-      </div>
+                        <input type="submit" class="btn btn-primary" name="crear" value="Guardar">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
