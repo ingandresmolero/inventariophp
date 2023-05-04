@@ -19,8 +19,16 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="../views/operaciones.php">Operaciones</a></li>
             <li><a class="dropdown-item" href="../views/reportes.php">Reportes</a></li>
-            <li><hr class="dropdown-divider"></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
             <li><a class="dropdown-item" href="../views/configuracion.php">Configuracion</a></li>
+            <li>
+              <form action="../php/functions/logout.php" method="post">
+                <input type="submit" value="Logout" name="logout">
+              </form>
+
+            </li>
           </ul>
         </li>
         <li class="nav-item">
