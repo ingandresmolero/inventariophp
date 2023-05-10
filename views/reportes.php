@@ -90,7 +90,7 @@ $paginas = ceil($total_report / $report_x_pagina);
                         <td><?php echo $report['ingreso']; ?></td>
                         <td><?php echo $report['usuario']; ?></td>
                         <td><?php echo $report['fecha_creacion']; ?></td>
-                        <td class="action"><a class="table-btn" href="editarreporte.php?reporteid=<?php echo $id ?>">Detalles </a></td>
+                        <td class="action"><a class="table-btn" href="operacion/verreporte.php?reporteid=<?php echo $id ?>">Detalles </a></td>
                         
                        
                     </tr>

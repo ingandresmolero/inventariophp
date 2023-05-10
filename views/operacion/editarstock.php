@@ -25,7 +25,7 @@ $resultado = $stmt->fetchAll();
 </head>
 
 <body>
-    <?php include("../../views/assets/header.php"); ?>
+    <?php include("../../views/assets/headersintasa.php"); ?>
 
     <main>
 
@@ -61,27 +61,29 @@ $resultado = $stmt->fetchAll();
                                 <input type="text" class="form-control" name="lote" id="" value="<?php echo $stock['lote'] ?>" placeholder="<?php echo $stock['lote'] ?>...">
                             </div>
                             <div class="col-sm-3">
-                                <label for="" class="form-label">Costo:</label>
+                                <label for="" class="form-label">Costo $:</label>
                                 <input type="number" class="form-control" name="costo" id="" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
 
                             <div class="row ">
                                 <div class="col-sm-3">
-                                    <label for="" class="form-label">Precio 1:</label>
+                                    <label for="" class="form-label">Precio 1 $:</label>
                                     <input type="number" class="form-control" name="precio_1" id="" value="<?php echo $stock['precio_1'] ?>" placeholder="<?php echo $stock['precio_1'] ?>...">
                                 </div>
                                 <div class="col-sm-3">
-                                    <label for="" class="form-label">Precio 2:</label>
+                                    <label for="" class="form-label">Precio 2 $:</label>
                                     <input type="number" class="form-control" name="precio_2" id="" value="<?php echo $stock['precio_2'] ?>" placeholder="<?php echo $stock['precio_2'] ?>...">
                                 </div>
                                 <div class="col-sm-3">
-                                    <label for="" class="form-label">Precio 3:</label>
+                                    <label for="" class="form-label">Precio 3 $:</label>
                                     <input type="number" class="form-control" name="precio_3" id="" value="<?php echo $stock['precio_3'] ?>" placeholder="<?php echo $stock['precio_3'] ?>...">
                                 </div>
                             </div>
+                            <hr class="mt-3">
+                          
                             <div class="row mb-3">
                                 <div class="col-3">
-                                    <label for="" class="form-label">Tasa del dia BS.S:</label>
+                                    <label for="" class="form-label">Tasa Compra del dia BS.S:</label>
                                     <input type="number" class="form-control" name="tasa" id="" value="<?php echo $stock['tasa'] ?>" placeholder="<?php echo $stock['tasa'] ?>...">
 
                                 </div>
@@ -90,7 +92,7 @@ $resultado = $stmt->fetchAll();
                                     <input type="number" class="form-control" name="iva" id="" value="<?php echo $stock['iva'] ?>" placeholder="<?php echo $stock['iva'] ?>...">
                                 </div>
                                 <div class="col-3">
-                                    <label for="" class="form-label">Tasa Variable:</label>
+                                    <label for="" class="form-label">Tasa Variable Bs.S:</label>
                                     <input type="tasa_variable" class="form-control" name="tasa_variable" id="" value="<?php echo $stock['tasa_variable'] ?>" placeholder="<?php echo $stock['tasa_variable'] ?>...">
 
                                 </div>
@@ -143,9 +145,10 @@ $resultado = $stmt->fetchAll();
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <label for="" class="form-label">Unidad:</label>
-                                            <select name="unidad" id="unidad">
+                                            <select class="form-select" name="unidad" id="unidad">
                                                 <option value="kg">Kilogramos</option>
-                                                <option value="mt">mt</option>
+                                                <option value="mt">Metros</option>
+                                                <option value="carrete">Carrete</option>
                                             </select>
                                         </div>
                                         <div class="col-sm-3">
@@ -189,10 +192,10 @@ $resultado = $stmt->fetchAll();
                 <?php
                 if (isset($_POST['borrar'])) {
                     $delete = " DELETE FROM stock WHERE id_stock='$stockid'";
-                    
-                   $stmt = $conn->prepare($delete);
-                   $stmt->execute();
-                   echo '<script>
+
+                    $stmt = $conn->prepare($delete);
+                    $stmt->execute();
+                    echo '<script>
                 alert("Se elimino el producto ' . $stockid . '--' . $stock['nombre'] . '");
                 window.location.href = "../stock.php";
                 </script>';

@@ -1,6 +1,6 @@
-<?php 
+<?php
 include("../../php/functions/validar.php");
-include("../../php/dbconn.php"); 
+include("../../php/dbconn.php");
 
 
 ?>
@@ -12,7 +12,7 @@ include("../../php/dbconn.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <title>Orden Retiro</title>
+    <title>Crear Item</title>
 </head>
 
 <body>
@@ -21,22 +21,24 @@ include("../../php/dbconn.php");
     <main>
 
 
-
         <section>
             <div class="container-sm " id="prueba1">
                 <form action="" method="post">
-                    <div class="row">
+                    <div class="row mb-3">
                         <h3>Creacion de Item</h3>
                         <div class="col-lg-3 ">
-                            <label for="" class="form-label">Codigo:</label>
-                            <input type="tex" class="form-control" name="codigo" id="">
+                         
+                            <input type="tex" class="form-control" name="codigo" id="" placeholder="Codigo...">
+                        </div>
+                        <div class="col-lg-3">
                             <input type="submit" class="btn btn-primary" id="buscar" value="buscar" name="buscar">
                         </div>
                     </div>
             </div>
+            </div>
             </form>
             <?php include("../operacion/consultacodigocrear.php");
-             
+
             ?>
             </div>
         </section>
@@ -49,12 +51,12 @@ include("../../php/dbconn.php");
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
-    
+
 </script>
 
 <script>
-// let boton = document.getElementById("buscar");
-// boton.addEventListener("click",function(){
-//     document.getElementById("prueba1").setAttribute("class"," visually-hidden");
-// });
+    // let boton = document.getElementById("buscar");
+    // boton.addEventListener("click",function(){
+    //     document.getElementById("prueba1").setAttribute("class"," visually-hidden");
+    // });
 </script>

@@ -27,7 +27,7 @@ include("../../php/dbconn.php");
     <?php include("../assets/headersintasa.php"); ?>
 
     <main>
-
+<h1>Orden de Salida</h1>
 
 
         <section>
@@ -37,7 +37,7 @@ include("../../php/dbconn.php");
                         <div class="col-lg-3 ">
                             <label for="" class="form-label">Codigo:</label>
                             <input type="tex" class="form-control" name="codigo" id="">
-                            <input type="submit" value="buscar" name="buscar">
+                            <input type="submit" class="btn btn-primary" value="buscar" name="buscar">
                         </div>
                     </div>
             </div>

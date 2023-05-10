@@ -11,11 +11,12 @@ $codigo =$_POST["codigo2"];
 $nombre =$_POST["nombre"];
 $descripcion =$_POST["descripcion"];
 $existencia =$_POST["existencia"];
+$unidad =$_POST["unidad"];
 $costo =$_POST["costo"];
 $precio =$_POST["precio_1"];
 
 
-$query2 = "INSERT INTO stock ( codigo, nombre, descripcion,existencia,costo,precio_1) VALUES ('$codigo','$nombre','$descripcion','$existencia','$costo','$precio')";
+$query2 = "INSERT INTO stock ( codigo, nombre, descripcion,existencia,costo,precio_1,unidades) VALUES ('$codigo','$nombre','$descripcion','$existencia','$costo','$precio','$unidad')";
 
 
 $stmt2= $conn->prepare($query2);
