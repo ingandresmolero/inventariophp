@@ -36,8 +36,8 @@ $paginas = ceil($total_report / $report_x_pagina);
     <?php include("../views/assets/header.php"); ?>
     
 
-    <section class="container-fluid">
-    <h2>Reportes</h2>
+    <section class="container">
+    <h1 class="page-heading">Reportes</h1>
     <div class="table-responsive-sm">
         <table class="table table-style">
             <thead>
