@@ -64,7 +64,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                         <th scope="col">Descripcion</th>
                         <th scope="col">Existencia</th>
                         <th scope="col">Unidad</th>
-                        <th scope="col">Costo</th>
+                       
                         <th scope="col">Precio $ PVP</th>
                         <th scope="col">Precio PVP</th>
                         <th scope="col">Accion</th>
@@ -110,7 +110,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                                 <td><?php echo $stock['descripcion']; ?></td>
                                 <td><?php echo $stock['existencia']; ?></td>
                                 <td><?php echo $stock['unidades']; ?></td>
-                                <td><?php echo $stock['costo']; ?></td>
+                              
                                 <td><?php echo $stock['precio_1']; ?></td>
                                 <td><?php echo $variable ?>Bs.S</td>
                                 <td class="action"><a class="table-btn" href="operacion/editarstock.php?stockid=<?php echo $id ?>">Detalles </a></td>
@@ -147,7 +147,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                                     <td><?php echo $stock['descripcion']; ?></td>
                                     <td><?php echo $stock['existencia']; ?></td>
                                     <td><?php echo $stock['unidades']; ?></td>
-                                    <td><?php echo $stock['costo']; ?></td>
+                                  
                                     <td><?php echo $stock['precio_1']; ?></td>
                                     <td><?php echo $variable ?>Bs.S</td>
                                     <td class="action"><a class="table-btn" href="operacion/editarstock.php?stockid=<?php echo $id ?>">Detalles </a></td>

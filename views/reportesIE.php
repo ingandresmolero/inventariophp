@@ -37,7 +37,7 @@ $paginas = ceil($total_report / $report_x_pagina);
     
 
     <section class="container">
-    <h1 class="page-heading">Reportes</h1>
+    <h1 class="page-heading">Reportes Ingreso y Egresos</h1>
     <div class="table-responsive-sm">
         <table class="table table-style">
             <thead>
@@ -57,9 +57,9 @@ $paginas = ceil($total_report / $report_x_pagina);
 
 <?php
     if(!$_GET){
-        header('Location:reportes.php?pagina=1');
+        header('Location:reportesIE.php?pagina=1');
     }if ($_GET['pagina']>$paginas || $_GET['pagina']<=0 ){
-        header('Location:reportes.php?pagina=1');
+        header('Location:reportesIE.php?pagina=1');
     }
 
     $iniciar = ($_GET['pagina']-1) * $report_x_pagina;
@@ -103,16 +103,16 @@ $paginas = ceil($total_report / $report_x_pagina);
             <ul class="pagination">
                 <li class="page-item 
                 <?php echo $_GET['pagina'] < $paginas ? ' disabled' : '' ?> 
-                "><a class="page-link" href="reportes.php?pagina=<?php echo $_GET['pagina'] - 1; ?>">Anterior</a></li>
+                "><a class="page-link" href="reportesIE.php?pagina=<?php echo $_GET['pagina'] - 1; ?>">Anterior</a></li>
 
                 <?php for ($i = 0; $i < $paginas; $i++) : ?>
-                    <li class="page-item <?php echo $_GET['pagina'] == $i + 1 ? ' active' : '' ?>"><a class="page-link" href="reportes.php?pagina=<?php echo $i + 1; ?>"><?php echo $i + 1; ?></a></li>
+                    <li class="page-item <?php echo $_GET['pagina'] == $i + 1 ? ' active' : '' ?>"><a class="page-link" href="reportesIE.php?pagina=<?php echo $i + 1; ?>"><?php echo $i + 1; ?></a></li>
                 <?php endfor  ?>
 
 
                 <li class="page-item
                 <?php echo $_GET['pagina'] >= $paginas ? ' disabled' : '' ?> 
-                "><a class="page-link" href="reportes.php?pagina=<?php echo $_GET['pagina'] + 1; ?>">Siguiente</a></li>
+                "><a class="page-link" href="reportesIE.php?pagina=<?php echo $_GET['pagina'] + 1; ?>">Siguiente</a></li>
             </ul>
         </nav>
     </section>
