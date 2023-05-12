@@ -32,10 +32,11 @@ $resultado = $stmt->fetchAll();
 
 
         <section>
-            <div class="container-sm">
+            <div class="container-sm card shadow p-3 mb-5 bg-body-tertiary rounded">
                 <?php foreach ($resultado as $stock) : ?>
                     <form action="" method="post">
-                        <div class="row">
+                        <h2 class="text-center">Editar articulo</h2>
+                        <div class="row ">
                             <div class="col-lg-3 ">
                                 <label for="" class="form-label">Codigo:</label>
                                 <input type="tex" class="form-control" name="codigo" id="" value="<?php echo $stock['codigo'] ?>" placeholder="<?php echo $stock['codigo'] ?>">
@@ -112,6 +113,7 @@ $resultado = $stmt->fetchAll();
                             <div class="collapse multi-collapse" id="multiCollapseCaracteristicas">
                                 <div class="card card-body">
                                     <div class="row">
+                                    <h3>Caracteristicas</h3>
                                         <div class="col-sm-3">
                                             <label for="" class="form-label">Color:</label>
                                             <input type="tex" class="form-control" name="color" id="" value="<?php echo $stock['color'] ?>" placeholder="<?php echo $stock['color'] ?>...">
@@ -143,6 +145,7 @@ $resultado = $stmt->fetchAll();
                             <div class="collapse multi-collapse" id="multiCollapseEmbalaje">
                                 <div class="card card-body">
                                     <div class="row">
+                                        <h3>Embalaje</h3>
                                         <div class="col-sm-3">
                                             <label for="" class="form-label">Unidad:</label>
                                             <select class="form-select" name="unidad" id="unidad">
