@@ -5,18 +5,18 @@ include("../php/functions/tasa.php");
 ?>
 <?php
 include("../php/dbconn.php");
-$sql = 'SELECT * FROM usuarios';
+$sql = 'SELECT * FROM stock';
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 
 $resultado = $stmt->fetchAll();
 
-$usuarios_x_pagina = 10;
+$stock_x_pagina = 10;
 
-$total_usuario = $stmt->rowCount();
+$total_stock = $stmt->rowCount();
 
 
-$paginas = ceil($total_usuario / $usuarios_x_pagina);
+$paginas = ceil($total_stock / $stock_x_pagina);
 
 ?>
 
@@ -29,29 +29,28 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.min.css">
-    <title>Usuarios</title>
+    <title>Inventario</title>
     <link rel="icon" type="image/x-icon" href="../img/favicon.png">
-    <script src="../js/user-page.js"></script>
 
 </head>
 
-<body id="users-page">
+<body>
     <?php include("../views/assets/header.php"); ?>
 
 
     <section class="container">
-        <h1 class="page-heading">Usuarios</h1>
+        <h1 class="page-heading">Inventario</h1>
         <!-- Button trigger modal -->
 
-        <button type="button" class="btn-style-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Nuevo Usuario
-        </button>
+        <div class="col-auto ">
+            <a href="./operacion/add_stock.php" class="table-btn">Crear Item</a>
+        </div>
         <div class="row b-3">
             <div class="col-md">
                 <form action="" method="post">
-                    <input type="text" class="form-control" name="campo" placeholder="Usuario, nombre, rol...." id="">
+                    <input type="text" class="form-control" name="campo" placeholder="Codigo, nombre..." id="">
                     <input type="submit" class="btn-invert-1" value="busqueda" name="busqueda">
-                    <a href="usuarios.php" class="btn-invert-1">Mostrar Todos</a>
+                    <a href="stock.php" class="btn-invert-1">Mostrar Todos</a>
                 </form>
             </div>
         </div>
@@ -60,11 +59,16 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
                 <thead>
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Codigo</th>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Usuario</th>
-                        <th scope="col">Rol</th>
-                        <th scope="col">Editar</th>
-                        <th scope="col">Eliminar</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Existencia</th>
+                        <th scope="col">Unidad</th>
+                       
+                        <th scope="col">Precio $ PVP</th>
+                        <th scope="col">Precio PVP</th>
+                        <th scope="col">Accion</th>
+
 
                     </tr>
                 </thead>
@@ -73,61 +77,80 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
 
                     <?php
                     if (!$_GET) {
-                        header('Location:usuarios.php?pagina=1');
+                        header('Location:stock.php?pagina=1');
                     }
                     if ($_GET['pagina'] > $paginas || $_GET['pagina'] <= 0) {
-                        header('Location:usuarios.php?pagina=1');
+                        header('Location:stock.php?pagina=1');
                     }
 
                     if (!isset($_POST['busqueda'])) {
 
-                        $iniciar = ($_GET['pagina'] - 1) * $usuarios_x_pagina;
+                        $iniciar = ($_GET['pagina'] - 1) * $stock_x_pagina;
 
-                        $sql_usuarios = "SELECT * FROM usuarios LIMIT :iniciar,:nusuarios";
-                        $stm_usuario = $conn->prepare($sql_usuarios);
-                        $stm_usuario->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
-                        $stm_usuario->bindParam(':nusuarios', $usuarios_x_pagina, PDO::PARAM_INT);
-                        $stm_usuario->execute();
+                        $sql_stock = "SELECT * FROM stock LIMIT :iniciar,:nusuarios";
+                        $stm_stock = $conn->prepare($sql_stock);
+                        $stm_stock->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
+                        $stm_stock->bindParam(':nusuarios', $stock_x_pagina, PDO::PARAM_INT);
+                        $stm_stock->execute();
 
 
-                        $resultado_usuario = $stm_usuario->fetchAll();
+                        $resultado_stock = $stm_stock->fetchAll();
                     ?>
 
-                        <?php foreach ($resultado_usuario as $usuario) :   ?>
+                        <?php foreach ($resultado_stock as $stock) :
+                            $id = $stock['id_stock'];
+                            $tasa = floatval($tasadia);
+                            $precio = floatval($stock['precio_1']);
+                            $variable = $precio * $tasa; ?>
+
                             <tr>
-                                <th scope="row"><?php echo $usuario['id_usuario'];  ?></th>
-                                <td><?php echo $usuario['nombre']; ?></td>
-                                <td><?php echo $usuario['user']; ?></td>
-                                <td><?php echo $usuario['rol']; ?></td>
-                                <td class="action"><a class="table-btn" href="../views/operacion/editarUser.php?userid=<?php echo $usuario['id_usuario'] ?>">Ver</a></td>
-                                <td class="action"><a class="table-btn" href="../views/operacion/eliminarusuario.php?userid=<?php echo $usuario['id_usuario'] ?>">Eliminar</a></td>
+                                <th scope="row"><?php echo $stock['id_stock'];  ?></th>
+                                <td><?php echo $stock['codigo']; ?></td>
+                                <td><?php echo $stock['nombre']; ?></td>
+                                <td><?php echo $stock['descripcion']; ?></td>
+                                <td><?php echo $stock['existencia']; ?></td>
+                                <td><?php echo $stock['unidades']; ?></td>
+                              
+                                <td><?php echo $stock['precio_1']; ?></td>
+                                <td><?php echo $variable ?>Bs.S</td>
+                                <td class="action"><a class="table-btn" href="operacion/editarstock.php?stockid=<?php echo $id ?>">Detalles </a></td>
 
                             </tr>
                         <?php endforeach  ?>
                         <?php } else {
                         if (isset($_POST['busqueda'])) {
                             $busqueda = $_POST['campo'];
-                            $iniciar = ($_GET['pagina'] - 1) * $usuarios_x_pagina;
+                            $iniciar = ($_GET['pagina'] - 1) * $stock_x_pagina;
 
-                            $sql_usuarios = "SELECT * FROM usuarios WHERE (nombre = '$busqueda') OR (rol='$busqueda') LIMIT :iniciar,:nusuarios";
-                            $stm_usuario = $conn->prepare($sql_usuarios);
-                            $stm_usuario->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
-                            $stm_usuario->bindParam(':nusuarios', $usuarios_x_pagina, PDO::PARAM_INT);
-                            $stm_usuario->execute();
+                            $sql_stock = "SELECT * FROM stock WHERE (nombre = '$busqueda') OR (codigo='$busqueda') LIMIT :iniciar,:nusuarios";
+                            $stm_stock = $conn->prepare($sql_stock);
+                            $stm_stock->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
+                            $stm_stock->bindParam(':nusuarios', $stock_x_pagina, PDO::PARAM_INT);
+                            $stm_stock->execute();
 
 
 
-                            $resultado_usuario = $stm_usuario->fetchAll();
+                            $resultado_stock = $stm_stock->fetchAll();
                         ?>
 
-                            <?php foreach ($resultado_usuario as $usuario) :   ?>
+                            <?php foreach ($resultado_stock as $stock) :
+
+                                $id = $stock['id_stock'];
+                                $tasa = floatval($tasadia);
+                                $precio = floatval($stock['precio_1']);
+                                $variable = $precio * $tasa;
+                            ?>
                                 <tr>
-                                    <th scope="row"><?php echo $usuario['id_usuario'];  ?></th>
-                                    <td><?php echo $usuario['nombre']; ?></td>
-                                    <td><?php echo $usuario['user']; ?></td>
-                                    <td><?php echo $usuario['rol']; ?></td>
-                                    <td class="action"><a class="table-btn" href="../views/operacion/editarUser.php?userid=<?php echo $usuario['id_usuario'] ?>">Ver</a></td>
-                                    <td class="action"><a class="table-btn" href="../views/operacion/eliminarusuario.php?userid=<?php echo $usuario['id_usuario'] ?>">Eliminar</a></td>
+                                    <th scope="row"><?php echo $stock['id_stock'];  ?></th>
+                                    <td><?php echo $stock['codigo']; ?></td>
+                                    <td><?php echo $stock['nombre']; ?></td>
+                                    <td><?php echo $stock['descripcion']; ?></td>
+                                    <td><?php echo $stock['existencia']; ?></td>
+                                    <td><?php echo $stock['unidades']; ?></td>
+                                  
+                                    <td><?php echo $stock['precio_1']; ?></td>
+                                    <td><?php echo $variable ?>Bs.S</td>
+                                    <td class="action"><a class="table-btn" href="operacion/editarstock.php?stockid=<?php echo $id ?>">Detalles </a></td>
 
                                 </tr>
                             <?php endforeach  ?>

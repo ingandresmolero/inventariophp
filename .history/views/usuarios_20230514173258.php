@@ -50,8 +50,8 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
             <div class="col-md">
                 <form action="" method="post">
                     <input type="text" class="form-control" name="campo" placeholder="Usuario, nombre, rol...." id="">
-                    <input type="submit" class="btn-invert-1" value="busqueda" name="busqueda">
-                    <a href="usuarios.php" class="btn-invert-1">Mostrar Todos</a>
+                    <input type="submit" class="search-btn" value="busqueda" name="busqueda">
+                    <a href="usuarios.php" class="show-btn">Mostrar Todos</a>
                 </form>
             </div>
         </div>
