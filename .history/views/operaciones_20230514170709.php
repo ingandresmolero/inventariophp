@@ -25,21 +25,43 @@ include("../php/functions/tasa.php");
         <div class="elements">
            
             <a href="./operacion/add_stock.php" class="item">
-                <img src="../img/icons/crear-codigo.png">
+                <img src="../img/icons/inventario.png">
                 <p class="card-title">Crear Codigo</p>
             </a>
                    
-            <a href="./operacion/anadir_stock.php" class="item">
-                <img src="../img/icons/orden-carga.png">
-                <p class="card-title">Orden de Carga</p>
-            </a>
+         
 
-            <a href="./operacion/out_stock.php" class="item">
-                <img src="../img/icons/orden-retiro.png">
-                <p class="card-title">Orden de Retiro</p>
-            </a>
+
+            <div class="col-3">
+                <div class="card" style="width: 18rem;">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Orden de Carga</h5>
+
+                        <a href="./operacion/anadir_stock.php" class="btn btn-primary">Entrar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-3">
+                <div class="card" style="width: 18rem;">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Orden de Retiro</h5>
+
+                        <a href="./operacion/out_stock.php" class="btn btn-primary">Entrar</a>
+                    </div>
+                </div>
+            </div>
+
+
+
 
         </div>
+
+
+
 
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

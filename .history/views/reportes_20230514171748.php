@@ -35,7 +35,7 @@ include("../php/functions/tasa.php");
                 
             <a href="estadisticas.php" class="item">
                 
-                <img src="../img/icons/graficos.png">
+                <img src="../img/icons/estadistica.png">
                 <p class="card-title">Estadisticas</p>
             </a>
         </div>
