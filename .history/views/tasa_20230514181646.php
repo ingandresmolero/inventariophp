@@ -46,12 +46,20 @@ $add = $stmt->fetchAll();
     <main>
 
         <div class="container">
-        
             <form action="" method="post">
-                <label class="form-label" for="">Tasa 1 del Dia</label>
-                <input class="form-control col-sm-3" type="text" name="tasa" id="tasa" placeholder="Tasa BS del dia...">
-                <label class="form-label" for="">Tasa 2 del Dia</label>
-                <input class="form-control col-sm-3 mb-3" type="text" name="tasa2" id="tasa2" placeholder="Tasa paralela del dia...">
+                <div class="flex-container">
+                    <div class="flex-item">
+                        <label class="form-label" for="">Tasa 1 del Dia</label>
+                        <input class="form-control col-sm-3" type="text" name="tasa" id="tasa" placeholder="Tasa BS del dia...">
+                    </div>
+
+                    <div class="flex-container">
+                        <label class="form-label" for="">Tasa 2 del Dia</label>
+                        <input class="form-control col-sm-3 mb-3" type="text" name="tasa2" id="tasa2" placeholder="Tasa paralela del dia...">
+                    </div>
+
+                </div>
+                
                 <input type="submit" class="btn btn-primary mb-3" value="Guardar" name="guardar">
             </form>
         </div>

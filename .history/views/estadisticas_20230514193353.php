@@ -34,21 +34,26 @@ while ($rows = $stmt_arti->fetch()) {
     <link rel="stylesheet" href="../css/styles.min.css">
 </head>
 
-<body id="estadisticas">
-    <div class="container">
+<body>
+
+
+
+
+
+    <div class="container-sm">
         <h1 class="page-heading">Vision de Empresa</h1>
 
-        <div class="options">
-            <button class="btn-invert-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapseExample">
-                Total de Inversion en $
-            </button>
-            <button class="btn-invert-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapseExample">
-                Total de Inversion en Bs.S
-            </button>
-            <button class="btn-invert-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapseExample">
-                Cantidad de Articulos
-            </button>
-        </div>
+
+        <button class="btn-invert-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapseExample">
+            Total de Inversion en $
+        </button>
+        <button class="btn-invert-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapseExample">
+            Total de Inversion en Bs.S
+        </button>
+        <button class="btn-invert-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapseExample">
+            Cantidad de Articulos
+        </button>
+
         <div class="collapse" id="collapse1">
             <div class="card card-body">
                 Total de Inversion <?php

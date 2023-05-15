@@ -15,32 +15,42 @@ include("../../php/dbconn.php");
     <link rel="icon" type="image/x-icon" href="../../img/favicon.png">
     <link rel="stylesheet" href="../../css/styles.min.css">
     <title>Crear Item</title>
-
+    
 </head>
 
 <body>
     <?php include("../assets/headersintasa.php"); ?>
 
     <main>
-        <div class="container" id="prueba1">
-            <h1 class="page-heading">Creacion de Item</h1>
-            <form action="" method="post" class="form-style-1">
-                <div class="flex-element">
-                    <div class="flex-item">
-                        <input type="tex" class="form-control" name="codigo" id="" placeholder="Codigo...">
+
+
+        <section>
+            <div class="container-sm " id="prueba1">
+                <form action="" method="post">
+                    <div class="row mb-3">
+                        <h3>Creacion de Item</h3>
+                        <div class="col-lg-3 ">
+                         
+                            <input type="tex" class="form-control" name="codigo" id="" placeholder="Codigo...">
+                        </div>
+                        <div class="col-lg-3">
+                            <input type="submit" class="btn btn-primary" id="buscar" value="buscar" name="buscar">
+                        </div>
                     </div>
-                    <div class="flex-item">
-                        <input type="submit" class="btn-style-1" id="buscar" value="buscar" name="buscar">
-                    </div>
-                </div>
-         
+            </div>
+            </div>
             </form>
             <?php include("../operacion/consultacodigocrear.php");
 
             ?>
-        </div>
+            </div>
+        </section>
+
+
 
     </main>
+
+
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">

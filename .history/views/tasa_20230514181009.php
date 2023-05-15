@@ -40,13 +40,12 @@ $add = $stmt->fetchAll();
 
 </head>
 
-<body id="tasa">
+<body>
     <?php include("assets/header.php"); ?>
 
     <main>
 
         <div class="container">
-        
             <form action="" method="post">
                 <label class="form-label" for="">Tasa 1 del Dia</label>
                 <input class="form-control col-sm-3" type="text" name="tasa" id="tasa" placeholder="Tasa BS del dia...">

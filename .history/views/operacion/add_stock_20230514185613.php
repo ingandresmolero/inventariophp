@@ -23,21 +23,23 @@ include("../../php/dbconn.php");
 
     <main>
         <div class="container" id="prueba1">
-            <h1 class="page-heading">Creacion de Item</h1>
             <form action="" method="post" class="form-style-1">
-                <div class="flex-element">
-                    <div class="flex-item">
+                <div class="row mb-3">
+                    <h3>Creacion de Item</h3>
+                    <div class="col-lg-3 ">
+
                         <input type="tex" class="form-control" name="codigo" id="" placeholder="Codigo...">
                     </div>
-                    <div class="flex-item">
-                        <input type="submit" class="btn-style-1" id="buscar" value="buscar" name="buscar">
+                    <div class="col-lg-3">
+                        <input type="submit" class="btn btn-primary" id="buscar" value="buscar" name="buscar">
                     </div>
                 </div>
-         
-            </form>
-            <?php include("../operacion/consultacodigocrear.php");
+        </div>
+        </div>
+        </form>
+        <?php include("../operacion/consultacodigocrear.php");
 
-            ?>
+        ?>
         </div>
 
     </main>

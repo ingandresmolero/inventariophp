@@ -22,28 +22,28 @@ if (isset($_POST['buscar'])) {;
         echo '  
             <div id="test">
             
-                <form action="crearCodigo.php" method="post" class="form-style-2">
-                <div class="card p-5 justify-content-center">
+                <form action="crearCodigo.php" method="post">
+                <div class="crear justify-content-center">
                 <h3>Creacion de Nuevo Codigo: </h3>
                 <div class="col-sm">
-                    <label for="" class="col-form-label">Codigo: </label>
+                    <label for="" class="form-label">Codigo: </label>
                     <input type="text" class="form-control" value="' . $codigo . '" name="codigo2"  >
                 </div>
                 <div class="col-sm">
-                    <label for="" class="col-form-label">Nombre: </label>
+                    <label for="" class="form-label">Nombre: </label>
                     <input type="text" class="form-control" name="nombre" id="">
                 </div>
                 <div class="col-sm">
-                    <label for="" class="col-form-label">Descripcion: </label>
+                    <label for="" class="form-label">Descripcion: </label>
                     <input type="text" class="form-control" name="descripcion" id="">
                 </div>
                 <div class="row">
                     <div class="col-sm">
-                        <label for="" class="col-form-label">Existencia: </label>
+                        <label for="" class="form-label">Existencia: </label>
                         <input type="text" class="form-control" name="existencia" id="">
                     </div>
                     <div class="col-sm">
-                        <label for="" class="col-form-label">Unidad: </label>
+                        <label for="" class="form-label">Unidad: </label>
                         <select class="form-select" name="unidad" id="">
                             <option value="kg">Kilogramos</option>
                             <option value="mt">Metros</option>
@@ -52,14 +52,14 @@ if (isset($_POST['buscar'])) {;
                     </div>
                 </div>    
             <div class="col-sm">
-            <label for="" class="col-form-label">Costo: </label>
+            <label for="" class="form-label">Costo: </label>
             <input type="text" class="form-control" name="costo" id="">
         </div>
         <div class="col-sm mb-3">
-            <label for="" class="col-form-label">Precio: </label>
+            <label for="" class="form-label">Precio: </label>
             <input type="text" class="form-control" name="precio_1" id="">
         </div>
-        <input type="submit" name="crear" class="submit-btn" value="Crear">
+        <input type="submit" name="crear" class="btn btn-primary" value="Crear">
             </div>
             
                 </form>

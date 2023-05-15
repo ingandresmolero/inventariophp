@@ -26,6 +26,7 @@ include("../../php/dbconn.php");
             <h1 class="page-heading">Creacion de Item</h1>
             <form action="" method="post" class="form-style-1">
                 <div class="flex-element">
+                   
                     <div class="flex-item">
                         <input type="tex" class="form-control" name="codigo" id="" placeholder="Codigo...">
                     </div>
@@ -33,11 +34,12 @@ include("../../php/dbconn.php");
                         <input type="submit" class="btn-style-1" id="buscar" value="buscar" name="buscar">
                     </div>
                 </div>
-         
-            </form>
-            <?php include("../operacion/consultacodigocrear.php");
+        </div>
+        </div>
+        </form>
+        <?php include("../operacion/consultacodigocrear.php");
 
-            ?>
+        ?>
         </div>
 
     </main>

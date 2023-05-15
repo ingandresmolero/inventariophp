@@ -34,7 +34,7 @@ while ($rows = $stmt_arti->fetch()) {
     <link rel="stylesheet" href="../css/styles.min.css">
 </head>
 
-<body id="estadisticas">
+<body class="estadisticas">
     <div class="container">
         <h1 class="page-heading">Vision de Empresa</h1>
 
