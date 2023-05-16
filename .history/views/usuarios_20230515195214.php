@@ -160,7 +160,7 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title" id="exampleModalLabel">Crear un Nuevo Usuario</h2>
+                    <h1 class="modal-title" id="exampleModalLabel">Crear un Nuevo Usuario</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -185,7 +185,7 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
                             </select>
                         </div>
 
-                        <input type="submit" class="btn-style-1" name="crear" value="Guardar">
+                        <input type="submit" class="btn btn-primary" name="crear" value="Guardar">
                     </form>
                 </div>
             </div>

@@ -21,13 +21,13 @@ include("../views/operacion/addparametros.php");
 
 </head>
 
-<body id="configuracion-empresa">
+<body>
     <?php include("assets/header.php"); ?>
 
     <main>
         <div class="container">
             <h1 class="page-heading">Configuracion de Empresa</h1>
-            <div class="box-bg">
+            <div class="box">
                 <form action="" method="post">
                     <div class="input-item">
                         <label for="" class="form-label">Nombre:</label>
@@ -50,7 +50,7 @@ include("../views/operacion/addparametros.php");
                         <input type="tex" class="form-control" name="n_control" id="">
                     </div>
 
-                    <input type="submit" class="btn-style-1" value="Guardar" name="guardar">
+                    <input type="submit" class="btn btn-primary mb-3" value="Guardar" name="guardar">
                 </form>
             </div>
         </div>

@@ -50,7 +50,7 @@ include("../views/operacion/addparametros.php");
                         <input type="tex" class="form-control" name="n_control" id="">
                     </div>
 
-                    <input type="submit" class="btn-style-1" value="Guardar" name="guardar">
+                    <input type="submit" class="btn btn-primary mb-3" value="Guardar" name="guardar">
                 </form>
             </div>
         </div>

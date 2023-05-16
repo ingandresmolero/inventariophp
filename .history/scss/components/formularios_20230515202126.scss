@@ -11,6 +11,10 @@
         .flex-item:first-child {
             margin-right: 10px;
         }
+
+        input.form-control {
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+        }
     }
 }
 
@@ -30,13 +34,14 @@
             color: $accentColor;
         }
     }
+
+    input.form-control {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    }
 }
 
 .input-item {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 10px;
-    input.form-control {
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
-    }
+    padding-bottom: 10px;
 }

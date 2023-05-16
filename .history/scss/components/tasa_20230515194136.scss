@@ -10,13 +10,11 @@
             margin: 0 auto;
             background-color: #fff;
             padding: 30px;
-            box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
         }
 
-        .btn-style-1 {
-            width: 50%;
-            margin: 20px auto 0;
-            display: block;
+        .input-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
     }
 }

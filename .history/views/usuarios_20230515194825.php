@@ -160,32 +160,24 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title" id="exampleModalLabel">Crear un Nuevo Usuario</h2>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Crear un Nuevo Usuario</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="operacion/crearusuario.php" method="post">
-                        <div class="input-item">
-                            <label class="form-label" for="">Nombre</label>
-                            <input class="form-control" type="text" name="nombre" id="">
-                        </div>
-                        <div class="input-item">
-                            <label class="form-label" for="">Usuario</label>
-                            <input class="form-control" type="text" name="usuario" id="">
-                        </div>
-                        <div class="input-item">
-                            <label class="form-label" for="">Contrasena</label>
-                            <input class="form-control" type="password" name="clave" id="">
-                        </div>
-                        <div class="input-item">
-                            <label class="form-label" for="">Rol</label>
-                            <select class="form-control" name="rol" id="">
-                                <option value="master">Master</option>
-                                <option value="usuario">Usuario</option>
-                            </select>
-                        </div>
+                        <label class="form-label" for="">Nombre</label>
+                        <input class="form-control" type="text" name="nombre" id="">
+                        <label class="form-label" for="">Usuario</label>
+                        <input class="form-control" type="text" name="usuario" id="">
+                        <label class="form-label" for="">Contrasena</label>
+                        <input class="form-control" type="password" name="clave" id="">
+                        <label class="form-label" for="">Rol</label>
+                        <select class="form-control" name="rol" id="">
+                            <option value="master">Master</option>
+                            <option value="usuario">Usuario</option>
+                        </select>
 
-                        <input type="submit" class="btn-style-1" name="crear" value="Guardar">
+                        <input type="submit" class="btn btn-primary" name="crear" value="Guardar">
                     </form>
                 </div>
             </div>

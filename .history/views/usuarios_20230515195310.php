@@ -185,7 +185,7 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
                             </select>
                         </div>
 
-                        <input type="submit" class="btn-style-1" name="crear" value="Guardar">
+                        <input type="submit" class="btn btn-primary" name="crear" value="Guardar">
                     </form>
                 </div>
             </div>
