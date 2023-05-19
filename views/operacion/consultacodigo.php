@@ -10,8 +10,7 @@
         $stmt->execute();
         $out = $stmt->fetch();
 
-        $cantidad = $out['existencia'];
-        
+    
 
         if ($out > 0) {
             echo '

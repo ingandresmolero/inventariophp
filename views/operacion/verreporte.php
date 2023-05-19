@@ -76,12 +76,12 @@ $resultado = $stmt->fetchAll();
 
 
                 <input type="submit" class="btn btn-warning mb-3" value="Actualizar" name="actualizar">
-                <?php
+                <!-- <?php
                     $rol = $_SESSION['rol'];
                     if ($rol == 'master') {
                         echo '<input type="submit" class="btn btn-danger mb-3" value="Borrar" name="borrar">';
                     }
-                ?>
+                ?> -->
                 </form>
 
             <?php endforeach ?>
