@@ -3,7 +3,7 @@
 .form-style-1 {
     .flex-element {
         display: flex;
-
+        align-items: baseline;
         .flex-item .form-control {
             border-radius: initial;
         }
@@ -11,6 +11,15 @@
         .flex-item:first-child {
             margin-right: 10px;
         }
+
+        .form-label {
+            margin-right: 10px;
+        }
+
+        .margin-left {
+            margin-left: 10px;
+        }
+        
     }
 }
 
@@ -39,4 +48,27 @@
     input.form-control {
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
     }
+}
+
+.box-bg {
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    width: 75%;
+    margin: 0 auto;
+    @media only screen and (max-width: 767px) {
+        width: auto;
+        padding: 25px;
+    }
+
+    .btn-style-1 {
+        width: 50%;
+        margin: 25px 0 0 auto;
+        display: block;
+    }
+}
+
+.medium-sz {
+    width: 88.5%;
+    margin: 20px auto 40px;
 }

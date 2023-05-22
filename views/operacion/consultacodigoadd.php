@@ -15,31 +15,36 @@
 
         if ($out > 0) {
             echo '
-            <div class="container-sm">
-            <form action="agregarItem.php" method="post">
-                <label class="form-label">Codigo</label>
-                <input class="form-control" value= "'.$out['codigo']. '" name="codigo2">
-                
-                <label class="form-label">Nombre</label>
-                <input class="form-control" value= "'.$out['nombre']. '" name="nombre">
-                
-                <label class="form-label">Costo</label>
-                <input class="form-control" value= "'.$out['costo']. '" name="costo">
-                
-                <label class="form-label">Stock</label>
-                <input class="form-control" value= "'.$out['existencia']. '" name="existencia">
-                
-                <label class="form-label">Cantidad </label>
-                <input class="form-control" placeholder="cantidad a agregar" name="cantidad">
-                <button type="" name="agregar"> Agregar </button>
-            </form>
+            <div class="box-bg medium-sz">
+            
+                <form action="agregarItem.php" method="post">
+                    <div class="input-item">
+                        <label class="form-label">Codigo</label>
+                        <input class="form-control" value= "'.$out['codigo']. '" name="codigo2">
+                    </div>
+                    <div class="input-item">
+                        <label class="form-label">Nombre</label>
+                        <input class="form-control" value= "'.$out['nombre']. '" name="nombre">
+                    </div>
+                    <div class="input-item">
+                        <label class="form-label">Costo</label>
+                        <input class="form-control" value= "'.$out['costo']. '" name="costo">
+                    </div>
+                    <div class="input-item">
+                        <label class="form-label">Stock</label>
+                        <input class="form-control" value= "'.$out['existencia']. '" name="existencia">
+                    </div>
+                    <div class="input-item">
+                        <label class="form-label">Cantidad </label>
+                        <input class="form-control" placeholder="cantidad a agregar" name="cantidad">
+                    </div>
+                    <button type="" class="btn-style-1" name="agregar"> Agregar </button>
+                </form>
             </div>
             ';
-    
-           
 
         } else {
-            echo 'Este codigo no existe';
+            echo '<div class="container"><p class="alert-error">El codigo ingresado no existe.</p></div>';
         }
     }
     ?>

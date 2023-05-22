@@ -27,7 +27,7 @@ include("../../php/dbconn.php");
             <form action="" method="post" class="form-style-1">
                 <div class="flex-element">
                     <div class="flex-item">
-                        <input type="tex" class="form-control" name="codigo" id="" placeholder="Codigo...">
+                        <input type="text" class="form-control" name="codigo" id="" placeholder="Codigo...">
                     </div>
                     <div class="flex-item">
                         <input type="submit" class="btn-style-1" id="buscar" value="buscar" name="buscar">

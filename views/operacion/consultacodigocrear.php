@@ -13,8 +13,8 @@ if (isset($_POST['buscar'])) {;
 
     if ($out > 0) {
         echo '
-            <div class="card container-sm mt-5">
-            <h3>Ya existe el codigo</h3>
+            <div class="container">
+            <p class="alert-error">El codigo introducido ya existe.</p>
 
             </div>
             ';
