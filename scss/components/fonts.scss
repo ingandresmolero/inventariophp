@@ -5,7 +5,10 @@
     text-align: center;
     color: $accentColor;
 }
-
+.module-title {
+    text-align: center;
+    padding: 10px 0 20px;
+}
 p.alert-error {
     margin-top: 2rem;
     font-weight: bold;

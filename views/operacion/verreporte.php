@@ -21,69 +21,57 @@ $resultado = $stmt->fetchAll();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <title>Ver Detalles</title>
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.png">
+    <link rel="stylesheet" href="../../css/styles.min.css">
+    <title>Ver Reporte</title>
 </head>
 
 <body>
     <?php include("../../views/assets/headersintasa.php"); ?>
 
     <main>
-
-
-
-        <section>
-            <div class="container-sm">
+        <div class="container">
+            <h1 class="page-heading">Ver Reporte</h1>
+            <div class="box-bg mb-4">
                 <?php foreach ($resultado as $stock) : ?>
-                    <form action="" method="post">
+                    <form action="" method="post" >
                         <div class="row">
-                            <div class="col-lg-3 ">
+                            <div class="input-item">
                                 <label for="" class="form-label">Codigo:</label>
                                 <input type="tex" class="form-control" name="codigo" id="" disabled value="<?php echo $stock['codigo'] ?>" placeholder="<?php echo $stock['codigo'] ?>">
-
                             </div>
 
-                            <div class="col-lg-3">
+                            <div class="input-item">
                                 <label for="" class="form-label">Egreso:</label>
                                 <input type="tex" class="form-control" name="nombre" id="" disabled value="<?php echo $stock['egreso'] ?>" placeholder="<?php echo $stock['egreso'] ?>">
                             </div>
 
-                            <div class="col-lg-3">
+                            <div class="input-item">
                                 <label for="" class="form-label">Ingreso:</label>
                                 <input type="tex" class="form-control" name="descripcion" id="" disabled value="<?php echo $stock['ingreso'] ?>" placeholder="<?php echo $stock['ingreso'] ?>...">
                             </div>
-
-                        </div>
-                        <div class="row">
-
                         
-                        <div class="col-3">
+                            <div class="input-item">
                                 <label for="" class="form-label">Usuario:</label>
                                 <input type="number" class="form-control" name="existencia" id="" disabled value="<?php echo $stock['usuario'] ?>" placeholder="<?php echo $stock['usuario'] ?>...">
-                            </div>
+                            </div>   
 
-                            <div class="col-3">
+                            <div class="input-item">
                                 <label for="" class="form-label">Fecha Creacion:</label>
                                 <input type="number" class="form-control" name="existencia" id="" disabled value="<?php echo $stock['fecha_creacion'] ?>" placeholder="<?php echo $stock['fecha_creacion'] ?>...">
                             </div>
                         </div>
-            </div>
-
-            </div>
-
-            <div>
-
-
-
-
-                <input type="submit" class="btn btn-warning mb-3" value="Actualizar" name="actualizar">
-                <!-- <?php
-                    $rol = $_SESSION['rol'];
-                    if ($rol == 'master') {
-                        echo '<input type="submit" class="btn btn-danger mb-3" value="Borrar" name="borrar">';
-                    }
-                ?> -->
-                </form>
-
+                        <div class="row mb-3 mt-4">
+                            <input type="submit" class="submit-btn-2 " value="Actualizar" name="actualizar">
+                            <!-- <?php
+                               $rol = $_SESSION['rol'];
+                                if ($rol == 'master') {
+                                    echo '<input type="submit" class="submit-invert" value="Borrar" name="borrar">';
+                                }
+                            ?> -->
+                        </div>
+                    </form>
+                </div>
             <?php endforeach ?>
             <?php
             if (isset($_POST['borrar'])) {
@@ -141,11 +129,7 @@ $resultado = $stmt->fetchAll();
             }
 
             ?>
-            </div>
-        </section>
-
-
-
+        </div>
     </main>
 
 

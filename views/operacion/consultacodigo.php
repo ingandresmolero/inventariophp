@@ -41,7 +41,6 @@
             </div>
             ';
     
-        
         } else {
             echo '<div class="container"><p class="alert-error">El codigo ingresado no existe.</p></div>';
         }

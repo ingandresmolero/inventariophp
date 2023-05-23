@@ -24,6 +24,7 @@
 }
 
 .form-style-2 {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
     .card {
         margin-bottom: 2rem;
     }
@@ -41,12 +42,21 @@
     }
 }
 
+.form-style-3 {
+    label {
+        margin: 10px 0px;
+    }
+}
+
 .input-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 10px;
+    
     input.form-control {
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    }
+    @media only screen and (min-width: 479px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 10px;
     }
 }
 
@@ -64,6 +74,23 @@
     .btn-style-1 {
         width: 50%;
         margin: 25px 0 0 auto;
+        display: block;
+    }
+
+}
+.box-bg-2 {
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    width: auto;
+    margin: 0 auto;
+    @media only screen and (max-width: 767px) {
+        width: auto;
+        padding: 25px;
+    }
+
+    .btn-style-1 {
+        margin: 0 auto;
         display: block;
     }
 }

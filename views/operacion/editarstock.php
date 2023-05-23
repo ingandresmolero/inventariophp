@@ -21,6 +21,8 @@ $resultado = $stmt->fetchAll();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.png">
+    <link rel="stylesheet" href="../../css/styles.min.css">
     <title>Editar Producto</title>
 </head>
 
@@ -29,70 +31,70 @@ $resultado = $stmt->fetchAll();
 
     <main>
 
-
-
-        <section>
-            <div class="container-sm card shadow p-3 mb-5 bg-body-tertiary rounded">
-                <?php foreach ($resultado as $stock) : ?>
-                    <form action="" method="post">
-                        <h2 class="text-center">Editar articulo</h2>
+        <div class="container">
+            <h1 class="page-heading">Editar articulo</h1>
+            <div class="box-bg-2">
+            <?php foreach ($resultado as $stock) : ?>
+                    <form action="" method="post" class="form-style-3">
+                        
                         <div class="row ">
-                            <div class="col-lg-3 ">
+                            <div class="col-lg-4">
                                 <label for="" class="form-label">Codigo:</label>
                                 <input type="tex" class="form-control" name="codigo" id="" value="<?php echo $stock['codigo'] ?>" placeholder="<?php echo $stock['codigo'] ?>">
 
                             </div>
 
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <label for="" class="form-label">Nombre:</label>
                                 <input type="tex" class="form-control" name="nombre" id="" value="<?php echo $stock['nombre'] ?>" placeholder="<?php echo $stock['nombre'] ?>">
                             </div>
 
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <label for="" class="form-label">Descripcion:</label>
                                 <input type="tex" class="form-control" name="descripcion" id="" value="<?php echo $stock['descripcion'] ?>" placeholder="<?php echo $stock['descripcion'] ?>...">
                             </div>
-
-                            <div class="col-3">
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
                                 <label for="" class="form-label">Existencia:</label>
                                 <input type="number" class="form-control" name="existencia" id="" value="<?php echo $stock['existencia'] ?>" placeholder="<?php echo $stock['existencia'] ?>...">
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <label for="" class="form-label">Lote:</label>
                                 <input type="text" class="form-control" name="lote" id="" value="<?php echo $stock['lote'] ?>" placeholder="<?php echo $stock['lote'] ?>...">
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <label for="" class="form-label">Costo $:</label>
                                 <input type="number" class="form-control" name="costo" id="" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
-
-                            <div class="row ">
-                                <div class="col-sm-3">
-                                    <label for="" class="form-label">Precio 1 $:</label>
-                                    <input type="number" class="form-control" name="precio_1" id="" value="<?php echo $stock['precio_1'] ?>" placeholder="<?php echo $stock['precio_1'] ?>...">
-                                </div>
-                                <div class="col-sm-3">
-                                    <label for="" class="form-label">Precio 2 $:</label>
-                                    <input type="number" class="form-control" name="precio_2" id="" value="<?php echo $stock['precio_2'] ?>" placeholder="<?php echo $stock['precio_2'] ?>...">
-                                </div>
-                                <div class="col-sm-3">
-                                    <label for="" class="form-label">Precio 3 $:</label>
-                                    <input type="number" class="form-control" name="precio_3" id="" value="<?php echo $stock['precio_3'] ?>" placeholder="<?php echo $stock['precio_3'] ?>...">
-                                </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-sm-4">
+                                <label for="" class="form-label">Precio 1 $:</label>
+                                <input type="number" class="form-control" name="precio_1" id="" value="<?php echo $stock['precio_1'] ?>" placeholder="<?php echo $stock['precio_1'] ?>...">
                             </div>
+                            <div class="col-sm-4">
+                                <label for="" class="form-label">Precio 2 $:</label>
+                                <input type="number" class="form-control" name="precio_2" id="" value="<?php echo $stock['precio_2'] ?>" placeholder="<?php echo $stock['precio_2'] ?>...">
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="" class="form-label">Precio 3 $:</label>
+                                <input type="number" class="form-control" name="precio_3" id="" value="<?php echo $stock['precio_3'] ?>" placeholder="<?php echo $stock['precio_3'] ?>...">
+                            </div>
+                        </div>
                             <hr class="mt-3">
                           
                             <div class="row mb-3">
-                                <div class="col-3">
+                                <div class="col-md-4">
                                     <label for="" class="form-label">Tasa Compra del dia BS.S:</label>
                                     <input type="number" class="form-control" name="tasa" id="" value="<?php echo $stock['tasa'] ?>" placeholder="<?php echo $stock['tasa'] ?>...">
 
                                 </div>
-                                <div class="col-3">
+                                <div class="col-md-4">
                                     <label for="" class="form-label">% IVA:</label>
                                     <input type="number" class="form-control" name="iva" id="" value="<?php echo $stock['iva'] ?>" placeholder="<?php echo $stock['iva'] ?>...">
                                 </div>
-                                <div class="col-3">
+                                <div class="col-md-4">
                                     <label for="" class="form-label">Tasa Variable Bs.S:</label>
                                     <input type="tasa_variable" class="form-control" name="tasa_variable" id="" value="<?php echo $stock['tasa_variable'] ?>" placeholder="<?php echo $stock['tasa_variable'] ?>...">
 
@@ -100,20 +102,18 @@ $resultado = $stmt->fetchAll();
                             </div>
 
                             <hr>
-                            <p>
-                                <a class="btn btn-warning" data-bs-toggle="collapse" href="#multiCollapseCaracteristicas" role="button" aria-expanded="false" aria-controls="multiCollapseCaracteristicas">Caracteristicas</a>
-                                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseEmbalaje" aria-expanded="false" aria-controls="multiCollapseEmbalaje">Embalaje</button>
+                            <div class="mt-4">
+                                <a class="btn-invert" data-bs-toggle="collapse" href="#multiCollapseCaracteristicas" role="button" aria-expanded="false" aria-controls="multiCollapseCaracteristicas">Caracteristicas</a>
+                                <button class="btn-invert" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseEmbalaje" aria-expanded="false" aria-controls="multiCollapseEmbalaje">Embalaje</button>
 
-                            </p>
+                            </div>
                             <hr>
-                        </div>
-
                         <div>
                             <!-- CARACTERISTICAS -->
-                            <div class="collapse multi-collapse" id="multiCollapseCaracteristicas">
+                            <div class="collapse multi-collapse mt-3 mb-3" id="multiCollapseCaracteristicas">
                                 <div class="card card-body">
                                     <div class="row">
-                                    <h3>Caracteristicas</h3>
+                                    <h3 class="module-title">Caracteristicas</h3>
                                         <div class="col-sm-3">
                                             <label for="" class="form-label">Color:</label>
                                             <input type="tex" class="form-control" name="color" id="" value="<?php echo $stock['color'] ?>" placeholder="<?php echo $stock['color'] ?>...">
@@ -131,7 +131,7 @@ $resultado = $stmt->fetchAll();
                                             <label for="" class="form-label">Calibre:</label>
                                             <input type="tex" class="form-control" name="calibre" id="" value="<?php echo $stock['calibre'] ?>" placeholder="<?php echo $stock['calibre'] ?>...">
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <label for="" class="form-label">No de Hilos</label>
                                             <input type="tex" class="form-control" name="n_hilos" id="" value="<?php echo $stock['N_hilos'] ?>" placeholder="<?php echo $stock['N_hilos'] ?>...">
                                         </div>
@@ -142,10 +142,10 @@ $resultado = $stmt->fetchAll();
 
                         <!-- EMBALAJE -->
                         <div>
-                            <div class="collapse multi-collapse" id="multiCollapseEmbalaje">
+                            <div class="collapse multi-collapse mt-2 mb-3" id="multiCollapseEmbalaje">
                                 <div class="card card-body">
                                     <div class="row">
-                                        <h3>Embalaje</h3>
+                                        <h3 class="module-title">Embalaje</h3>
                                         <div class="col-sm-3">
                                             <label for="" class="form-label">Unidad:</label>
                                             <select class="form-select" name="unidad" id="unidad">
@@ -181,14 +181,15 @@ $resultado = $stmt->fetchAll();
                         </div>
 
 
-
-                        <input type="submit" class="btn btn-warning mb-3" value="Actualizar" name="actualizar">
+                    <div class="row mb-3 mt-4">
+                        <input type="submit" class="submit-btn-2" value="Actualizar" name="actualizar">
                         <?php
                         $rol = $_SESSION['rol'];
                         if ($rol == 'master') {
-                            echo '<input type="submit" class="btn btn-danger mb-3" value="Borrar" name="borrar">';
+                            echo '<input type="submit" class="submit-invert " value="Borrar" name="borrar">';
                         }
                         ?>
+                    </div>
                     </form>
 
                 <?php endforeach ?>
@@ -249,10 +250,7 @@ $resultado = $stmt->fetchAll();
 
                 ?>
             </div>
-        </section>
-
-
-
+        </div>
     </main>
 
 
