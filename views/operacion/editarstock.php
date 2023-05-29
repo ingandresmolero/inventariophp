@@ -65,17 +65,17 @@ $resultado = $stmt->fetchAll();
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-4">
-                                <label for="" class="form-label">Costo Promedio $:</label>
-                                <input type="number" class="form-control" name="costo" id="" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                            <div class="col-sm-4" id="costo">
+                                <label for="" class="form-label" id="">Costo Promedio $:</label>
+                                <input type="number" class="form-control" name="costo"  value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
-                            <div class="col-sm-4">
-                                <label for="" class="form-label">Utilidad %:</label>
-                                <input type="number" class="form-control" name="costo" id="" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                            <div class="col-sm-4" id="utilidad">
+                                <label for="" class="form-label" id="">Utilidad %:</label>
+                                <input type="number" class="form-control" name="costo"  value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-4" id="pvp">
                                 <label for="" class="form-label">Precio PVP:</label>
-                                <input type="number" class="form-control" name="costo" id="" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                                <input type="number" class="form-control" name="costo"  value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
                         </div>
 
@@ -268,6 +268,15 @@ $resultado = $stmt->fetchAll();
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+</script>
+
+<script>
+const costo = document.getElementById("costo");
+const utilidad = document.getElementById("utilidad");
+const pvp = document.getElementById("pvp");
+
+costo.classList.add(" btn-primary");
+    //Servicios
 </script>
 
 </html>
