@@ -65,32 +65,32 @@ $resultado = $stmt->fetchAll();
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-4" id="costo">
-                                <label for="" class="form-label" id="">Costo Promedio $:</label>
-                                <input type="number" class="form-control" name="costo"  value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                            <div class="col-sm-4">
+                                <label for="" class="form-label">Costo Promedio $:</label>
+                                <input id="costoP_input" type="number" class="form-control" name="costo"  value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
-                            <div class="col-sm-4" id="utilidad">
-                                <label for="" class="form-label" id="">Utilidad %:</label>
-                                <input type="number" class="form-control" name="costo"  value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                            <div class="col-sm-4">
+                                <label for="" class="form-label">Utilidad %:</label>
+                                <input id="utilidad_input" type="number" class="form-control" name="costo"  value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
-                            <div class="col-sm-4" id="pvp">
+                            <div class="col-sm-4">
                                 <label for="" class="form-label">Precio PVP:</label>
-                                <input type="number" class="form-control" name="costo"  value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                                <input id="precioPvp_input" type="number" class="form-control" name="costo"  value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
                         </div>
 
                         <div class="row ">
                             <div class="col-sm-4">
                                 <label for="" class="form-label">Precio 1 $:</label>
-                                <input type="number" class="form-control" name="precio_1" id="" value="<?php echo $stock['precio_1'] ?>" placeholder="<?php echo $stock['precio_1'] ?>...">
+                                <input type="number" class="form-control" name="precio_1" id="precio1_input" value="<?php echo $stock['precio_1'] ?>" placeholder="<?php echo $stock['precio_1'] ?>...">
                             </div>
                             <div class="col-sm-4">
                                 <label for="" class="form-label">Precio 2 $:</label>
-                                <input type="number" class="form-control" name="precio_2" id="" value="<?php echo $stock['precio_2'] ?>" placeholder="<?php echo $stock['precio_2'] ?>...">
+                                <input type="number" class="form-control" name="precio_2" id="precio2" value="<?php echo $stock['precio_2'] ?>" placeholder="<?php echo $stock['precio_2'] ?>...">
                             </div>
                             <div class="col-sm-4">
                                 <label for="" class="form-label">Precio 3 $:</label>
-                                <input type="number" class="form-control" name="precio_3" id="" value="<?php echo $stock['precio_3'] ?>" placeholder="<?php echo $stock['precio_3'] ?>...">
+                                <input type="number" class="form-control" name="precio_3" id="precio3" value="<?php echo $stock['precio_3'] ?>" placeholder="<?php echo $stock['precio_3'] ?>...">
                             </div>
                         </div>
                         <hr class="mt-3">
@@ -269,13 +269,14 @@ $resultado = $stmt->fetchAll();
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
 </script>
+<script src="../../js/productFuction.js"></script>
 
 <script>
-const costo = document.getElementById("costo");
-const utilidad = document.getElementById("utilidad");
-const pvp = document.getElementById("pvp");
+// const costo = document.getElementById("costo");
+// const utilidad = document.getElementById("utilidad");
+// const pvp = document.getElementById("pvp");
 
-costo.classList.add(" btn-primary");
+// costo.classList.add(" btn-primary");
     //Servicios
 </script>
 
