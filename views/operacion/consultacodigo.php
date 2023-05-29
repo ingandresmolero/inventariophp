@@ -21,16 +21,28 @@
                         <input class="form-control" value= "'.$out['codigo']. '" name="codigo2">
                     </div>
                     <div class="input-item">
+                    <label class="form-label">Nota Retiro</label>
+                    <input class="form-control" value= "" placeholder="Nota de Retiro..." name="nombre">
+                </div>
+                    <div class="input-item">
                         <label class="form-label">Nombre</label>
                         <input class="form-control" value= "'.$out['nombre']. '" name="nombre">
                     </div>
                     <div class="input-item">
-                        <label class="form-label">Costo</label>
+                        <label class="form-label">Costo Promedio</label>
                         <input class="form-control" value= "'.$out['costo']. '" name="costo">
                     </div>
                     <div class="input-item">
                         <label class="form-label">Stock</label>
                         <input class="form-control" value= "'.$out['existencia']. '" name="existencia">
+                    </div>
+                    <div class="input-item">
+                        <label class="form-label">Monto Retiro </label>
+                        <input class="form-control" placeholder="cantidad a retirar" name="cantidad">
+                    </div>
+                    <div class="input-item">
+                        <label class="form-label">Tasa del dia</label>
+                        <input class="form-control" placeholder="Tasa" name="cantidad">
                     </div>
                     <div class="input-item">
                         <label class="form-label">Cantidad </label>

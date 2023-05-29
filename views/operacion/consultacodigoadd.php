@@ -23,6 +23,14 @@
                         <input class="form-control" value= "'.$out['codigo']. '" name="codigo2">
                     </div>
                     <div class="input-item">
+                        <label class="form-label">Factura de Compra: </label>
+                        <input class="form-control" placeholder="Numero de documento..." name="cantidad">
+                    </div>
+                    <div class="input-item">
+                    <label class="form-label">Proveedor: </label>
+                    <input class="form-control" placeholder="Numero de documento..." name="cantidad">
+                </div>
+                    <div class="input-item">
                         <label class="form-label">Nombre</label>
                         <input class="form-control" value= "'.$out['nombre']. '" name="nombre">
                     </div>
@@ -38,6 +46,11 @@
                         <label class="form-label">Cantidad </label>
                         <input class="form-control" placeholder="cantidad a agregar" name="cantidad">
                     </div>
+                    <div class="input-item">
+                        <label class="form-label">Monto Compra </label>
+                        <input class="form-control" placeholder="Monto $ ..." name="cantidad">
+                    </div>
+                    
                     <button type="" class="btn-style-1" name="agregar"> Agregar </button>
                 </form>
             </div>

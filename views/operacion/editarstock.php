@@ -34,9 +34,9 @@ $resultado = $stmt->fetchAll();
         <div class="container">
             <h1 class="page-heading">Editar articulo</h1>
             <div class="box-bg-2">
-            <?php foreach ($resultado as $stock) : ?>
+                <?php foreach ($resultado as $stock) : ?>
                     <form action="" method="post" class="form-style-3">
-                        
+
                         <div class="row ">
                             <div class="col-lg-4">
                                 <label for="" class="form-label">Codigo:</label>
@@ -63,11 +63,22 @@ $resultado = $stmt->fetchAll();
                                 <label for="" class="form-label">Lote:</label>
                                 <input type="text" class="form-control" name="lote" id="" value="<?php echo $stock['lote'] ?>" placeholder="<?php echo $stock['lote'] ?>...">
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-sm-4">
-                                <label for="" class="form-label">Costo $:</label>
+                                <label for="" class="form-label">Costo Promedio $:</label>
+                                <input type="number" class="form-control" name="costo" id="" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="" class="form-label">Utilidad %:</label>
+                                <input type="number" class="form-control" name="costo" id="" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="" class="form-label">Precio PVP:</label>
                                 <input type="number" class="form-control" name="costo" id="" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
                         </div>
+
                         <div class="row ">
                             <div class="col-sm-4">
                                 <label for="" class="form-label">Precio 1 $:</label>
@@ -82,38 +93,38 @@ $resultado = $stmt->fetchAll();
                                 <input type="number" class="form-control" name="precio_3" id="" value="<?php echo $stock['precio_3'] ?>" placeholder="<?php echo $stock['precio_3'] ?>...">
                             </div>
                         </div>
-                            <hr class="mt-3">
-                          
-                            <div class="row mb-3">
-                                <div class="col-md-4">
-                                    <label for="" class="form-label">Tasa Compra del dia BS.S:</label>
-                                    <input type="number" class="form-control" name="tasa" id="" value="<?php echo $stock['tasa'] ?>" placeholder="<?php echo $stock['tasa'] ?>...">
+                        <hr class="mt-3">
 
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="" class="form-label">% IVA:</label>
-                                    <input type="number" class="form-control" name="iva" id="" value="<?php echo $stock['iva'] ?>" placeholder="<?php echo $stock['iva'] ?>...">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="" class="form-label">Tasa Variable Bs.S:</label>
-                                    <input type="tasa_variable" class="form-control" name="tasa_variable" id="" value="<?php echo $stock['tasa_variable'] ?>" placeholder="<?php echo $stock['tasa_variable'] ?>...">
-
-                                </div>
-                            </div>
-
-                            <hr>
-                            <div class="mt-4">
-                                <a class="btn-invert" data-bs-toggle="collapse" href="#multiCollapseCaracteristicas" role="button" aria-expanded="false" aria-controls="multiCollapseCaracteristicas">Caracteristicas</a>
-                                <button class="btn-invert" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseEmbalaje" aria-expanded="false" aria-controls="multiCollapseEmbalaje">Embalaje</button>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="" class="form-label">Tasa Compra del dia BS.S:</label>
+                                <input type="number" class="form-control" name="tasa" id="" value="<?php echo $stock['tasa'] ?>" placeholder="<?php echo $stock['tasa'] ?>...">
 
                             </div>
-                            <hr>
+                            <div class="col-md-4">
+                                <label for="" class="form-label">% IVA:</label>
+                                <input type="number" class="form-control" name="iva" id="" value="<?php echo $stock['iva'] ?>" placeholder="<?php echo $stock['iva'] ?>...">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="" class="form-label">Tasa Variable Bs.S:</label>
+                                <input type="tasa_variable" class="form-control" name="tasa_variable" id="" value="<?php echo $stock['tasa_variable'] ?>" placeholder="<?php echo $stock['tasa_variable'] ?>...">
+
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="mt-4">
+                            <a class="btn-invert" data-bs-toggle="collapse" href="#multiCollapseCaracteristicas" role="button" aria-expanded="false" aria-controls="multiCollapseCaracteristicas">Caracteristicas</a>
+                            <button class="btn-invert" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseEmbalaje" aria-expanded="false" aria-controls="multiCollapseEmbalaje">Embalaje</button>
+
+                        </div>
+                        <hr>
                         <div>
                             <!-- CARACTERISTICAS -->
                             <div class="collapse multi-collapse mt-3 mb-3" id="multiCollapseCaracteristicas">
                                 <div class="card card-body">
                                     <div class="row">
-                                    <h3 class="module-title">Caracteristicas</h3>
+                                        <h3 class="module-title">Caracteristicas</h3>
                                         <div class="col-sm-3">
                                             <label for="" class="form-label">Color:</label>
                                             <input type="tex" class="form-control" name="color" id="" value="<?php echo $stock['color'] ?>" placeholder="<?php echo $stock['color'] ?>...">
@@ -181,15 +192,15 @@ $resultado = $stmt->fetchAll();
                         </div>
 
 
-                    <div class="row mb-3 mt-4">
-                        <input type="submit" class="submit-btn-2" value="Actualizar" name="actualizar">
-                        <?php
-                        $rol = $_SESSION['rol'];
-                        if ($rol == 'master') {
-                            echo '<input type="submit" class="submit-invert " value="Borrar" name="borrar">';
-                        }
-                        ?>
-                    </div>
+                        <div class="row mb-3 mt-4">
+                            <input type="submit" class="submit-btn-2" value="Actualizar" name="actualizar">
+                            <?php
+                            $rol = $_SESSION['rol'];
+                            if ($rol == 'master') {
+                                echo '<input type="submit" class="submit-invert " value="Borrar" name="borrar">';
+                            }
+                            ?>
+                        </div>
                     </form>
 
                 <?php endforeach ?>

@@ -60,16 +60,29 @@ $resultado = $stmt->fetchAll();
                                 <label for="" class="form-label">Fecha Creacion:</label>
                                 <input type="number" class="form-control" name="existencia" id="" disabled value="<?php echo $stock['fecha_creacion'] ?>" placeholder="<?php echo $stock['fecha_creacion'] ?>...">
                             </div>
+
+                            <div class="input-item">
+                                <label for="" class="form-label">Tasa del dia:</label>
+                                <input type="number" class="form-control" name="existencia" id="" disabled  placeholder="Tasa del dia...">
+                            </div>
+                            <div class="input-item">
+                                <label for="" class="form-label">Monto Operacion:</label>
+                                <input type="number" class="form-control" name="existencia" id="" disabled  placeholder="Costo Promedio...">
+                            </div>
+
+                            <div class="input-item">
+                                <label for="" class="form-label">Costo Promedio:</label>
+                                <input type="number" class="form-control" name="existencia" id="" disabled  placeholder="Costo Promedio...">
+                            </div>
                         </div>
-                        <div class="row mb-3 mt-4">
+                        <!-- <div class="row mb-3 mt-4">
                             <input type="submit" class="submit-btn-2 " value="Actualizar" name="actualizar">
-                            <!-- <?php
-                               $rol = $_SESSION['rol'];
+                            $rol = $_SESSION['rol'];
                                 if ($rol == 'master') {
                                     echo '<input type="submit" class="submit-invert" value="Borrar" name="borrar">';
                                 }
-                            ?> -->
-                        </div>
+                            ?> 
+                        </div> -->
                     </form>
                 </div>
             <?php endforeach ?>
