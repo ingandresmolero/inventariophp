@@ -4,15 +4,19 @@
 
 include("../../php/dbconn.php");
 $stockid = $_GET['stockid'];
-$sql = "SELECT * FROM stock where id_stock='$stockid' ";
+$sql = "SELECT * FROM stock INNER JOIN reportes ON stock.codigo = reportes.codigo where stock.id_stock='$stockid' AND reportes.fecha_creacion = (SELECT MAX(fecha_creacion) from reportes) AND id_reporte = (SELECT MAX(id_reporte) FROM reportes) LIMIT 1";
+// $sql = "SELECT * FROM stock where id_stock='$stockid' ";
+
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();
+
 
 $resultado = $stmt->fetchAll();
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,27 +59,36 @@ $resultado = $stmt->fetchAll();
                             </div>
                         </div>
                         <div class="row">
+                        <div class="col-sm-4 ">
+                                <label for="" class="form-label">Existencia Compra:</label>
+                                <input id="ingreso_input" type="number" class="form-control" name="existencia"  value="<?php echo $stock['existencia'] ?>" placeholder="<?php echo $stock['ingreso'] ?>...">
+                            </div>
                             <div class="col-sm-4">
                                 <label for="" class="form-label">Existencia:</label>
-                                <input type="number" class="form-control" name="existencia" id="" value="<?php echo $stock['existencia'] ?>" placeholder="<?php echo $stock['existencia'] ?>...">
+                                <input id="cantidad_input" type="number" class="form-control" name="existencia"  value="<?php echo $stock['existencia'] ?>" placeholder="<?php echo $stock['existencia'] ?>...">
                             </div>
                             <div class="col-sm-4">
                                 <label for="" class="form-label">Lote:</label>
                                 <input type="text" class="form-control" name="lote" id="" value="<?php echo $stock['lote'] ?>" placeholder="<?php echo $stock['lote'] ?>...">
                             </div>
+
                         </div>
                         <div class="row">
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
+                                <label for="" class="form-label">Costo Promedio Anterior $:</label>
+                                <input id="costoPAnt_input" type="number" class="form-control" name="costo" value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['monto'] ?>...">
+                            </div>
+                            <div class="col-sm-3">
                                 <label for="" class="form-label">Costo Promedio $:</label>
-                                <input id="costoP_input" type="number" class="form-control" name="costo"  value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                                <input id="costoP_input" type="number" class="form-control" name="costo" value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <label for="" class="form-label">Utilidad %:</label>
-                                <input id="utilidad_input" type="number" class="form-control" name="costo"  value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                                <input id="utilidad_input" type="number" class="form-control" name="costo" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <label for="" class="form-label">Precio PVP:</label>
-                                <input id="precioPvp_input" type="number" class="form-control" name="costo"  value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                                <input id="precioPvp_input" type="number" class="form-control" name="costo" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
                         </div>
 
@@ -272,11 +285,11 @@ $resultado = $stmt->fetchAll();
 <script src="../../js/productFuction.js"></script>
 
 <script>
-// const costo = document.getElementById("costo");
-// const utilidad = document.getElementById("utilidad");
-// const pvp = document.getElementById("pvp");
+    // const costo = document.getElementById("costo");
+    // const utilidad = document.getElementById("utilidad");
+    // const pvp = document.getElementById("pvp");
 
-// costo.classList.add(" btn-primary");
+    // costo.classList.add(" btn-primary");
     //Servicios
 </script>
 
