@@ -17,7 +17,6 @@ function costoPromedio() {
     let cantidadStock = Number(cantidad.value);
     let ingresos = Number(ingreso.value);
     let montCompra = Number(montocompra.value);
-    console.log('costo promedio:', costoPromedio, 'existencia' ,cantidadStock , 'existencia Compra', ingresos, 'Costo promedio Anterior', montCompra   )
     let costoProm = ( (cantidadStock * costoPromedio) + (ingresos * montCompra) ) / (cantidadStock + ingresos) ;
     precPvp.value = costoProm;
   }
