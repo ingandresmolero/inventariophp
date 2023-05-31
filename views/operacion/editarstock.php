@@ -95,15 +95,15 @@ $resultado = $stmt->fetchAll();
                         <div class="row ">
                             <div class="col-sm-4">
                                 <label for="" class="form-label">Precio 1 $:</label>
-                                <input type="number" class="form-control" name="precio_1" id="precio1_input" value="<?php echo $stock['precio_1'] ?>" placeholder="<?php echo $stock['precio_1'] ?>...">
+                                <input type="number" class="form-control" name="precio_1" id="precio1_input" >
                             </div>
                             <div class="col-sm-4">
                                 <label for="" class="form-label">Precio 2 $:</label>
-                                <input type="number" class="form-control" name="precio_2" id="precio2" value="<?php echo $stock['precio_2'] ?>" placeholder="<?php echo $stock['precio_2'] ?>...">
+                                <input type="number" class="form-control" name="precio_2" id="precio2_input"  >
                             </div>
                             <div class="col-sm-4">
                                 <label for="" class="form-label">Precio 3 $:</label>
-                                <input type="number" class="form-control" name="precio_3" id="precio3" value="<?php echo $stock['precio_3'] ?>" placeholder="<?php echo $stock['precio_3'] ?>...">
+                                <input type="number" class="form-control" name="precio_3" id="precio3_input" value="<?php echo $stock['precio_3'] ?>" placeholder="<?php echo $stock['precio_3'] ?>...">
                             </div>
                         </div>
                         <hr class="mt-3">
