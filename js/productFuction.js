@@ -1,38 +1,41 @@
-//Editar Stock View
+//------------------------------------------
+            //Editar Stock View
+//------------------------------------------
 
-//Sumar campos Costo Promedio $, Utilidad %, Precio PVP:
+
+//Formula para calcular el costo promedio.
 
 let costoP = document.getElementById('costoP_input');
-let util = document.getElementById('utilidad_input');
-let precPvp = document.getElementById('precioPvp_input');
-let precio1 = document.getElementById('precio1_input');
 let cantidad = document.getElementById('cantidad_input');
-
 let ingreso = document.getElementById('ingreso_input')
 let montocompra = document.getElementById('costoPAnt_input');
+let precPvp = document.getElementById('precioPvp_input'); 
 
-function sumarInputs() {
-    
-    let costoPromedio = parseFloat(costoP.value);
-    let utilidad = parseFloat(util.value);
-    let pvp = parseFloat(precPvp.value);
-    let cantidadstock = parseFloat(cantidad.value);
-  
-    let compracant = parseFloat(ingreso.value);
-    let costocompra = parseFloat(montocompra.value);
-  
+function costoPromedio() {
 
+    let costoPromedio = Number(costoP.value);
+    let cantidadStock = Number(cantidad.value);
+    let ingresos = Number(ingreso.value);
+    let montCompra = Number(montocompra.value);
 
-      //ESTO ES PARA MOSTRAR EN COSTO PROMEDIO $
-
-
-      let suma = ( (cantidadstock * costoPromedio) + (compracant * costocompra) ) / (cantidadstock + compracant) ;
-      //let suma = valor1 + utilidad + pvp;
-      precio1.value = suma;
-      
-    
+    let costoProm = ( (cantidadStock * costoPromedio) + (ingresos * montCompra) ) / (cantidadStock + ingresos) ;
+    precPvp.value = costoProm;
   }
   
-  costoP.addEventListener('input', sumarInputs);
-  util.addEventListener('input', sumarInputs);
-  precPvp.addEventListener('input', sumarInputs);
+  costoP.addEventListener('input', costoPromedio);
+  cantidad.addEventListener('input', costoPromedio);
+  ingreso.addEventListener('input', costoPromedio);
+  montocompra.addEventListener('input', costoPromedio);
+
+//---------------------------------------------- End
+
+
+
+
+
+//Formula 2:
+
+
+
+
+// Formula 3:
