@@ -55,6 +55,11 @@ $resultado = $stmt->fetchAll();
                                 <label for="" class="form-label">Usuario:</label>
                                 <input type="number" class="form-control" name="existencia" id="" disabled value="<?php echo $stock['usuario'] ?>" placeholder="<?php echo $stock['usuario'] ?>...">
                             </div>   
+                            <div class="input-item">
+                                <label for="" class="form-label">Representante:</label>
+                                <input type="number" class="form-control" name="existencia" id="" disabled value="<?php echo $stock['representante'] ?>" placeholder="<?php echo $stock['representante'] ?>...">
+                            </div>   
+                            
 
                             <div class="input-item">
                                 <label for="" class="form-label">Fecha Creacion:</label>
@@ -67,13 +72,10 @@ $resultado = $stmt->fetchAll();
                             </div>
                             <div class="input-item">
                                 <label for="" class="form-label">Monto Operacion:</label>
-                                <input type="number" class="form-control" name="existencia" id="" disabled  placeholder="Costo Promedio...">
+                                <input type="number" class="form-control" name="existencia" id="" disabled  value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['monto'] ?>...">
                             </div>
 
-                            <div class="input-item">
-                                <label for="" class="form-label">Costo Promedio:</label>
-                                <input type="number" class="form-control" name="existencia" id="" disabled  placeholder="Costo Promedio...">
-                            </div>
+                           
                         </div>
                         <!-- <div class="row mb-3 mt-4">
                             <input type="submit" class="submit-btn-2 " value="Actualizar" name="actualizar">
