@@ -27,7 +27,7 @@ function costoPromedio() {
     precPvp.value = costoProm;
 
     //Calculo de Utilidad en base al Precio
-    let utilidadCal = 100 - ((costoPromedio * 100) / precPvp.value);
+    let utilidadCal = 100 - ((costoPromedio * 100) / costoProm);
     precio2.value=utilidadCal;
 
     //calculo de precio en base a la utilidad
