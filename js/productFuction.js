@@ -22,6 +22,7 @@ function costoPromedio() {
     let ingresos = Number(ingreso.value);
     let montCompra = Number(montocompra.value);
     // let precio1 = Number(precio1_input.value);
+    let preciopvp = Number(precioPvp_input.value);
     let precio2 = Number(precio2_input.value);
     let precio3 = Number(precio3_input.value);
     let utilidad = Number(utilidad.value);
@@ -36,8 +37,8 @@ function costoPromedio() {
     precio2.value=utilidadCal; //esto lo puedes mostrar en precio 2
 
     //calculo de precio en base a la utilidad
-    let precioutilidad = costoPromedio / ((100-(utilidad/100)));
-    precio3.value = precioutilidad;
+    let precioutilidad = (costoPromedio / ((100- utilidad) / 100)) + costoPromedio;
+    preciopvp.value = precioutilidad;
   }
   
   costoP.addEventListener('input', costoPromedio);

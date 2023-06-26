@@ -54,13 +54,14 @@ include("../php/functions/tasa.php");
                 <p class="card-title">Usuarios</p>
                 </a>
 
-            <a href="configuracion.php" class="item">
+            <a href="configuracion.php" class="item" id="configuracion">
                 <img src="../img/icons/configuracion.png">
                 <p class="card-title">Configuracion</p>
             </a>
         </div>
 
     </section>
+    <script src="../js/validacionesrol.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
