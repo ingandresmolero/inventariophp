@@ -64,7 +64,7 @@ $paginas = ceil($total_report / $report_x_pagina);
 
     $iniciar = ($_GET['pagina']-1) * $report_x_pagina;
    
-    $sql_report = "SELECT * FROM reportes LIMIT :iniciar,:nusuarios";
+    $sql_report = "SELECT * FROM reportes  LIMIT :iniciar,:nusuarios ";
     $stm_report = $conn->prepare($sql_report);
     $stm_report->bindParam(':iniciar' , $iniciar,PDO::PARAM_INT);
     $stm_report->bindParam(':nusuarios' , $report_x_pagina,PDO::PARAM_INT);

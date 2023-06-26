@@ -18,31 +18,38 @@
                 <form action="retirarItem.php" method="post">
                     <div class="input-item">
                         <label class="form-label" >Codigo</label>
-                        <input class="form-control" value= "'.$out['codigo']. '" name="codigo2">
+                        <input class="form-control" value= "'.$out['codigo']. '" name="codigo2" disabled>
+                    </div>
+                    <div class="input-item">
+                    <label class="form-label">Nombre Articulo</label>
+                    <input class="form-control" value= "'.$out['nombre']. '" name="nombre" disabled>
+                </div>
+                <div class="input-item">
+                <label class="form-label">Costo Promedio</label>
+                <input class="form-control" value= "'.$out['costo']. '" name="costo" disabled>
+            </div>
+            <div class="input-item">
+                        <label class="form-label">Stock</label>
+                        <input class="form-control" value= "'.$out['existencia']. '" name="existencia" disabled>
                     </div>
                     <div class="input-item">
                     <label class="form-label">Nota Retiro</label>
-                    <input class="form-control" value= "" placeholder="Nota de Retiro..." name="nombre">
+                    <input class="form-control" value= "" placeholder="Nota de Retiro..." name="nota_retiro">
                 </div>
-                    <div class="input-item">
-                        <label class="form-label">Nombre</label>
-                        <input class="form-control" value= "'.$out['nombre']. '" name="nombre">
-                    </div>
-                    <div class="input-item">
-                        <label class="form-label">Costo Promedio</label>
-                        <input class="form-control" value= "'.$out['costo']. '" name="costo">
-                    </div>
-                    <div class="input-item">
-                        <label class="form-label">Stock</label>
-                        <input class="form-control" value= "'.$out['existencia']. '" name="existencia">
-                    </div>
+                <div class="input-item">
+                    <label class="form-label">Representante Retiro</label>
+                    <input class="form-control" value= "" placeholder="Nota de Retiro..." name="repres_retiro">
+                </div>
+                   
+                  
+                    
                     <div class="input-item">
                         <label class="form-label">Monto Retiro </label>
-                        <input class="form-control" placeholder="cantidad a retirar" name="cantidad">
+                        <input class="form-control" placeholder="cantidad a retirar" name="monto_reti">
                     </div>
                     <div class="input-item">
                         <label class="form-label">Tasa del dia</label>
-                        <input class="form-control" placeholder="Tasa" name="cantidad">
+                        <input class="form-control" placeholder="Tasa" name="tasa">
                     </div>
                     <div class="input-item">
                         <label class="form-label">Cantidad </label>
@@ -57,5 +64,3 @@
             echo '<div class="container"><p class="alert-error">El codigo ingresado no existe.</p></div>';
         }
     }
-    ?>
-  

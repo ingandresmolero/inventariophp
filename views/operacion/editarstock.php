@@ -87,7 +87,7 @@ $resultado = $stmt->fetchAll();
                                 <input id="utilidad_input" type="number" class="form-control" name="costo" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
                             <div class="col-sm-3">
-                                <label for="" class="form-label">Precio PVP:</label>
+                                <label for="" class="form-label">Precio PVP del costoprom:</label>
                                 <input id="precioPvp_input" type="number" class="form-control" name="costo" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
                         </div>
@@ -98,11 +98,11 @@ $resultado = $stmt->fetchAll();
                                 <input type="number" class="form-control" name="precio_1" id="precio1_input" >
                             </div>
                             <div class="col-sm-4">
-                                <label for="" class="form-label">Precio 2 $:</label>
+                                <label for="" class="form-label">utilidad calculo</label>
                                 <input type="number" class="form-control" name="precio_2" id="precio2_input"  >
                             </div>
                             <div class="col-sm-4">
-                                <label for="" class="form-label">Precio 3 $:</label>
+                                <label for="" class="form-label">Precio utilidad </label>
                                 <input type="number" class="form-control" name="precio_3" id="precio3_input" value="<?php echo $stock['precio_3'] ?>" placeholder="<?php echo $stock['precio_3'] ?>...">
                             </div>
                         </div>
