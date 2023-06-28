@@ -1,7 +1,7 @@
 <?php
 
 include("../php/functions/validar.php");
-
+include("../php/functions/validarrol.php");
 include("../php/functions/tasa.php");
 ?>
 

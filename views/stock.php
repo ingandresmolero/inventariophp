@@ -1,6 +1,6 @@
 <?php
 include("../php/functions/validar.php");
-
+include("../php/functions/validarrol.php");
 include("../php/functions/tasa.php");
 ?>
 <?php
@@ -35,7 +35,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
 </head>
 
 <body>
-    <?php include("../views/assets/header.php"); ?>
+    <?php include("../views/assets/headersintasa.php"); ?>
 
 
     <section class="container">
