@@ -68,32 +68,38 @@ $resultado = $stmt->fetchAll();
                             </div>
                         </div>
                         <div class="row">
-                            <!-- <div class="col-sm-4 ">
+                            <div class="col-sm-4 ">
                                 <label for="" class="form-label">Existencia Compra:</label>
                                 <input id="ingreso_input" type="number" class="form-control" name="existencia"  value="<?php echo $stock['existencia'] ?>" placeholder="<?php echo $stock['ingreso'] ?>...">
-                            </div> -->
+                            </div>
                             <div class="col-sm-4">
                                 <label for="" class="form-label">Lote:</label>
                                 <input type="text" class="form-control" name="lote" id="" value="<?php echo $stock['lote'] ?>" placeholder="<?php echo $stock['lote'] ?>...">
                             </div>
-
+                            <div class="col-sm-4 ">
+                                <label for="" class="form-label">Precio de Compra:</label>
+                                <input id="precioCompra_input" type="number" class="form-control" name="existencia"  value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['monto'] ?>...">
+                            </div>
                         </div>
                         <div class="row product-price">
                             <span class="separador">Costo/Precio</span>
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                     <label for="" class="form-label">Actual:</label>
                                     <input id="actual_input" type="number" class="form-control" name="existencia"  value="<?php echo $valoractual ?>" placeholder="<?php echo $valoractual ?>...">
                                 </div>
                                 
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <label for="" class="form-label">Promedio:</label>
                                     <input id="promedio_input" type="number" class="form-control" name="costo" value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <label for="" class="form-label">Anterior:</label>
                                     <input id="anterior_input" type="number" class="form-control" name="costo" value="<?php echo $valoranterior ?>" placeholder="<?php echo $valoranterior ?>...">
                                 </div>
-                                
+                                <div class="col-md-3">
+                                    <label for="" class="form-label">% IVA a Calcular:</label>
+                                    <input type="number" class="form-control" name="iva" id="iva_input" value="<?php echo $stock['iva'] ?>" placeholder="<?php echo $stock['iva'] ?>...">
+                                </div>
                                 <!-- <div class="col-sm-3">
                                     <label for="" class="form-label">Precio PVP del costoprom:</label>
                                     <input id="precioPvp_input" type="number" class="form-control" name="costo" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
@@ -101,18 +107,21 @@ $resultado = $stmt->fetchAll();
                             </div>
 
                         <div class="row">
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <label for="" class="form-label">Precio 1:</label>
                                 <input type="number" class="form-control" name="precio_1" id="precio1_input">
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                     <label for="" class="form-label">Utilidad %:</label>
                                     <input id="utilidad_input" type="number" class="form-control" name="costo" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
-                            <div class="col-md-4">
-                                <label for="" class="form-label">% IVA:</label>
-                                <input type="number" class="form-control" name="iva" id="iva_input" value="<?php echo $stock['iva'] ?>" placeholder="<?php echo $stock['iva'] ?>...">
+                                <!-- En caso de que haya un campo para el precio final: Precio mas Iva-->
+                            <div class="col-md-3">
+                                <label for="" class="form-label">Precio + IVA</label>   
+                                <input type="number" class="form-control" name="iva" id="precioIva_input" value="<?php// echo $stock['iva'] ?>" placeholder="...">
                             </div>
+                            <!-- Fin-->
+
                             <!-- <div class="col-sm-4">
                                 <label for="" class="form-label">Precio 2:</label>
                                 <input type="number" class="form-control" name="precio_2" id="precio2_input">

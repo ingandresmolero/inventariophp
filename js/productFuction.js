@@ -2,66 +2,59 @@
             //Editar Stock View
 //------------------------------------------
 
-
-//Formula para calcular el costo promedio.
-
-// let costoP = document.getElementById('costoP_input');
-// let cantidad = document.getElementById('cantidad_input');
-// let ingreso = document.getElementById('ingreso_input')
-// let montocompra = document.getElementById('costoPAnt_input');
-// let precPvp = document.getElementById('precioPvp_input'); 
-// let utilidad = document.getElementById('utilidad_input');
-// let precio1 = document.getElementById('precio1_input');
-// let precio2 = document.getElementById('precio2_input');
-// let precio3 = document.getElementById('precio3_input');
-
-// function costoPromedio() {
-
-//     let costoPromedio = Number(costoP.value);
-//     let cantidadStock = Number(cantidad.value);
-//     let ingresos = Number(ingreso.value);
-//     let montCompra = Number(montocompra.value);
-//     // let precio1 = Number(precio1_input.value);
-//     let preciopvp = Number(precioPvp_input.value);
-//     let precio2 = Number(precio2_input.value);
-//     let precio3 = Number(precio3_input.value);
-//     let utilidad = Number(utilidad.value);
-
-//     //Calculo de Costo Promedio
-//     let costoProm = ( (cantidadStock * costoPromedio) + (ingresos * montCompra) ) / (cantidadStock + ingresos) ;
-//     precPvp.value = costoProm;
-
-
-//     //Calculo de Utilidad en base al Precio
-//     let utilidadCal = 100 - ((costoPromedio * 100) / precio3);
-//     precio2.value=utilidadCal; //esto lo puedes mostrar en precio 2
-
-//     //calculo de precio en base a la utilidad
-//     let precioutilidad = (costoPromedio / ((100- utilidad) / 100)) + costoPromedio;
-//     preciopvp.value = precioutilidad;
-//   }
-  
-//   costoP.addEventListener('input', costoPromedio);
-//   cantidad.addEventListener('input', costoPromedio);
-//   ingreso.addEventListener('input', costoPromedio);
-//   montocompra.addEventListener('input', costoPromedio);
-
-//---------------------------------------------- End
-
-
-
 let actual = document.getElementById('actual_input');
 let promedio = document.getElementById('promedio_input');
 let anterior = document.getElementById('anterior_input');
-
+let ingreso = document.getElementById('ingreso_input')
+let precioCompra = document.getElementById('precioCompra_input');
 let precio1 = document.getElementById('precio1_input');
 let utilidad = document.getElementById('utilidad_input');
 let iva = document.getElementById('iva_input');
+let precioIva = document.getElementById('precioIva_input');
 
-function costoPromedio() {
-    //Calculo de Costo Promedio
+precio1.addEventListener('input', () => {
+    
+    let valPromedio = Number(promedio.value);
+    let valPrecioCompra = Number (precioCompra.value);
+    let valPrecio1 = Number(precio1.value);
+    let precioUtilidad = ( (valPrecio1 - valPrecioCompra - (valPromedio - valPrecioCompra)) / valPrecio1) * 100;
+    
+    utilidad.value = precioUtilidad.toFixed(2); 
+    
+ });
 
-}
+ utilidad.addEventListener('input', () => {
+    
+    let valPrecio1 = Number(precio1.value);
+    let valPromedio = Number(promedio.value);
+    let valUtilidad = Number(utilidad.value);
+    let valIva = Number(iva.value);
+    
+    let utilidadBasePrecio = valPromedio / ((100- valUtilidad)/100);
+    precio1.value = utilidadBasePrecio.toFixed(2);
+    //Mas iva
+    precioFinal = valPrecio1 * (valIva*100);
+    precioIva.value = precioFinal.toFixed(2);
 
-costoP.addEventListener('input', costoPromedio);
+ });
+
+
+
+//si cambio actual cambia el promedio,
+//si cambio precio1 cambia la utilidad ---listo
+//si cambio la utilidad cambia el precio1 y el iva
+
+
+
+//VALORES A LO LOCO
+ // EXISTENCIA ANTERIOR = 0
+ // Costo Promedio = 0
+ //Cantidad de compra = 25
+ // Costo Compra = 30
+// costo promedio = 20
+// Utilidad = 10
+
+
+
+
 
