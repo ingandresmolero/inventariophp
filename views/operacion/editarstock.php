@@ -97,8 +97,8 @@ $resultado = $stmt->fetchAll();
                                     <input id="anterior_input" type="number" class="form-control" name="costo" value="<?php echo $valoranterior ?>" placeholder="<?php echo $valoranterior ?>...">
                                 </div>
                                 <div class="col-md-3">
-                                    <label for="" class="form-label">% IVA a Calcular:</label>
-                                    <input type="number" class="form-control" name="iva" id="iva_input" value="<?php echo $stock['iva'] ?>" placeholder="<?php echo $stock['iva'] ?>...">
+                                    <label for="" class="form-label">IVA a Calcular:</label>
+                                    <input type="number" class="form-control" name="iva" id="iva_input" value="<?php echo 16;//$stock['iva'] ?>" placeholder="<?php echo 16;//$stock['iva'] ?>..." disabled>
                                 </div>
                                 <!-- <div class="col-sm-3">
                                     <label for="" class="form-label">Precio PVP del costoprom:</label>
@@ -118,7 +118,7 @@ $resultado = $stmt->fetchAll();
                                 <!-- En caso de que haya un campo para el precio final: Precio mas Iva-->
                             <div class="col-md-3">
                                 <label for="" class="form-label">Precio + IVA</label>   
-                                <input type="number" class="form-control" name="iva" id="precioIva_input" value="<?php// echo $stock['iva'] ?>" placeholder="...">
+                                <input type="number" class="form-control" name="iva" id="precioIva_input" value="" placeholder="..." disabled>
                             </div>
                             <!-- Fin-->
 

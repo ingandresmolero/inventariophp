@@ -33,7 +33,7 @@ precio1.addEventListener('input', () => {
     let utilidadBasePrecio = valPromedio / ((100- valUtilidad)/100);
     precio1.value = utilidadBasePrecio.toFixed(2);
     //Precio mas iva
-    precioFinal = valPrecio1 * (valIva*100);
+    precioFinal = (utilidadBasePrecio * 0.16) + utilidadBasePrecio;
     precioIva.value = precioFinal.toFixed(2);
 
  });
