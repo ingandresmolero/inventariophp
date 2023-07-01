@@ -39,6 +39,15 @@ $resultado = $stmt->fetchAll();
             <h1 class="page-heading">Editar articulo</h1>
             <div class="box-bg-2">
                 <?php foreach ($resultado as $stock) : ?>
+
+                    <?php
+                        $valorcompra = $stock['monto'];
+                        $valoractual = $stock ['costo'];
+                        $valoranterior = $stock['costo']; //por ahora
+                        $existencianterior= $stock ['ingreso'];
+                        
+
+                    ?>
                     <form action="" method="post" class="form-style-3">
 
                         <div class="row ">
@@ -73,7 +82,7 @@ $resultado = $stmt->fetchAll();
                             <span class="separador">Costo/Precio</span>
                             <div class="col-sm-4">
                                     <label for="" class="form-label">Actual:</label>
-                                    <input id="actual_input" type="number" class="form-control" name="existencia"  value="<?php echo $stock['existencia'] ?>" placeholder="<?php echo $stock['existencia'] ?>...">
+                                    <input id="actual_input" type="number" class="form-control" name="existencia"  value="<?php echo $valoractual ?>" placeholder="<?php echo $valoractual ?>...">
                                 </div>
                                 
                                 <div class="col-sm-4">
@@ -82,7 +91,7 @@ $resultado = $stmt->fetchAll();
                                 </div>
                                 <div class="col-sm-4">
                                     <label for="" class="form-label">Anterior:</label>
-                                    <input id="anterior_input" type="number" class="form-control" name="costo" value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['monto'] ?>...">
+                                    <input id="anterior_input" type="number" class="form-control" name="costo" value="<?php echo $valoranterior ?>" placeholder="<?php echo $valoranterior ?>...">
                                 </div>
                                 
                                 <!-- <div class="col-sm-3">
