@@ -20,8 +20,10 @@ $datos = $stmt2->fetch();
 $resultado = $stmt->fetchAll();
 $filas = $stmt->rowCount();
 
-
-
+$codigo = $datos['codigo'];
+if(isset($_POST['agregar'])){
+    header("Location: act_stock.php?codigo=$codigo");
+}
 
 ?>
 
@@ -69,7 +71,8 @@ $filas = $stmt->rowCount();
 
 <?php  if($filas == 0){ ?>
         <div class="row mb-3 mt-4">
-        <input type="submit" class="submit-btn-2" value="Agregar" name="Agregar">
+        <input type="submit" class="submit-btn-2" name="agregar" value="agregar" />
+        
     </div>
    <?php }; ?>
 

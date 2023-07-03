@@ -2,6 +2,17 @@
 <?php
 include("../../php/dbconn.php");
 ?>
+
+<?php 
+
+if (isset($_GET['codigo'])){
+    $codigo = intval($_GET['codigo']);
+    
+}else{
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +36,14 @@ include("../../php/dbconn.php");
                 <div class="flex-element">
                     <label for="" class="form-label">Codigo:</label>
                     <div class="flex-item">
-                        <input type="text" class="form-control" name="codigo" id="">
+                        <?php if ($codigo > 0){
+                             echo'  <input type="text" class="form-control" name="codigo" value="'.$codigo.'" id="">';
+                            
+                        }else{
+                            echo '<input type="text" class="form-control" name="codigo" id="">';
+                         
+                        } ?>
+                        
                     </div>
                     <div class="flex-item">
                         <input type="submit"  class="btn-style-1 margin-left" value="buscar" name="buscar">
