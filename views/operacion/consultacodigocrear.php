@@ -40,7 +40,7 @@ if (isset($_POST['buscar'])) {;
                 <div class="row">
                     <div class="col-sm">
                         <label for="" class="col-form-label">Existencia: </label>
-                        <input type="text" class="form-control" name="existencia" id="">
+                        <input type="text" value="0" placeholder="0" class="form-control" name="existencia" id="">
                     </div>
                     <div class="col-sm">
                         <label for="" class="col-form-label">Unidad: </label>
@@ -51,11 +51,11 @@ if (isset($_POST['buscar'])) {;
                         </select>
                     </div>
                 </div>    
-            <div class="col-sm">
+            <div class="col-sm d-none">
             <label for="" class="col-form-label">Costo: </label>
             <input type="text" class="form-control" name="costo" id="">
         </div>
-        <div class="col-sm mb-3">
+        <div class="col-sm mb-3 d-none">
             <label for="" class="col-form-label">Precio: </label>
             <input type="text" class="form-control" name="precio_1" id="">
         </div>

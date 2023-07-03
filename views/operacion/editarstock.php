@@ -6,13 +6,21 @@ include("../../php/dbconn.php");
 $stockid = $_GET['stockid'];
 $sql = "SELECT * FROM stock INNER JOIN reportes ON stock.codigo = reportes.codigo where stock.id_stock='$stockid' AND reportes.fecha_creacion = (SELECT MAX(fecha_creacion) from reportes) AND id_reporte = (SELECT MAX(id_reporte) FROM reportes) LIMIT 1";
 // $sql = "SELECT * FROM stock where id_stock='$stockid' ";
+$sql2 = "SELECT * FROM stock WHERE id_stock='$stockid'";
 
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 
+$stmt2 = $conn->prepare($sql2);
+$stmt2->execute();
+
+$datos = $stmt2->fetch();
 
 $resultado = $stmt->fetchAll();
+$filas = $stmt->rowCount();
+
+
 
 
 ?>
@@ -38,6 +46,34 @@ $resultado = $stmt->fetchAll();
         <div class="container">
             <h1 class="page-heading">Editar articulo</h1>
             <div class="box-bg-2">
+
+            <form action="" method="post" class="form-style-3">
+
+<div class="row ">
+    <div class="col-lg-4">
+        <label for="" class="form-label">Codigo:</label>
+        <input type="tex" class="form-control" name="codigo" id="" value="<?php echo $datos['codigo'] ?>" placeholder="<?php echo $datos['codigo'] ?>">
+
+    </div>
+
+    <div class="col-lg-4">
+        <label for="" class="form-label">Nombre:</label>
+        <input type="tex" class="form-control" name="nombre" id="" value="<?php echo $datos['nombre'] ?>" placeholder="<?php echo $datos['nombre'] ?>">
+    </div>
+
+    <div class="col-lg-4">
+        <label for="" class="form-label">Descripcion:</label>
+        <input type="tex" class="form-control" name="descripcion" id="" value="<?php echo $datos['descripcion'] ?>" placeholder="<?php echo $datos['descripcion'] ?>...">
+    </div>
+</div>
+
+<?php  if($filas == 0){ ?>
+        <div class="row mb-3 mt-4">
+        <input type="submit" class="submit-btn-2" value="Agregar" name="Agregar">
+    </div>
+   <?php }; ?>
+
+
                 <?php foreach ($resultado as $stock) : ?>
 
                     <?php
@@ -48,25 +84,7 @@ $resultado = $stmt->fetchAll();
                         
 
                     ?>
-                    <form action="" method="post" class="form-style-3">
-
-                        <div class="row ">
-                            <div class="col-lg-4">
-                                <label for="" class="form-label">Codigo:</label>
-                                <input type="tex" class="form-control" name="codigo" id="" value="<?php echo $stock['codigo'] ?>" placeholder="<?php echo $stock['codigo'] ?>">
-
-                            </div>
-
-                            <div class="col-lg-4">
-                                <label for="" class="form-label">Nombre:</label>
-                                <input type="tex" class="form-control" name="nombre" id="" value="<?php echo $stock['nombre'] ?>" placeholder="<?php echo $stock['nombre'] ?>">
-                            </div>
-
-                            <div class="col-lg-4">
-                                <label for="" class="form-label">Descripcion:</label>
-                                <input type="tex" class="form-control" name="descripcion" id="" value="<?php echo $stock['descripcion'] ?>" placeholder="<?php echo $stock['descripcion'] ?>...">
-                            </div>
-                        </div>
+                    
                         <div class="row">
                             <div class="col-sm-4 ">
                                 <label for="" class="form-label">Existencia Compra:</label>
@@ -97,8 +115,8 @@ $resultado = $stmt->fetchAll();
                                     <input id="anterior_input" type="number" class="form-control" name="costo" value="<?php echo $valoranterior ?>" placeholder="<?php echo $valoranterior ?>...">
                                 </div>
                                 <div class="col-md-3">
-                                    <label for="" class="form-label">IVA a Calcular:</label>
-                                    <input type="number" class="form-control" name="iva" id="iva_input" value="<?php echo 16;//$stock['iva'] ?>" placeholder="<?php echo 16;//$stock['iva'] ?>..." disabled>
+                                    <label for="" class="form-label">% IVA a Calcular:</label>
+                                    <input type="number" class="form-control" name="iva" id="iva_input" value="<?php echo $stock['iva'] ?>" placeholder="<?php echo $stock['iva'] ?>...">
                                 </div>
                                 <!-- <div class="col-sm-3">
                                     <label for="" class="form-label">Precio PVP del costoprom:</label>
@@ -118,7 +136,7 @@ $resultado = $stmt->fetchAll();
                                 <!-- En caso de que haya un campo para el precio final: Precio mas Iva-->
                             <div class="col-md-3">
                                 <label for="" class="form-label">Precio + IVA</label>   
-                                <input type="number" class="form-control" name="iva" id="precioIva_input" value="" placeholder="..." disabled>
+                                <input type="number" class="form-control" name="iva" id="precioIva_input" value="<?php// echo $stock['iva'] ?>" placeholder="...">
                             </div>
                             <!-- Fin-->
 

@@ -20,16 +20,16 @@
                 <form action="agregarItem.php" method="post">
                     <div class="input-item">
                         <label class="form-label">Codigo</label>
-                        <input class="form-control" value= "'.$out['codigo']. '" name="codigo2" disabled>
+                        <input class="form-control" value= "'.$out['codigo']. '" name="codigo2" >
                     </div>
                     <div class="input-item">
                         <label class="form-label">Nombre Articulo</label>
-                        <input class="form-control" value= "'.$out['nombre']. '" name="nombre" disabled>
+                        <input class="form-control" value= "'.$out['nombre']. '" name="nombre" >
                     </div>
                  
                     <div class="input-item">
                         <label class="form-label">Existencia Stock</label>
-                        <input class="form-control" value= "'.$out['existencia']. '" name="existencia" disabled>
+                        <input class="form-control" value= "'.$out['existencia']. '" name="existencia" >
                     </div>
                     <div class="input-item">
                         <label class="form-label">Factura de Compra: </label>
