@@ -28,11 +28,17 @@ include("../php/functions/tasa.php");
                 <img src="../img/icons/crear-codigo.png">
                 <p class="card-title">Crear Codigo</p>
             </a>
-                   
+
             <a href="./operacion/anadir_stock.php" class="item">
+                <img src="../img/icons/orden-carga.png">
+                <p class="card-title">Orden de Compra</p>
+            </a>
+            <a href="./operacion/act_stock.php" class="item">
                 <img src="../img/icons/orden-carga.png">
                 <p class="card-title">Orden de Carga</p>
             </a>
+                   
+            
 
             <a href="./operacion/out_stock.php" class="item">
                 <img src="../img/icons/orden-retiro.png">
