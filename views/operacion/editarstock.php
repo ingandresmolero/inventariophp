@@ -21,7 +21,7 @@ $resultado = $stmt->fetchAll();
 $filas = $stmt->rowCount();
 
 $codigo = $datos['codigo'];
-if(isset($_POST['agregar'])){
+if (isset($_POST['agregar'])) {
     header("Location: act_stock.php?codigo=$codigo");
 }
 
@@ -49,88 +49,86 @@ if(isset($_POST['agregar'])){
             <h1 class="page-heading">Editar articulo</h1>
             <div class="box-bg-2">
 
-            <form action="" method="post" class="form-style-3">
+                <form action="" method="post" class="form-style-3">
 
-<div class="row ">
-    <div class="col-lg-4">
-        <label for="" class="form-label">Codigo:</label>
-        <input type="tex" class="form-control" name="codigo" id="" value="<?php echo $datos['codigo'] ?>" placeholder="<?php echo $datos['codigo'] ?>">
+                    <div class="row ">
+                        <div class="col-lg-4">
+                            <label for="" class="form-label">Codigo:</label>
+                            <input type="tex" class="form-control" name="codigo" id="" value="<?php echo $datos['codigo'] ?>" placeholder="<?php echo $datos['codigo'] ?>">
 
-    </div>
+                        </div>
 
-    <div class="col-lg-4">
-        <label for="" class="form-label">Nombre:</label>
-        <input type="tex" class="form-control" name="nombre" id="" value="<?php echo $datos['nombre'] ?>" placeholder="<?php echo $datos['nombre'] ?>">
-    </div>
+                        <div class="col-lg-4">
+                            <label for="" class="form-label">Nombre:</label>
+                            <input type="tex" class="form-control" name="nombre" id="" value="<?php echo $datos['nombre'] ?>" placeholder="<?php echo $datos['nombre'] ?>">
+                        </div>
 
-    <div class="col-lg-4">
-        <label for="" class="form-label">Descripcion:</label>
-        <input type="tex" class="form-control" name="descripcion" id="" value="<?php echo $datos['descripcion'] ?>" placeholder="<?php echo $datos['descripcion'] ?>...">
-    </div>
-
-    <div class="col-auto ">
-        <p>Nota: Este articulo tiene existencia: 0</p>
-        <p>Es necesario realizar una carga de articulos</p>
-    </div>
-</div>
-
-<?php  if($filas == 0){ ?>
-        <div class="row mb-3 mt-4">
-        <input type="submit" class="submit-btn-2" name="agregar" value="agregar" />
-        
-    </div>
-   <?php }; ?>
+                        <div class="col-lg-4">
+                            <label for="" class="form-label">Descripcion:</label>
+                            <input type="tex" class="form-control" name="descripcion" id="" value="<?php echo $datos['descripcion'] ?>" placeholder="<?php echo $datos['descripcion'] ?>...">
+                        </div>
 
 
-                <?php foreach ($resultado as $stock) : ?>
+                    </div>
 
-                    <?php
+                    <?php if ($filas == 0) { ?>
+                        <div class="row mb-3 mt-4">
+                            <input type="submit" class="submit-btn-2" name="agregar" value="agregar" />
+
+                        </div>
+                    <?php }; ?>
+
+
+                    <?php foreach ($resultado as $stock) : ?>
+
+                        <?php
                         $valorcompra = $stock['monto'];
-                        $valoractual = $stock ['costo'];
+                        $valoractual = $stock['costo'];
                         $valoranterior = $stock['costo']; //por ahora
-                        $existencianterior= $stock ['ingreso'];
-                        
+                        $existencianterior = $stock['ingreso'];
 
-                    ?>
-                    
+
+                        ?>
+
                         <div class="row">
-                            <div class="col-sm-4 ">
+                            <div class="col-sm-4 d-none">
                                 <label for="" class="form-label">Existencia Compra:</label>
-                                <input id="ingreso_input" type="number" class="form-control" name="existencia"  value="<?php echo $stock['existencia'] ?>" placeholder="<?php echo $stock['ingreso'] ?>...">
+                                <input id="ingreso_input" type="number" class="form-control" name="existencia" value="<?php echo $stock['existencia'] ?>" placeholder="<?php echo $stock['existencia'] ?>...">
                             </div>
                             <div class="col-sm-4">
                                 <label for="" class="form-label">Lote:</label>
                                 <input type="text" class="form-control" name="lote" id="" value="<?php echo $stock['lote'] ?>" placeholder="<?php echo $stock['lote'] ?>...">
                             </div>
-                            <div class="col-sm-4 ">
+                            <div class="col-sm-4 d-none">
                                 <label for="" class="form-label">Precio de Compra:</label>
-                                <input id="precioCompra_input" type="number" class="form-control" name="existencia"  value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['monto'] ?>...">
+                                <input id="precioCompra_input" type="number" class="form-control" name="existencia" value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['monto'] ?>...">
                             </div>
                         </div>
                         <div class="row product-price">
-                            <span class="separador">Costo/Precio</span>
+                            <hr>
+                            <!-- <span class="separador">Costo/Precio</span> -->
                             <div class="col-sm-3">
-                                    <label for="" class="form-label">Actual:</label>
-                                    <input id="actual_input" type="number" class="form-control" name="existencia"  value="<?php echo $valoractual ?>" placeholder="<?php echo $valoractual ?>...">
-                                </div>
-                                
-                                <div class="col-sm-3">
-                                    <label for="" class="form-label">Promedio:</label>
-                                    <input id="promedio_input" type="number" class="form-control" name="costo" value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
-                                </div>
-                                <div class="col-sm-3">
-                                    <label for="" class="form-label">Anterior:</label>
-                                    <input id="anterior_input" type="number" class="form-control" name="costo" value="<?php echo $valoranterior ?>" placeholder="<?php echo $valoranterior ?>...">
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="" class="form-label">% IVA a Calcular:</label>
-                                    <input type="number" class="form-control" name="iva" id="iva_input" value="<?php echo $stock['iva'] ?>" placeholder="<?php echo $stock['iva'] ?>...">
-                                </div>
-                                <!-- <div class="col-sm-3">
+                                <label for="" class="form-label">Actual:</label>
+                                <input id="actual_input" type="number" class="form-control" name="existencia" value="<?php echo $valoractual ?>" placeholder="<?php echo $valoractual ?>...">
+                            </div>
+
+                            <div class="col-sm-3">
+                                <label for="" class="form-label">Promedio:</label>
+                                <input id="promedio_input" type="number" class="form-control" name="costo" value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="form-label">Anterior:</label>
+                                <input id="anterior_input" type="number" class="form-control" name="costo" value="<?php echo $valoranterior ?>" placeholder="<?php echo $valoranterior ?>...">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="" class="form-label">% IVA a Calcular:</label>
+                                <input type="number" class="form-control" name="iva" id="iva_input" value="<?php echo $stock['iva'] ?>" placeholder="<?php echo $stock['iva'] ?>...">
+                            </div>
+                            <!-- <div class="col-sm-3">
                                     <label for="" class="form-label">Precio PVP del costoprom:</label>
                                     <input id="precioPvp_input" type="number" class="form-control" name="costo" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                                 </div> -->
-                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col-sm-3">
@@ -138,13 +136,13 @@ if(isset($_POST['agregar'])){
                                 <input type="number" class="form-control" name="precio_1" id="precio1_input">
                             </div>
                             <div class="col-sm-3">
-                                    <label for="" class="form-label">Utilidad %:</label>
-                                    <input id="utilidad_input" type="number" class="form-control" name="costo" value="<?php echo $stock['costo'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                                <label for="" class="form-label">Utilidad %:</label>
+                                <input id="utilidad_input" type="number" class="form-control" name="costo" value="" placeholder="...">
                             </div>
-                                <!-- En caso de que haya un campo para el precio final: Precio mas Iva-->
+                            <!-- En caso de que haya un campo para el precio final: Precio mas Iva-->
                             <div class="col-md-3">
-                                <label for="" class="form-label">Precio + IVA</label>   
-                                <input type="number" class="form-control" name="iva" id="precioIva_input" value="<?php// echo $stock['iva'] ?>" placeholder="...">
+                                <label for="" class="form-label">Precio + IVA</label>
+                                <input type="number" class="form-control" name="iva" id="precioIva_input" value="" placeholder="...">
                             </div>
                             <!-- Fin-->
 
@@ -215,6 +213,8 @@ if(isset($_POST['agregar'])){
                             </div>
                         </div>
 
+                        <!-- FIN CARACTERISTICAS -->
+
                         <!-- EMBALAJE -->
                         <div>
                             <div class="collapse multi-collapse mt-2 mb-3" id="multiCollapseEmbalaje">
@@ -254,7 +254,7 @@ if(isset($_POST['agregar'])){
                                 </div>
                             </div>
                         </div>
-
+                        <!-- FIN EMBALAJE -->
 
                         <div class="row mb-3 mt-4">
                             <input type="submit" class="submit-btn-2" value="Actualizar" name="actualizar">
@@ -265,65 +265,65 @@ if(isset($_POST['agregar'])){
                             }
                             ?>
                         </div>
-                    </form>
+                </form>
 
-                <?php endforeach ?>
-                <?php
-                if (isset($_POST['borrar'])) {
-                    $delete = " DELETE FROM stock WHERE id_stock='$stockid'";
+            <?php endforeach ?>
+            <?php
+            if (isset($_POST['borrar'])) {
+                $delete = " DELETE FROM stock WHERE id_stock='$stockid'";
 
-                    $stmt = $conn->prepare($delete);
-                    $stmt->execute();
-                    echo '<script>
+                $stmt = $conn->prepare($delete);
+                $stmt->execute();
+                echo '<script>
                 alert("Se elimino el producto ' . $stockid . '--' . $stock['nombre'] . '");
                 window.location.href = "../stock.php";
                 </script>';
-                };
+            };
 
-                if (isset($_POST['actualizar'])) {
-                    $username = $_SESSION['username'];
-                    $fecha_dia = date("Ymd");
-                    $codigo = $_POST['codigo'];
-                    $nombre = $_POST['nombre'];
-                    $descripcion = $_POST['descripcion'];
-                    $existencia = $_POST['existencia'];
-                    $lote = $_POST['lote'];
-                    $costo = $_POST['costo'];
-                    $precio_1 = $_POST['precio_1'];
-                    $precio_2 = $_POST['precio_2'];
-                    $precio_3 = $_POST['precio_3'];
-                    $tasa = $_POST['tasa'];
-                    $tasa_variable = $_POST['tasa_variable'];
-                    $iva = $_POST['iva'];
-                    $color = $_POST['color'];
-                    $voltaje = $_POST['voltaje'];
-                    $medida = $_POST['medida'];
-                    $calibre = $_POST['calibre'];
-                    $n_hilos = $_POST['n_hilos'];
-                    $unidad = $_POST['unidad'];
-                    $serials = $_POST['serials'];
-                    $largo = $_POST['largo'];
-                    $peso_bruto = $_POST['peso_bruto'];
-                    $peso_kilo_gramo = $_POST['peso_kg_cobre'];
+            if (isset($_POST['actualizar'])) {
+                $username = $_SESSION['username'];
+                $fecha_dia = date("Ymd");
+                $codigo = $_POST['codigo'];
+                $nombre = $_POST['nombre'];
+                $descripcion = $_POST['descripcion'];
+                $existencia = $_POST['existencia'];
+                $lote = $_POST['lote'];
+                $costo = $_POST['costo'];
+                $precio_1 = $_POST['precio_1'];
+                $precio_2 = $_POST['iva'];
+                $precio_3 = $_POST['utilidad'];
+                $tasa = $_POST['tasa'];
+                $tasa_variable = $_POST['tasa_variable'];
+                $iva = '16%';
+                $color = $_POST['color'];
+                $voltaje = $_POST['voltaje'];
+                $medida = $_POST['medida'];
+                $calibre = $_POST['calibre'];
+                $n_hilos = $_POST['n_hilos'];
+                $unidad = $_POST['unidad'];
+                $serials = $_POST['serials'];
+                $largo = $_POST['largo'];
+                $peso_bruto = $_POST['peso_bruto'];
+                $peso_kilo_gramo = $_POST['peso_kg_cobre'];
 
-                    $query = "UPDATE stock SET codigo='$codigo',nombre='$nombre',descripcion='$descripcion',existencia='$existencia',lote='$lote',costo='$costo',precio_1='$precio_1',precio_2='$precio_2',precio_3='$precio_3',tasa='$tasa',tasa_variable='$tasa_variable',iva='$iva',color='$color',voltaje='$voltaje',medida='$medida',calibre='$calibre',N_hilos='$n_hilos',unidades='$unidad',serials='$serials',largo='$largo',peso_bruto='$peso_bruto',peso_kg_cobre='$peso_kilo_gramo' WHERE id_stock='$stockid'";
+                $query = "UPDATE stock SET codigo='$codigo',nombre='$nombre',descripcion='$descripcion',existencia='$existencia',lote='$lote',costo='$costo',precio_1='$precio_1',precio_2='$precio_2',precio_3='$precio_3',tasa='$tasa',tasa_variable='$tasa_variable',iva='$iva',color='$color',voltaje='$voltaje',medida='$medida',calibre='$calibre',N_hilos='$n_hilos',unidades='$unidad',serials='$serials',largo='$largo',peso_bruto='$peso_bruto',peso_kg_cobre='$peso_kilo_gramo' WHERE id_stock='$stockid'";
 
-                    $consulta = $conn->prepare($query);
-                    $consulta->execute();
+                $consulta = $conn->prepare($query);
+                $consulta->execute();
 
-                    $act = $consulta->fetchAll();
+                $act = $consulta->fetchAll();
 
-                    if ($act > 0) {
-                        echo '<script>
+                if ($act > 0) {
+                    echo '<script>
                 alert("Se agrego campos para empresa");
                 window.location.href = "../stock.php";
                 </script>';
-                    } else {
-                        echo '<script>alert("Hubo un error!")</script>';
-                    }
+                } else {
+                    echo '<script>alert("Hubo un error!")</script>';
                 }
+            }
 
-                ?>
+            ?>
             </div>
         </div>
     </main>
