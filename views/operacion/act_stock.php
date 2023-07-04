@@ -37,7 +37,7 @@ if (isset($_GET['codigo'])){
                     <label for="" class="form-label">Codigo:</label>
                     <div class="flex-item">
                         <?php if ($codigo > 0){
-                             echo'  <input type="text" class="form-control" name="codigo" value="'.$codigo.'" id="">';
+                             echo'  <input type="text" class="form-control" name="codigo" value="'.$_GET['codigo'].'" id="">';
                             
                         }else{
                             echo '<input type="text" class="form-control" name="codigo" id="">';
