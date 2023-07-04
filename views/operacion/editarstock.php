@@ -67,6 +67,11 @@ if(isset($_POST['agregar'])){
         <label for="" class="form-label">Descripcion:</label>
         <input type="tex" class="form-control" name="descripcion" id="" value="<?php echo $datos['descripcion'] ?>" placeholder="<?php echo $datos['descripcion'] ?>...">
     </div>
+
+    <div class="col-auto ">
+        <p>Nota: Este articulo tiene existencia: 0</p>
+        <p>Es necesario realizar una carga de articulos</p>
+    </div>
 </div>
 
 <?php  if($filas == 0){ ?>

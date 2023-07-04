@@ -27,7 +27,7 @@ $stmt3= $conn->prepare($query3);
 $stmt3 -> execute();
 $stmt2 -> execute();
 echo '<script>alert("Se Genero una Carga")</script>';
-header("Location: ../reportes.php");
+header("Location: ../stock.php");
 
 
 
