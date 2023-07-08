@@ -91,7 +91,7 @@ if (isset($_POST['agregar'])) {
                         ?>
 
                         <div class="row">
-                            <div class="col-sm-4 d-none">
+                            <div class="col-sm-4">
                                 <label for="" class="form-label">Existencia Compra:</label>
                                 <input id="ingreso_input" type="number" class="form-control" name="existencia" value="<?php echo $stock['existencia'] ?>" placeholder="<?php echo $stock['existencia'] ?>...">
                             </div>
@@ -99,14 +99,13 @@ if (isset($_POST['agregar'])) {
                                 <label for="" class="form-label">Lote:</label>
                                 <input type="text" class="form-control" name="lote" id="" value="<?php echo $stock['lote'] ?>" placeholder="<?php echo $stock['lote'] ?>...">
                             </div>
-                            <div class="col-sm-4 d-none">
+                            <div class="col-sm-4 ">
                                 <label for="" class="form-label">Precio de Compra:</label>
-                                <input id="precioCompra_input" type="number" class="form-control" name="existencia" value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['monto'] ?>...">
+                                <input id="precioCompra_input" type="number" class="form-control" name="existencia"  value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['monto'] ?>...">
                             </div>
                         </div>
                         <div class="row product-price">
                             <hr>
-                            <!-- <span class="separador">Costo/Precio</span> -->
                             <div class="col-sm-3">
                                 <label for="" class="form-label">Actual:</label>
                                 <input id="actual_input" type="number" class="form-control" name="existencia" value="<?php echo $valoractual ?>" placeholder="<?php echo $valoractual ?>...">
