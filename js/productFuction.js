@@ -25,6 +25,7 @@ precio1.addEventListener('input', () => {
    //Calcular Utilidad
     let precioUtilidad = ( (valPrecio1 - valPrecioCompra - (valPromedio - valPrecioCompra)) / valPrecio1) * 100;
     utilidad.value = precioUtilidad.toFixed(2); 
+
     //Precio mas Iva
     calcPrecioIva = (valPrecio1 * 0.16) + valPrecio1;
     precioIva.value = calcPrecioIva.toFixed(2);
@@ -32,6 +33,7 @@ precio1.addEventListener('input', () => {
    //Precio BS 1
     calcPrecioBs1 = (valPrecio1 * valTasaUSD);
     precioBs1.value = calcPrecioBs1.toFixed(2);
+
    //Precio BS 1 + IVA
     calcPrecioBS1Iva = (calcPrecioBs1 * 0.16) + calcPrecioBs1;
     precioBsIva1.value = calcPrecioBS1Iva.toFixed(2);
@@ -45,8 +47,10 @@ precio1.addEventListener('input', () => {
     let valTasaUSD = Number (tasaUSD.value);
     //let valIva = Number(iva.value);
     
+    //Calcular Utilidad en base al Precio:
     let utilidadBasePrecio = valPromedio / ((100- valUtilidad)/100);
     precio1.value = utilidadBasePrecio.toFixed(2);
+
     //Precio mas iva
     calcPrecio = (utilidadBasePrecio * 0.16) + utilidadBasePrecio;
     precioIva.value = calcPrecio.toFixed(2);
@@ -54,19 +58,14 @@ precio1.addEventListener('input', () => {
    //Precio BS 1
     calcPrecioBs1 = (valPrecio1 * valTasaUSD);
     precioBs1.value = calcPrecioBs1.toFixed(2);
+    console.log(valPrecio1)
+    console.log(valTasaUSD)
+
    //Precio BS 1 + IVA
     calcPrecioBS1Iva = (calcPrecioBs1 * 0.16) + calcPrecioBs1;
     precioBsIva1.value = calcPrecioBS1Iva.toFixed(2);
  });
 
-
-//VALORES A LO LOCO
- // EXISTENCIA ANTERIOR = 0
- // Costo Promedio = 0
- //Cantidad de compra = 25
- // Costo Compra = 30
-// costo promedio = 20
-// Utilidad = 10
 
 
 
