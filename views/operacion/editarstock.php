@@ -102,27 +102,27 @@ if (isset($_POST['agregar'])) {
                             </div>
                             <div class="col-sm-4 d-none">
                                 <label for="" class="form-label">Precio de Compra:</label>
-                                <input id="precioCompra_input" type="number" class="form-control" name="existencia" value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['monto'] ?>...">
+                                <input id="precioCompra_input" type="number" step="any" class="form-control" name="existencia" value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['monto'] ?>...">
                             </div>
                         </div>
                         <div class="row product-price">
                             <hr>
                             <div class="col-sm-3">
                                 <label for="" class="form-label">Actual:</label>
-                                <input id="actual_input" type="number" class="form-control" name="existencia" value="<?php echo $valoractual ?>" placeholder="<?php echo $valoractual ?>...">
+                                <input id="actual_input" type="number" step="any" class="form-control" name="existencia" value="<?php echo $valoractual ?>" placeholder="<?php echo $valoractual ?>...">
                             </div>
 
                             <div class="col-sm-3">
                                 <label for="" class="form-label">Promedio:</label>
-                                <input id="promedio_input" type="number" class="form-control" name="costo" value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                                <input id="promedio_input" type="number" step="any" class="form-control" name="costo" value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
                             </div>
                             <div class="col-sm-3">
                                 <label for="" class="form-label">Anterior:</label>
-                                <input id="anterior_input" type="number" class="form-control" name="costo" value="<?php echo $valoranterior ?>" placeholder="<?php echo $valoranterior ?>...">
+                                <input id="anterior_input" type="number" step="any" class="form-control" name="costo" value="<?php echo $valoranterior ?>" placeholder="<?php echo $valoranterior ?>...">
                             </div>
                             <div class="col-md-3 d-none">
                                 <label for="" class="form-label">% IVA a Calcular:</label>
-                                <input type="number" class="form-control" name="iva" id="iva_input" value="<?php echo $stock['iva'] ?>" placeholder="<?php echo $stock['iva'] ?>...">
+                                <input type="number" class="form-control" step="any" name="iva" id="iva_input" value="<?php echo $stock['iva'] ?>" placeholder="<?php echo $stock['iva'] ?>...">
                             </div>
                             <!-- <div class="col-sm-3">
                                     <label for="" class="form-label">Precio PVP del costoprom:</label>
@@ -133,16 +133,16 @@ if (isset($_POST['agregar'])) {
                         <div class="row">
                             <div class="col-sm-3">
                                 <label for="" class="form-label">Precio 1:</label>
-                                <input type="number" class="form-control" name="precio_1" id="precio1_input">
+                                <input type="number" class="form-control" step="any" name="precio_1" id="precio1_input">
                             </div>
                             <div class="col-sm-3">
                                 <label for="" class="form-label">Utilidad %:</label>
-                                <input id="utilidad_input" type="number" class="form-control" name="costo" value="" placeholder="...">
+                                <input id="utilidad_input" type="number" step="any" class="form-control" name="costo" value="" placeholder="...">
                             </div>
                             <!-- En caso de que haya un campo para el precio final: Precio mas Iva-->
                             <div class="col-md-3">
                                 <label for="" class="form-label">Precio + IVA</label>
-                                <input type="number" class="form-control" name="iva" id="precioIva_input" value="" placeholder="...">
+                                <input type="number" step="any" class="form-control" name="iva" id="precioIva_input" value="" placeholder="...">
                             </div>
                             <!-- Fin-->
 
@@ -161,7 +161,7 @@ if (isset($_POST['agregar'])) {
                         <input type="number" class="form-control d-none" name="tasa_dia" id="tasa_dia" value="<?php echo $tasadia ?>" placeholder="...">
                             <div class="col-md-3">
                                 <label for="" class="form-label">Precio 1 (BS):</label>
-                                <input type="number" class="form-control" name="precioBs_1" id="precioBs1_input" value="<?php echo 0; //$stock['tasa'] 
+                                <input type="number" step="any" class="form-control" name="precioBs_1" id="precioBs1_input" value="<?php echo 0; //$stock['tasa'] 
                                                                                                                         ?>" placeholder="<?php echo 0; //$stock['tasa'] 
                                                                                                                                                                         ?>...">
 
@@ -170,7 +170,7 @@ if (isset($_POST['agregar'])) {
                             
                             <div class="col-md-3">
                                 <label for="" class="form-label">Precio + IVA (BS):</label>
-                                <input type="number" class="form-control" name="precioBsIva_1" id="precioBsIva1_input" value="<?php echo  0; //$stock['tasa'] 
+                                <input type="number" step="any" class="form-control" name="precioBsIva_1" id="precioBsIva1_input" value="<?php echo  0; //$stock['tasa'] 
                                                                                                                                 ?>" placeholder="<?php echo  0; //$stock['tasa'] 
                                                                                                                                                                                 ?>...">
 
@@ -182,7 +182,7 @@ if (isset($_POST['agregar'])) {
                         <div class="row mb-3">
                             <div class="col-md-3">
                                 <label for="" class="form-label">Tasa Compra del dia BS.S:</label>
-                                <input type="number" class="form-control" name="tasa" id="tasaUSD_input" value="<?php echo $stock['tasa'] ?>" placeholder="<?php echo $stock['tasa'] ?>...">
+                                <input type="number" step="any" class="form-control" name="tasa" id="tasaUSD_input" value="<?php echo $stock['tasa'] ?>" placeholder="<?php echo $stock['tasa'] ?>...">
 
                             </div>
                             <!-- <div class="col-md-4">
@@ -191,7 +191,7 @@ if (isset($_POST['agregar'])) {
                             </div> -->
                             <div class="col-md-3">
                                 <label for="" class="form-label">Tasa Variable Bs.S:</label>
-                                <input type="tasa_variable" class="form-control" name="tasa_variable" id="" value="<?php echo $stock['tasa_variable'] ?>" placeholder="<?php echo $stock['tasa_variable'] ?>...">
+                                <input type="tasa_variable" step="any" class="form-control" name="tasa_variable" id="" value="<?php echo $stock['tasa_variable'] ?>" placeholder="<?php echo $stock['tasa_variable'] ?>...">
 
                             </div>
                         </div>
