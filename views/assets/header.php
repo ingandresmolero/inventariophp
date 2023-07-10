@@ -1,3 +1,17 @@
+<?php
+    include("../php/dbconn.php");
+    $tasasql = "SELECT * FROM tasabs";
+    $stmt = $conn->prepare($tasasql);
+    $stmt->execute();
+
+    $listado = $stmt->fetch();
+
+    $tasadia = $listado['monto_bcv'];
+    $tasafecha = $listado['fecha_creacion'];
+
+    
+?>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img src="../media/logo/logo.png" alt="logo"></a>

@@ -1,4 +1,5 @@
 <?php include("../../php/functions/validar.php");
+    
 ?>
 <?php
 
@@ -41,7 +42,7 @@ if (isset($_POST['agregar'])) {
 </head>
 
 <body>
-    <?php include("../../views/assets/headersintasa.php"); ?>
+    <?php include("../../views/assets/header.php"); ?>
 
     <main>
 
@@ -101,7 +102,7 @@ if (isset($_POST['agregar'])) {
                             </div>
                             <div class="col-sm-4 d-none">
                                 <label for="" class="form-label">Precio de Compra:</label>
-                                <input id="precioCompra_input" type="number" class="form-control" name="existencia"  value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['monto'] ?>...">
+                                <input id="precioCompra_input" type="number" class="form-control" name="existencia" value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['monto'] ?>...">
                             </div>
                         </div>
                         <div class="row product-price">
@@ -119,7 +120,7 @@ if (isset($_POST['agregar'])) {
                                 <label for="" class="form-label">Anterior:</label>
                                 <input id="anterior_input" type="number" class="form-control" name="costo" value="<?php echo $valoranterior ?>" placeholder="<?php echo $valoranterior ?>...">
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3 d-none">
                                 <label for="" class="form-label">% IVA a Calcular:</label>
                                 <input type="number" class="form-control" name="iva" id="iva_input" value="<?php echo $stock['iva'] ?>" placeholder="<?php echo $stock['iva'] ?>...">
                             </div>
@@ -157,17 +158,28 @@ if (isset($_POST['agregar'])) {
                         <hr class="mt-3">
 
                         <div class="row mb-3">
+                        <input type="number" class="form-control d-none" name="tasa_dia" id="tasa_dia" value="<?php echo $tasadia ?>" placeholder="...">
                             <div class="col-md-3">
                                 <label for="" class="form-label">Precio 1 (BS):</label>
-                                <input type="number" class="form-control" name="precioBs_1" id="precioBs1_input" value="<?php echo 0;//$stock['tasa'] ?>" placeholder="<?php echo 0;//$stock['tasa'] ?>...">
+                                <input type="number" class="form-control" name="precioBs_1" id="precioBs1_input" value="<?php echo 0; //$stock['tasa'] 
+                                                                                                                        ?>" placeholder="<?php echo 0; //$stock['tasa'] 
+                                                                                                                                                                        ?>...">
 
                             </div>
+
+                            
                             <div class="col-md-3">
                                 <label for="" class="form-label">Precio + IVA (BS):</label>
-                                <input type="number" class="form-control" name="precioBsIva_1" id="precioBsIva1_input" value="<?php echo  0;//$stock['tasa'] ?>" placeholder="<?php echo  0;//$stock['tasa'] ?>...">
+                                <input type="number" class="form-control" name="precioBsIva_1" id="precioBsIva1_input" value="<?php echo  0; //$stock['tasa'] 
+                                                                                                                                ?>" placeholder="<?php echo  0; //$stock['tasa'] 
+                                                                                                                                                                                ?>...">
 
                             </div>
-                            
+
+<hr>
+                        </div>
+
+                        <div class="row mb-3">
                             <div class="col-md-3">
                                 <label for="" class="form-label">Tasa Compra del dia BS.S:</label>
                                 <input type="number" class="form-control" name="tasa" id="tasaUSD_input" value="<?php echo $stock['tasa'] ?>" placeholder="<?php echo $stock['tasa'] ?>...">
