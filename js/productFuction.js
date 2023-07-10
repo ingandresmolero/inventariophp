@@ -58,8 +58,6 @@ precio1.addEventListener('input', () => {
    //Precio BS 1
     calcPrecioBs1 = (valPrecio1 * valTasaUSD);
     precioBs1.value = calcPrecioBs1.toFixed(2);
-    console.log(valPrecio1)
-    console.log(valTasaUSD)
 
    //Precio BS 1 + IVA
     calcPrecioBS1Iva = (calcPrecioBs1 * 0.16) + calcPrecioBs1;
