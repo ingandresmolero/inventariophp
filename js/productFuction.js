@@ -13,16 +13,16 @@ let iva = document.getElementById('iva_input');
 let precioIva = document.getElementById('precioIva_input');
 let precioBs1 = document.getElementById('precioBs1_input');
 let precioBsIva1 = document.getElementById('precioBsIva1_input');
-let tasaUSD = document.getElementById('tasaUSD_input');
+let tasaUSD = document.getElementById('tasa_dia').textContent;
 
 precio1.addEventListener('input', () => {
     
     let valPromedio = Number(promedio.value);
     let valPrecioCompra = Number (precioCompra.value);
     let valPrecio1 = Number(precio1.value);
-    let valTasaUSD = Number (tasaUSD.value);
-    
-   //Calcular Utilidad
+    let valTasaUSD = parseInt(tasaUSD);
+
+    console.log(tasaUSD)
     let precioUtilidad = ( (valPrecio1 - valPrecioCompra - (valPromedio - valPrecioCompra)) / valPrecio1) * 100;
     utilidad.value = precioUtilidad.toFixed(2); 
 
@@ -44,7 +44,7 @@ precio1.addEventListener('input', () => {
     let valPrecio1 = Number(precio1.value);
     let valPromedio = Number(promedio.value);
     let valUtilidad = Number(utilidad.value);
-    let valTasaUSD = Number (tasaUSD.value);
+    let valTasaUSD = parseInt(tasaUSD);
     //let valIva = Number(iva.value);
     
     //Calcular Utilidad en base al Precio:
