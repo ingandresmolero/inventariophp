@@ -48,20 +48,23 @@ precio1.addEventListener('input', () => {
     //let valIva = Number(iva.value);
     
     //Calcular Utilidad en base al Precio:
-    let utilidadBasePrecio = valPromedio / ((100- valUtilidad)/100);
-    precio1.value = utilidadBasePrecio.toFixed(2);
+    if (utilidad.value >99) {
+      let utilidad
+      let utilidadBasePrecio = valPromedio / ((100- valUtilidad)/100);
+      precio1.value = utilidadBasePrecio.toFixed(2);
 
-    //Precio mas iva
-    calcPrecio = (utilidadBasePrecio * 0.16) + utilidadBasePrecio;
-    precioIva.value = calcPrecio.toFixed(2);
+      //Precio mas iva
+      calcPrecio = (utilidadBasePrecio * 0.16) + utilidadBasePrecio;
+      precioIva.value = calcPrecio.toFixed(2);
 
-   //Precio BS 1
-    calcPrecioBs1 = (valPrecio1 * valTasaUSD);
-    precioBs1.value = calcPrecioBs1.toFixed(2);
+      //Precio BS 1
+      calcPrecioBs1 = (valPrecio1 * valTasaUSD);
+      precioBs1.value = calcPrecioBs1.toFixed(2);
 
-   //Precio BS 1 + IVA
-    calcPrecioBS1Iva = (calcPrecioBs1 * 0.16) + calcPrecioBs1;
-    precioBsIva1.value = calcPrecioBS1Iva.toFixed(2);
+      //Precio BS 1 + IVA
+      calcPrecioBS1Iva = (calcPrecioBs1 * 0.16) + calcPrecioBs1;
+      precioBsIva1.value = calcPrecioBS1Iva.toFixed(2);
+    }
  });
 
 
