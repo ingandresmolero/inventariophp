@@ -137,7 +137,7 @@ if (isset($_POST['agregar'])) {
                             </div>
                             <div class="col-sm-3">
                                 <label for="" class="form-label">Utilidad %:</label>
-                                <input id="utilidad_input" type="number" step="any" max="99" class="form-control" name="costo" value="" placeholder="...">
+                                <input id="utilidad_input" type="number" step="any" min="1" max="99" class="form-control" name="costo" value="" placeholder="...">
                             </div>
                             <!-- En caso de que haya un campo para el precio final: Precio mas Iva-->
                             <div class="col-md-3">
