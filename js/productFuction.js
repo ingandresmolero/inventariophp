@@ -22,7 +22,6 @@ precio1.addEventListener('input', () => {
     let valPrecio1 = Number(precio1.value);
     let valTasaUSD = parseInt(tasaUSD);
 
-    console.log(tasaUSD)
     let precioUtilidad = ( (valPrecio1 - valPrecioCompra - (valPromedio - valPrecioCompra)) / valPrecio1) * 100;
     utilidad.value = precioUtilidad.toFixed(2); 
 
@@ -39,8 +38,11 @@ precio1.addEventListener('input', () => {
     precioBsIva1.value = calcPrecioBS1Iva.toFixed(2);
  });
 
+ 
  utilidad.addEventListener('input', () => {
-    
+   if (utilidad.value.length > 2) {
+     utilidad.value = utilidad.value.slice(0, 2);
+   }
     let valPrecio1 = Number(precio1.value);
     let valPromedio = Number(promedio.value);
     let valUtilidad = Number(utilidad.value);
@@ -48,8 +50,6 @@ precio1.addEventListener('input', () => {
     //let valIva = Number(iva.value);
     
     //Calcular Utilidad en base al Precio:
-    if (utilidad.value >99) {
-      let utilidad
       let utilidadBasePrecio = valPromedio / ((100- valUtilidad)/100);
       precio1.value = utilidadBasePrecio.toFixed(2);
 
@@ -64,7 +64,7 @@ precio1.addEventListener('input', () => {
       //Precio BS 1 + IVA
       calcPrecioBS1Iva = (calcPrecioBs1 * 0.16) + calcPrecioBs1;
       precioBsIva1.value = calcPrecioBS1Iva.toFixed(2);
-    }
+    
  });
 
 
