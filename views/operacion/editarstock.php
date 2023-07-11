@@ -85,7 +85,7 @@ if (isset($_POST['agregar'])) {
                         <?php
                         $valorcompra = $stock['monto'];
                         $valoractual = $stock['costo'];
-                        $valoranterior = $stock['costo']; //por ahora
+                        $valoranterior = $stock['costopromedio']; //por ahora
                         $existencianterior = $stock['ingreso'];
 
 
@@ -109,16 +109,16 @@ if (isset($_POST['agregar'])) {
                             <hr>
                             <div class="col-sm-3">
                                 <label for="" class="form-label">Actual:</label>
-                                <input id="actual_input" type="number" step="any" class="form-control" name="existencia" value="<?php echo $valoractual ?>" placeholder="<?php echo $valoractual ?>...">
+                                <input id="actual_input" type="number" step="any" class="form-control" name="existencia" value="<?php echo $valoractual ?>" placeholder="<?php echo$stock['costopromedio'] ?>...">
                             </div>
 
                             <div class="col-sm-3">
                                 <label for="" class="form-label">Promedio:</label>
-                                <input id="promedio_input" type="number" step="any" class="form-control" name="costo" value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['costo'] ?>...">
+                                <input id="promedio_input" type="number" step="any" class="form-control" name="costopromedio" value="<?php echo $stock['costopromedio'] ?>" placeholder="<?php echo $stock['costopromedio'] ?>...">
                             </div>
                             <div class="col-sm-3">
                                 <label for="" class="form-label">Anterior:</label>
-                                <input id="anterior_input" type="number" step="any" class="form-control" name="costo" value="<?php echo $valoranterior ?>" placeholder="<?php echo $valoranterior ?>...">
+                                <input id="anterior_input" type="number" step="any" class="form-control" name="costo_anterior" value="<?php echo $valoranterior ?>" placeholder="<?php echo $valoranterior ?>">
                             </div>
                             <div class="col-md-3 d-none">
                                 <label for="" class="form-label">% IVA a Calcular:</label>
@@ -133,16 +133,16 @@ if (isset($_POST['agregar'])) {
                         <div class="row">
                             <div class="col-sm-3">
                                 <label for="" class="form-label">Precio 1:</label>
-                                <input type="number" class="form-control" step="any" name="precio_1" id="precio1_input">
+                                <input type="number" class="form-control" step="any" name="precio1" id="precio1_input" value="<?php echo $stock['precio1']; ?>" placeholder="<?php echo $stock['precio1']; ?>">
                             </div>
                             <div class="col-sm-3">
                                 <label for="" class="form-label">Utilidad %:</label>
-                                <input id="utilidad_input" type="number" step="any" min="1" max="99" class="form-control" name="costo" value="" placeholder="...">
+                                <input id="utilidad_input" type="number" step="any" min="1" max="99" class="form-control" name="utilidad"  placeholder="<?php $stock['utilidad']; ?>">
                             </div>
                             <!-- En caso de que haya un campo para el precio final: Precio mas Iva-->
                             <div class="col-md-3">
                                 <label for="" class="form-label">Precio + IVA</label>
-                                <input type="number" step="any" class="form-control" name="iva" id="precioIva_input" value="" placeholder="...">
+                                <input type="number" step="any" class="form-control" name="precioIva" id="precioIva_input" value="" placeholder="<?php echo $stock['precioIva']; ?>">
                             </div>
                             <!-- Fin-->
 
@@ -152,17 +152,17 @@ if (isset($_POST['agregar'])) {
                             </div> 
                             <div class="col-sm-4">
                                 <label for="" class="form-label">Precio 3:</label>
-                                <input type="number" class="form-control" name="precio_3" id="precio3_input" value="<?php echo $stock['precio_3'] ?>" placeholder="<?php echo $stock['precio_3'] ?>...">
+                                <input type="number" class="form-control" name="precio_3" id="precio3_input" value="<?php echo $stock['precio_3'] ?>" placeholder="<?php echo $stock['precio_3']; ?>...">
                             </div> -->
                         </div>
                         <hr class="mt-3">
 
                         <div class="row mb-3">
-                        <input type="number" class="form-control d-none" name="tasa_dia" id="tasa_dia" value="<?php echo $tasadia ?>" placeholder="...">
+                        <input type="number" class="form-control d-none" name="tasa_dia" id="tasa_dia" value="<?php echo $tasadia; ?>" placeholder="...">
                             <div class="col-md-3">
                                 <label for="" class="form-label">Precio 1 (BS):</label>
-                                <input type="number" step="any" class="form-control" name="precioBs_1" id="precioBs1_input" value="<?php echo 0; //$stock['tasa'] 
-                                                                                                                        ?>" placeholder="<?php echo 0; //$stock['tasa'] 
+                                <input type="number" step="any" class="form-control" name="precioBs_1" id="precioBs1_input" value="<?php echo $stock['precio1bs']; //$stock['tasa'] 
+                                                                                                                        ?>" placeholder="<?php echo $stock['precio1bs']; //$stock['tasa'] 
                                                                                                                                                                         ?>...">
 
                             </div>
@@ -170,8 +170,8 @@ if (isset($_POST['agregar'])) {
                             
                             <div class="col-md-3">
                                 <label for="" class="form-label">Precio + IVA (BS):</label>
-                                <input type="number" step="any" class="form-control" name="precioBsIva_1" id="precioBsIva1_input" value="<?php echo  0; //$stock['tasa'] 
-                                                                                                                                ?>" placeholder="<?php echo  0; //$stock['tasa'] 
+                                <input type="number" step="any" class="form-control" name="precioBsIva_1" id="precioBsIva1_input" value="<?php echo  $stock['precioIvbs']; //$stock['tasa'] 
+                                                                                                                                ?>" placeholder="<?php echo  $stock['precioIvbs']; //$stock['tasa'] 
                                                                                                                                                                                 ?>...">
 
                             </div>
@@ -182,7 +182,7 @@ if (isset($_POST['agregar'])) {
                         <div class="row mb-3">
                             <div class="col-md-3">
                                 <label for="" class="form-label">Tasa Compra del dia BS.S:</label>
-                                <input type="number" step="any" class="form-control" name="tasa" id="tasaUSD_input" value="<?php echo $stock['tasa'] ?>" placeholder="<?php echo $stock['tasa'] ?>...">
+                                <input type="number" step="any" class="form-control" name="tasa" id="tasaUSD_input" value="<?php echo $tasadia ?>" placeholder="<?php echo $tasadia ?>...">
 
                             </div>
                             <!-- <div class="col-md-4">
@@ -310,12 +310,26 @@ if (isset($_POST['agregar'])) {
                 $descripcion = $_POST['descripcion'];
                 $existencia = $_POST['existencia'];
                 $lote = $_POST['lote'];
-                $costo = $_POST['costo'];
-                $precio_1 = $_POST['precio_1'];
+
+
+
+
+                $costopromedio = $_POST['costopromedio'];
+                $costoanterior = $_POST['costo_anterior'];
+                $utilidad = $_POST['utilidad'];
+
+
+                $precio_1 = $_POST['precio1'];
                 $precio_2 = $_POST['iva'];
                 $precio_3 = $_POST['utilidad'];
-                $tasa = $_POST['tasa'];
+                $precio1 = $_POST['precio_1'];
+                $precioIva = $_POST['precioIva'];
+                $precio1bs = $_POST['precioBs_1'];
+                $precioIvabs = $_POST['precioBsIva_1'];
+
+                $tasa = $tasadia;
                 $tasa_variable = $_POST['tasa_variable'];
+
                 $iva = '16%';
                 $color = $_POST['color'];
                 $voltaje = $_POST['voltaje'];
@@ -328,7 +342,10 @@ if (isset($_POST['agregar'])) {
                 $peso_bruto = $_POST['peso_bruto'];
                 $peso_kilo_gramo = $_POST['peso_kg_cobre'];
 
-                $query = "UPDATE stock SET codigo='$codigo',nombre='$nombre',descripcion='$descripcion',existencia='$existencia',lote='$lote',costo='$costo',precio_1='$precio_1',precio_2='$precio_2',precio_3='$precio_3',tasa='$tasa',tasa_variable='$tasa_variable',iva='$iva',color='$color',voltaje='$voltaje',medida='$medida',calibre='$calibre',N_hilos='$n_hilos',unidades='$unidad',serials='$serials',largo='$largo',peso_bruto='$peso_bruto',peso_kg_cobre='$peso_kilo_gramo' WHERE id_stock='$stockid'";
+                
+               // UPDATE `stock` SET `id_stock`='[value-1]',`codigo`='[value-2]',`nombre`='[value-3]',`descripcion`='[value-4]',`existencia`='[value-5]',`lote`='[value-6]',`costo`='[value-7]',`utilidad`='[value-8]',`costo_anterior`='[value-9]',`precio1`='[value-10]',`precioIva`='[value-11]',`precio1bs`='[value-12]',`precioIvbs`='[value-13]',`costopromedio`='[value-14]',`precio_1`='[value-15]',`precio_2`='[value-16]',`precio_3`='[value-17]',`tasa`='[value-18]',`tasa_variable`='[value-19]',`iva`='[value-20]',`color`='[value-21]',`voltaje`='[value-22]',`medida`='[value-23]',`calibre`='[value-24]',`N_hilos`='[value-25]',`unidades`='[value-26]',`serials`='[value-27]',`largo`='[value-28]',`peso_bruto`='[value-29]',`peso_kg_cobre`='[value-30]',`usuario`='[value-31]',`fecha_creacion`='[value-32]' WHERE 1
+
+                $query = "UPDATE stock SET codigo='$codigo',nombre='$nombre',descripcion='$descripcion',existencia='$existencia',lote='$lote',costo='$costo',utilidad='$utilidad',costo_anterior='$costoanterior',precio1='$precio_1',precioIva='$precioIva',precio1bs='$precio1bs',precioIvbs='$precioIvabs',costopromedio='$costopromedio',tasa='$tasa',tasa_variable='$tasa_variable',iva='$iva',color='$color',voltaje='$voltaje',medida='$medida',calibre='$calibre',N_hilos='$n_hilos',unidades='$unidad',serials='$serials',largo='$largo',peso_bruto='$peso_bruto',peso_kg_cobre='$peso_kilo_gramo' WHERE id_stock='$stockid'";
 
                 $consulta = $conn->prepare($query);
                 $consulta->execute();
