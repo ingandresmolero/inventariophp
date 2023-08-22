@@ -1,7 +1,7 @@
 .table-btn {
-  background-color: #2F3148;
+  background-color: #af0848;
   border-radius: 30px;
-  border: 1px solid #2F3148;
+  border: 1px solid #af0848;
   color: #fff;
   display: inline-block;
   line-height: initial;
@@ -13,7 +13,7 @@
 .table-btn:hover, .table-btn:active {
   color: #fff;
   background-color: transparent;
-  color: #2F3148;
+  color: #af0848;
 }
 @media only screen and (max-width: 767px) {
   .table-btn {
@@ -23,8 +23,8 @@
 }
 
 .btn-style-1 {
-  background-color: #2F3148;
-  border: 1px solid #2F3148;
+  background-color: #af0848;
+  border: 1px solid #af0848;
   color: #fff;
   display: inline-block;
   padding: 7px 21px;
@@ -34,14 +34,14 @@
   line-height: 22px;
 }
 .btn-style-1:hover, .btn-style-1:active {
-  border: 1px solid #2F3148;
+  border: 1px solid #af0848;
   background-color: transparent;
-  color: #2F3148;
+  color: #af0848;
 }
 
 .submit-btn {
-  background-color: #2F3148;
-  border: 1px solid #2F3148;
+  background-color: #af0848;
+  border: 1px solid #af0848;
   color: #fff;
   display: inline-block;
   width: 100%;
@@ -53,14 +53,14 @@
   line-height: 22px;
 }
 .submit-btn:hover, .submit-btn:active {
-  border: 1px solid #2F3148;
+  border: 1px solid #af0848;
   background-color: transparent;
   color: #fff;
 }
 
 .submit-btn-2 {
-  background-color: #2F3148;
-  border: 1px solid #2F3148;
+  background-color: #af0848;
+  border: 1px solid #af0848;
   color: #fff;
   display: inline-block;
   height: 40px;
@@ -73,15 +73,15 @@
   display: block;
 }
 .submit-btn-2:hover, .submit-btn-2:active {
-  border: 1px solid #2F3148;
+  border: 1px solid #af0848;
   background-color: transparent;
-  color: #2F3148;
+  color: #af0848;
 }
 
 .submit-invert {
-  border: 1px solid #2F3148;
+  border: 1px solid #af0848;
   background-color: transparent;
-  color: #2F3148;
+  color: #af0848;
   display: inline-block;
   height: 40px;
   width: 160px;
@@ -93,15 +93,15 @@
   display: block;
 }
 .submit-invert:hover, .submit-invert:active {
-  background-color: #2F3148;
-  border: 1px solid #2F3148;
+  background-color: #af0848;
+  border: 1px solid #af0848;
   color: #fff;
 }
 
 .btn-invert-1 {
   background-color: transparent;
-  border: 1px solid #2F3148;
-  color: #2F3148;
+  border: 1px solid #af0848;
+  color: #af0848;
   display: inline-block;
   padding: 7px 21px;
   text-decoration: none;
@@ -110,15 +110,15 @@
   line-height: 22px;
 }
 .btn-invert-1:hover, .btn-invert-1:active {
-  border: 1px solid #2F3148;
-  background-color: #2F3148;
+  border: 1px solid #af0848;
+  background-color: #af0848;
   color: #fff;
 }
 
 .btn-invert {
   background-color: transparent;
-  border: 1px solid #2F3148;
-  color: #2F3148;
+  border: 1px solid #af0848;
+  color: #af0848;
   display: inline-block;
   padding: 7px 21px;
   text-decoration: none;
@@ -127,22 +127,22 @@
   line-height: 22px;
 }
 .btn-invert:hover, .btn-invert:active {
-  background-color: #2F3148;
+  background-color: #af0848;
   color: #fff;
 }
 .btn-invert.collapsed {
   background-color: transparent;
-  border: 1px solid #2F3148;
-  color: #2F3148;
+  border: 1px solid #af0848;
+  color: #af0848;
 }
 .btn-invert[aria-expanded=true] {
-  background-color: #2F3148;
+  background-color: #af0848;
   color: #fff;
 }
 
 .btn-menu {
-  background-color: #2F3148;
-  border: 1px solid #2F3148;
+  background-color: #af0848;
+  border: 1px solid #af0848;
   color: #fff;
   display: inline-block;
   width: 100%;
@@ -154,7 +154,7 @@
 }
 .btn-menu:hover, .btn-menu:active {
   background-color: transparent;
-  color: #2F3148;
+  color: #af0848;
 }
 @media only screen and (max-width: 991px) {
   .btn-menu {

@@ -41,9 +41,9 @@ $paginas = ceil($total_stock / $stock_x_pagina);
         <h1 class="page-heading">Listado Descarga</h1>
         <!-- Button trigger modal -->
 
-        <div class="col-auto ">
+        <!-- <div class="col-auto ">
             <a href="./operacion/add_listado_descarga.php" class="btn-style-1">Crear Item</a>
-        </div>
+        </div> -->
         <div class="row b-3">
             <div class="col-md">
                 <form action="" method="post">

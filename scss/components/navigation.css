@@ -19,26 +19,26 @@ nav .pagination > li {
   margin: 0 5px;
 }
 nav .pagination > li.active a {
-  background-color: #2F3148;
+  background-color: #af0848;
   color: #fff;
   pointer-events: none;
   opacity: 0.89;
 }
 nav .pagination > li.disabled a {
-  background-color: #2F3148;
+  background-color: #af0848;
   color: #fff;
   opacity: 0.89;
 }
 nav .pagination > li .page-link {
-  color: #2F3148;
+  color: #af0848;
   padding: 4px 20px;
   border-radius: 30px !important;
-  border: 2px solid #2F3148;
-  border-color: #2F3148;
+  border: 2px solid #af0848;
+  border-color: #af0848;
   transition: 0.3s;
 }
 nav .pagination > li .page-link:hover {
-  background-color: #2F3148;
+  background-color: #af0848;
   color: #fff;
 }
 @media only screen and (max-width: 767px) {

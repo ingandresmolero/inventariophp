@@ -28,7 +28,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.min.css">
-    <title>Listado Carga</title>
+    <title>Listado Trasladar</title>
     <link rel="icon" type="image/x-icon" href="../img/favicon.png">
 
 </head>
@@ -38,18 +38,18 @@ $paginas = ceil($total_stock / $stock_x_pagina);
 
 
     <section class="container">
-        <h1 class="page-heading">Listado de Carga</h1>
+        <h1 class="page-heading">Listado de Trasladar</h1>
         <!-- Button trigger modal -->
 
         <!-- <div class="col-auto ">
-            <a href="./operacion/add_listado_carga.php" class="btn-style-1">Crear Item</a>
+            <a href="./operacion/add_traslado.php" class="btn-style-1">Crear Item</a>
         </div> -->
         <div class="row b-3">
             <div class="col-md">
                 <form action="" method="post">
                     <input type="text" class="form-control" name="campo" placeholder="Codigo, nombre..." id="">
                     <input type="submit" class="btn-invert-1" value="busqueda" name="busqueda">
-                    <a href="listado_carga.php" class="btn-invert-1">Mostrar Todos</a>
+                    <a href="traslado.php" class="btn-invert-1">Mostrar Todos</a>
                 </form>
             </div>
         </div>
@@ -73,10 +73,10 @@ $paginas = ceil($total_stock / $stock_x_pagina);
 
                     <?php
                     if (!$_GET) {
-                        header('Location:listado_carga.php?pagina=1');
+                        header('Location:traslado.php?pagina=1');
                     }
                     if ($_GET['pagina'] > $paginas || $_GET['pagina'] <= 0) {
-                        header('Location:listado_carga.php?pagina=1');
+                        header('Location:traslado.php?pagina=1');
                     }
 
                     if (!isset($_POST['busqueda'])) {
@@ -107,7 +107,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                                 <td><?php echo $stock['descripcion']; ?></td>
                                 <td><?php echo $stock['existencia']; ?></td>
                                
-                                <td class="action"><a class="table-btn" href="operacion/act_stock.php?stockid=<?php echo $codigo ?>">Carga </a></td>
+                                <td class="action"><a class="table-btn" href="operacion/traslado_operacion.php?stockid=<?php echo $stock['id_stock'] ?>">Trasladar </a></td>
 
                             </tr>
                         <?php endforeach  ?>
@@ -142,7 +142,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                                     <td><?php echo $stock['descripcion']; ?></td>
                                     <td><?php echo $stock['existencia']; ?></td>
                                 
-                                    <td class="action"><a class="table-btn" href="operacion/act_stock.php?stockid=<?php echo $codigo ?>">Carga </a></td>
+                                    <td class="action"><a class="table-btn" href="operacion/traslado_operacion.ph.php?stockid=<?php echo $stock['id_stock'] ?>">Trasladar </a></td>
 
                                 </tr>
                             <?php endforeach  ?>

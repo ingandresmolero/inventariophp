@@ -13,7 +13,7 @@ nav.navbar a.nav-link {
 }
 nav.navbar a.nav-link.active, nav.navbar a.nav-link:hover, nav.navbar a.nav-link:focus, nav.navbar a.nav-link:active, nav.navbar a.nav-link.nav-link.show {
   transition: 0.3s;
-  color: #4c54ad !important;
+  color: #a41c59 !important;
 }
 nav.navbar .navbar-collapse .dropdown-menu {
   left: -40px;
@@ -22,11 +22,11 @@ nav.navbar .navbar-collapse .dropdown-menu {
   padding: 10px;
 }
 nav.navbar .navbar-collapse .dropdown-menu li a {
-  color: #4c54ad;
+  color: #a41c59;
 }
 nav.navbar .navbar-collapse .dropdown-menu li a:hover {
   transition: 0.3s;
-  background-color: #587099;
+  background-color: #995871;
   color: #fff;
 }
 @media only screen and (max-width: 991px) {
@@ -87,7 +87,7 @@ nav.navbar .mobile-menu {
   box-shadow: rgba(71, 75, 255, 0.075) 0px 8px 12px;
 }
 .elements .item p {
-  color: #2F3148;
+  color: #af0848;
   font-size: 16px;
   font-weight: bold;
   padding-top: 10px;
@@ -123,7 +123,7 @@ nav.navbar .mobile-menu {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .table-style thead {
-  background-color: #2F3148;
+  background-color: #af0848;
 }
 .table-style thead tr th {
   width: 22px;
@@ -150,20 +150,20 @@ nav.navbar .mobile-menu {
   font-weight: bold;
 }
 .table-style tbody th {
-  color: #2F3148;
+  color: #af0848;
   padding: 12px 10px;
 }
 .table-style tbody tr {
   border-radius: unset;
-  color: #587099;
+  color: #995871;
 }
 .table-style tbody tr:hover {
   background-color: #f3f3f3;
-  color: #2F3148;
+  color: #af0848;
   transition: 0.3s;
 }
 .table-style tbody tr:hover th {
-  color: #2F3148;
+  color: #af0848;
   transition: 0.3s;
 }
 .table-style tbody tr .action {
@@ -182,9 +182,9 @@ nav.navbar .mobile-menu {
 }
 
 .table-btn {
-  background-color: #2F3148;
+  background-color: #af0848;
   border-radius: 30px;
-  border: 1px solid #2F3148;
+  border: 1px solid #af0848;
   color: #fff;
   display: inline-block;
   line-height: initial;
@@ -196,7 +196,7 @@ nav.navbar .mobile-menu {
 .table-btn:hover, .table-btn:active {
   color: #fff;
   background-color: transparent;
-  color: #2F3148;
+  color: #af0848;
 }
 @media only screen and (max-width: 767px) {
   .table-btn {
@@ -206,8 +206,8 @@ nav.navbar .mobile-menu {
 }
 
 .btn-style-1 {
-  background-color: #2F3148;
-  border: 1px solid #2F3148;
+  background-color: #af0848;
+  border: 1px solid #af0848;
   color: #fff;
   display: inline-block;
   padding: 7px 21px;
@@ -217,14 +217,14 @@ nav.navbar .mobile-menu {
   line-height: 22px;
 }
 .btn-style-1:hover, .btn-style-1:active {
-  border: 1px solid #2F3148;
+  border: 1px solid #af0848;
   background-color: transparent;
-  color: #2F3148;
+  color: #af0848;
 }
 
 .submit-btn {
-  background-color: #2F3148;
-  border: 1px solid #2F3148;
+  background-color: #af0848;
+  border: 1px solid #af0848;
   color: #fff;
   display: inline-block;
   width: 100%;
@@ -236,14 +236,14 @@ nav.navbar .mobile-menu {
   line-height: 22px;
 }
 .submit-btn:hover, .submit-btn:active {
-  border: 1px solid #2F3148;
+  border: 1px solid #af0848;
   background-color: transparent;
   color: #fff;
 }
 
 .submit-btn-2 {
-  background-color: #2F3148;
-  border: 1px solid #2F3148;
+  background-color: #af0848;
+  border: 1px solid #af0848;
   color: #fff;
   display: inline-block;
   height: 40px;
@@ -256,15 +256,15 @@ nav.navbar .mobile-menu {
   display: block;
 }
 .submit-btn-2:hover, .submit-btn-2:active {
-  border: 1px solid #2F3148;
+  border: 1px solid #af0848;
   background-color: transparent;
-  color: #2F3148;
+  color: #af0848;
 }
 
 .submit-invert {
-  border: 1px solid #2F3148;
+  border: 1px solid #af0848;
   background-color: transparent;
-  color: #2F3148;
+  color: #af0848;
   display: inline-block;
   height: 40px;
   width: 160px;
@@ -276,15 +276,15 @@ nav.navbar .mobile-menu {
   display: block;
 }
 .submit-invert:hover, .submit-invert:active {
-  background-color: #2F3148;
-  border: 1px solid #2F3148;
+  background-color: #af0848;
+  border: 1px solid #af0848;
   color: #fff;
 }
 
 .btn-invert-1 {
   background-color: transparent;
-  border: 1px solid #2F3148;
-  color: #2F3148;
+  border: 1px solid #af0848;
+  color: #af0848;
   display: inline-block;
   padding: 7px 21px;
   text-decoration: none;
@@ -293,15 +293,15 @@ nav.navbar .mobile-menu {
   line-height: 22px;
 }
 .btn-invert-1:hover, .btn-invert-1:active {
-  border: 1px solid #2F3148;
-  background-color: #2F3148;
+  border: 1px solid #af0848;
+  background-color: #af0848;
   color: #fff;
 }
 
 .btn-invert {
   background-color: transparent;
-  border: 1px solid #2F3148;
-  color: #2F3148;
+  border: 1px solid #af0848;
+  color: #af0848;
   display: inline-block;
   padding: 7px 21px;
   text-decoration: none;
@@ -310,22 +310,22 @@ nav.navbar .mobile-menu {
   line-height: 22px;
 }
 .btn-invert:hover, .btn-invert:active {
-  background-color: #2F3148;
+  background-color: #af0848;
   color: #fff;
 }
 .btn-invert.collapsed {
   background-color: transparent;
-  border: 1px solid #2F3148;
-  color: #2F3148;
+  border: 1px solid #af0848;
+  color: #af0848;
 }
 .btn-invert[aria-expanded=true] {
-  background-color: #2F3148;
+  background-color: #af0848;
   color: #fff;
 }
 
 .btn-menu {
-  background-color: #2F3148;
-  border: 1px solid #2F3148;
+  background-color: #af0848;
+  border: 1px solid #af0848;
   color: #fff;
   display: inline-block;
   width: 100%;
@@ -337,7 +337,7 @@ nav.navbar .mobile-menu {
 }
 .btn-menu:hover, .btn-menu:active {
   background-color: transparent;
-  color: #2F3148;
+  color: #af0848;
 }
 @media only screen and (max-width: 991px) {
   .btn-menu {
@@ -366,26 +366,26 @@ nav .pagination > li {
   margin: 0 5px;
 }
 nav .pagination > li.active a {
-  background-color: #2F3148;
+  background-color: #af0848;
   color: #fff;
   pointer-events: none;
   opacity: 0.89;
 }
 nav .pagination > li.disabled a {
-  background-color: #2F3148;
+  background-color: #af0848;
   color: #fff;
   opacity: 0.89;
 }
 nav .pagination > li .page-link {
-  color: #2F3148;
+  color: #af0848;
   padding: 4px 20px;
   border-radius: 30px !important;
-  border: 2px solid #2F3148;
-  border-color: #2F3148;
+  border: 2px solid #af0848;
+  border-color: #af0848;
   transition: 0.3s;
 }
 nav .pagination > li .page-link:hover {
-  background-color: #2F3148;
+  background-color: #af0848;
   color: #fff;
 }
 @media only screen and (max-width: 767px) {
@@ -397,7 +397,7 @@ nav .pagination > li .page-link:hover {
 .page-heading {
   padding: 3rem 0 2rem;
   text-align: center;
-  color: #2F3148;
+  color: #af0848;
 }
 
 .module-title {
@@ -482,9 +482,9 @@ body {
   margin: 20px auto 0;
 }
 .form-style-2 .submit-btn:hover, .form-style-2 .submit-btn:active {
-  border: 1px solid #2F3148;
+  border: 1px solid #af0848;
   background-color: transparent;
-  color: #2F3148;
+  color: #af0848;
 }
 
 .form-style-3 input[type=number]::-webkit-inner-spin-button,
@@ -579,7 +579,7 @@ body {
 }
 
 #estadisticas .options button[aria-expanded=true] {
-  background-color: #2F3148;
+  background-color: #af0848;
   color: #fff;
 }
 @media only screen and (max-width: 767px) {
@@ -590,7 +590,7 @@ body {
 
 .modal .modal-title {
   font-size: 20px;
-  color: #2F3148;
+  color: #af0848;
   margin-left: 10px;
 }
 .modal .btn-style-1 {

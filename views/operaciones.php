@@ -18,7 +18,7 @@ include("../php/functions/tasa.php");
 
 <body class="operations">
     <?php
-    include("assets/header.php");
+    include("assets/headersintasa.php");
     ?>
     <section class="container">
         
@@ -43,6 +43,11 @@ include("../php/functions/tasa.php");
             <a href="./listado_descarga.php" class="item">
                 <img src="../img/icons/orden-retiro.png">
                 <p class="card-title">Orden de Retiro</p>
+            </a>
+
+            <a href="./traslado.php" class="item">
+                <img src="../img/icons/orden-retiro.png">
+                <p class="card-title">Traslado de Inventario</p>
             </a>
 
         </div>

@@ -78,10 +78,10 @@ if ($rol != 'master') { ?>
                 <p class="card-title">Reportes</p>
             </a>
 
-            <a href="usuarios.php" class="item">
+            <!-- <a href="usuarios.php" class="item">
                 <img src="../img/icons/usuarios.png">
                 <p class="card-title">Usuarios</p>
-            </a>
+            </a> -->
 
             <!-- <a href="configuracion.php" class="item" id="configuracion">
                 <img src="../img/icons/configuracion.png">
