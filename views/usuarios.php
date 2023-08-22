@@ -109,7 +109,7 @@ $paginas = ceil($total_usuario / $usuarios_x_pagina);
                             $busqueda = $_POST['campo'];
                             $iniciar = ($_GET['pagina'] - 1) * $usuarios_x_pagina;
 
-                            $sql_usuarios = "SELECT * FROM usuarios WHERE (nombre = '$busqueda') OR (rol='$busqueda') LIMIT :iniciar,:nusuarios";
+                            $sql_usuarios = "SELECT * FROM usuarios WHERE (nombre LIKE '%$busqueda%') OR (rol LIKE '%$busqueda%') LIMIT :iniciar,:nusuarios";
                             $stm_usuario = $conn->prepare($sql_usuarios);
                             $stm_usuario->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
                             $stm_usuario->bindParam(':nusuarios', $usuarios_x_pagina, PDO::PARAM_INT);

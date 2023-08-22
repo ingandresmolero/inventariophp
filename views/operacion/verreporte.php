@@ -41,7 +41,7 @@ $resultado = $stmt->fetchAll();
                                 <input type="tex" class="form-control" name="codigo" id="" disabled value="<?php echo $stock['codigo'] ?>" placeholder="<?php echo $stock['codigo'] ?>">
                             </div>
 
-                            <div class="input-item">
+                            <!-- <div class="input-item">
                                 <label for="" class="form-label">Egreso:</label>
                                 <input type="tex" class="form-control" name="nombre" id="" disabled value="<?php echo $stock['egreso'] ?>" placeholder="<?php echo $stock['egreso'] ?>">
                             </div>
@@ -49,6 +49,21 @@ $resultado = $stmt->fetchAll();
                             <div class="input-item">
                                 <label for="" class="form-label">Ingreso:</label>
                                 <input type="tex" class="form-control" name="descripcion" id="" disabled value="<?php echo $stock['ingreso'] ?>" placeholder="<?php echo $stock['ingreso'] ?>...">
+                            </div> -->
+
+                            <div class="input-item">
+                                <label for="" class="form-label">Numero ODS:</label>
+                                <input type="tex" class="form-control" name="nombre" id="" disabled value="<?php echo $stock['nota_ret'] ?>" placeholder="<?php echo $stock['nota_ret'] ?>">
+                            </div>
+
+                            <div class="input-item">
+                                <label for="" class="form-label">Cantidad Egreso:</label>
+                                <input type="tex" class="form-control" name="nombre" id="" disabled value="<?php echo $stock['egreso'] ?>" placeholder="<?php echo $stock['egreso'] ?>">
+                            </div>
+
+                            <div class="input-item">
+                                <label for="" class="form-label">Cantidad Ingreso:</label>
+                                <input type="tex" class="form-control" name="nombre" id="" disabled value="<?php echo $stock['ingreso'] ?>" placeholder="<?php echo $stock['ingreso'] ?>">
                             </div>
                         
                             <div class="input-item">
@@ -56,7 +71,7 @@ $resultado = $stmt->fetchAll();
                                 <input type="number" class="form-control" name="existencia" id="" disabled value="<?php echo $stock['usuario'] ?>" placeholder="<?php echo $stock['usuario'] ?>...">
                             </div>   
                             <div class="input-item">
-                                <label for="" class="form-label">Representante:</label>
+                                <label for="" class="form-label">Tecnico Asignado:</label>
                                 <input type="number" class="form-control" name="existencia" id="" disabled value="<?php echo $stock['representante'] ?>" placeholder="<?php echo $stock['representante'] ?>...">
                             </div>   
                             
@@ -66,14 +81,14 @@ $resultado = $stmt->fetchAll();
                                 <input type="number" class="form-control" name="existencia" id="" disabled value="<?php echo $stock['fecha_creacion'] ?>" placeholder="<?php echo $stock['fecha_creacion'] ?>...">
                             </div>
 
-                            <div class="input-item">
+                            <!-- <div class="input-item">
                                 <label for="" class="form-label">Tasa del dia:</label>
                                 <input type="number" class="form-control" name="existencia" id="" disabled  placeholder="Tasa del dia...">
-                            </div>
-                            <div class="input-item">
+                            </div> -->
+                            <!-- <div class="input-item">
                                 <label for="" class="form-label">Monto Operacion:</label>
                                 <input type="number" class="form-control" name="existencia" id="" disabled  value="<?php echo $stock['monto'] ?>" placeholder="<?php echo $stock['monto'] ?>...">
-                            </div>
+                            </div> -->
 
                            
                         </div>

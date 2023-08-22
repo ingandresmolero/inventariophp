@@ -1,0 +1,38 @@
+.elements {
+  display: flex;
+  margin: 3rem 0;
+  justify-content: center;
+  flex-direction: column;
+}
+@media (min-width: 767px) {
+  .elements {
+    gap: 60px;
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .elements .item {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .elements .item {
+    width: 85%;
+    margin: 0 auto 30px;
+  }
+  .elements .item:last-child {
+    margin-bottom: initial;
+  }
+}
+.elements .item a {
+  transition: 0.3s;
+  width: 241px;
+  display: block;
+  padding: 46px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.18);
+}
+.elements .item a:hover {
+  transform: scale(1.1);
+}/*# sourceMappingURL=dashboard_20230513201940.css.map */

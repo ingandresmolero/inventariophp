@@ -1,18 +1,9 @@
 <?php include("../../php/functions/validar.php"); ?>
 <?php
 include("../../php/dbconn.php");
+$codigo = $_GET['stockid'];
 ?>
 
-<?php 
-
-if (isset($_GET['codigo'])){
-    $codigo = intval($_GET['codigo']);
-    
-}else{
-
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,13 +27,10 @@ if (isset($_GET['codigo'])){
                 <div class="flex-element">
                     <label for="" class="form-label">Codigo:</label>
                     <div class="flex-item">
-                        <?php if ($codigo > 0){
-                             echo'  <input type="text" class="form-control" name="codigo" value="'.$_GET['codigo'].'" id="">';
+                        <?php 
+                             echo'  <input type="text" class="form-control" name="codigo" value="'.$codigo.'" id="">';
                             
-                        }else{
-                            echo '<input type="text" class="form-control" name="codigo" id="">';
-                         
-                        } ?>
+                       ?>
                         
                     </div>
                     <div class="flex-item">

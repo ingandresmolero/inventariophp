@@ -1,0 +1,34 @@
+.elements {
+  display: flex;
+  margin: 3rem 0;
+  justify-content: center;
+  flex-direction: column;
+}
+@media (min-width: 767px) {
+  .elements {
+    gap: 60px;
+    flex-direction: row;
+  }
+}
+.elements .item a {
+  margin-bottom: 25px;
+}
+.elements .item a img {
+  margin-bottom: 25px;
+  margin: 0 auto;
+  display: block;
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .elements .item {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .elements .item {
+    width: 85%;
+    margin: 0 auto 30px;
+  }
+  .elements .item:last-child {
+    margin-bottom: initial;
+  }
+}/*# sourceMappingURL=dashboard_20230513193440.css.map */

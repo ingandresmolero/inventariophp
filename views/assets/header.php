@@ -17,9 +17,9 @@
     <a class="navbar-brand" href="#"><img src="../media/logo/logo.png" alt="logo"></a>
    
     
-     <div class="tasa">
+     <!-- <div class="tasa">
       <a class="nav-link" href="../views/stock.php">Tasa del dia: <?php echo "<span id='tasa_dia'> $tasadia </span> Fecha: $tasafecha"; ?></a>
-    </div>
+    </div> -->
     <button class="navbar-toggler mobile-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

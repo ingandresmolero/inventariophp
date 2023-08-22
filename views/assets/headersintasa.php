@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img src="../media/logo/logo.png" alt="logo"></a>
@@ -21,8 +22,15 @@
             <li><a class="dropdown-item" href="../views/reportes.php">Reportes</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="../views/configuracion.php">Configuracion</a></li>
+            <form action="../php/functions/logout.php" method="post">
+              <li><a class="dropdown-item user-name" id="rol"><?php echo $rol ?></a></li>
+                <input type="submit" value="Salir" name="logout" class="btn-menu">
+              </form>
           </ul>
+            <!-- DATO PARA HACER LA VALIDACION DE USUARIO -->
+        
         </li>
+       
         
     </div>
   </div>

@@ -24,7 +24,7 @@ include("../php/functions/tasa.php");
         
         <div class="elements">
            
-            <a href="./operacion/add_stock.php" class="item">
+            <!-- <a href="./operacion/add_stock.php" class="item">
                 <img src="../img/icons/crear-codigo.png">
                 <p class="card-title">Crear Codigo</p>
             </a>
@@ -32,15 +32,15 @@ include("../php/functions/tasa.php");
             <a href="./operacion/anadir_stock.php" class="item">
                 <img src="../img/icons/orden-carga.png">
                 <p class="card-title">Orden de Compra</p>
-            </a>
-            <a href="./operacion/act_stock.php" class="item">
+            </a> -->
+            <a href="./listado_carga.php" class="item">
                 <img src="../img/icons/orden-carga.png">
                 <p class="card-title">Orden de Carga</p>
             </a>
                    
             
 
-            <a href="./operacion/out_stock.php" class="item">
+            <a href="./listado_descarga.php" class="item">
                 <img src="../img/icons/orden-retiro.png">
                 <p class="card-title">Orden de Retiro</p>
             </a>

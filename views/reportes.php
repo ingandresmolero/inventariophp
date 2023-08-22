@@ -33,11 +33,11 @@ include("../php/functions/tasa.php");
                 <p class="card-title">Ordenes E/I</p>
             </a>
                 
-            <a href="estadisticas.php" class="item">
+            <!-- <a href="estadisticas.php" class="item">
                 
                 <img src="../img/icons/graficos.png">
                 <p class="card-title">Estadisticas</p>
-            </a>
+            </a> -->
         </div>
 
     </section>

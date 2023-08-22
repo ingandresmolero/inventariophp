@@ -21,7 +21,7 @@ include("../php/functions/tasa.php");
 </head>
 <body id="dashboard">
     <?php
-    include("assets/header.php");
+    include("assets/headersintasa.php");
     ?>
 <?php
 if ($rol != 'master') { ?>
@@ -33,11 +33,11 @@ if ($rol != 'master') { ?>
                 <img src="../img/icons/inventario.png">
                 <p class="card-title">Inventario</p>
             </a>
-            <a href="tasa.php" class="item">
+            <!-- <a href="tasa.php" class="item">
 
                 <img src="../img/icons/tasa.png">
                 <p class="card-title">Actualizar Tasa</p>
-            </a>
+            </a> -->
 
             <a href="operaciones.php" class="item">
                 <img src="../img/icons/operaciones.png">
@@ -60,11 +60,11 @@ if ($rol != 'master') { ?>
                 <img src="../img/icons/inventario.png">
                 <p class="card-title">Inventario</p>
             </a>
-            <a href="tasa.php" class="item">
+            <!-- <a href="tasa.php" class="item">
 
                 <img src="../img/icons/tasa.png">
                 <p class="card-title">Actualizar Tasa</p>
-            </a>
+            </a> -->
 
             <a href="operaciones.php" class="item">
                 <img src="../img/icons/operaciones.png">
@@ -83,10 +83,10 @@ if ($rol != 'master') { ?>
                 <p class="card-title">Usuarios</p>
             </a>
 
-            <a href="configuracion.php" class="item" id="configuracion">
+            <!-- <a href="configuracion.php" class="item" id="configuracion">
                 <img src="../img/icons/configuracion.png">
                 <p class="card-title">Configuracion</p>
-            </a>
+            </a> -->
         </div>
 
     </section>

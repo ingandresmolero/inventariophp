@@ -18,42 +18,32 @@
                 <form action="retirarItem.php" method="post">
                     <div class="input-item">
                         <label class="form-label" >Codigo</label>
-                        <input class="form-control" value= "'.$out['codigo']. '" name="codigo2" disabled>
+                        <input class="form-control" value= "'.$out['codigo']. '" name="codigo2" >
                     </div>
                     <div class="input-item">
                     <label class="form-label">Nombre Articulo</label>
-                    <input class="form-control" value= "'.$out['nombre']. '" name="nombre" disabled>
+                    <input class="form-control" value= "'.$out['nombre']. '" name="nombre" >
                 </div>
-                <div class="input-item">
-                <label class="form-label">Costo Promedio</label>
-                <input class="form-control" value= "'.$out['costo']. '" name="costo" disabled>
-            </div>
+                
             <div class="input-item">
                         <label class="form-label">Stock</label>
-                        <input class="form-control" value= "'.$out['existencia']. '" name="existencia" disabled>
+                        <input class="form-control" value= "'.$out['existencia']. '" name="existencia" >
                     </div>
                     <div class="input-item">
-                    <label class="form-label">Nota Retiro</label>
-                    <input class="form-control" value= "" placeholder="Nota de Retiro..." name="nota_retiro">
+                    <label class="form-label">Numero ODS</label>
+                    <input class="form-control" value= "" placeholder="ODS..." name="nota_retiro">
                 </div>
                 <div class="input-item">
-                    <label class="form-label">Representante Retiro</label>
-                    <input class="form-control" value= "" placeholder="Nota de Retiro..." name="repres_retiro">
+                    <label class="form-label">Tecnico</label>
+                    <input class="form-control" value= "" placeholder="Tecnico..." name="repres_retiro">
                 </div>
                    
                   
                     
-                    <div class="input-item">
-                        <label class="form-label">Monto Retiro </label>
-                        <input class="form-control" placeholder="cantidad a retirar" name="monto_reti">
-                    </div>
-                    <div class="input-item">
-                        <label class="form-label">Tasa del dia</label>
-                        <input class="form-control" placeholder="Tasa" name="tasa">
-                    </div>
+                   
                     <div class="input-item">
                         <label class="form-label">Cantidad </label>
-                        <input class="form-control" placeholder="cantidad a retirar" name="cantidad">
+                        <input class="form-control" placeholder="..." name="cantidad">
                     </div>
                     <button class="btn-style-1" type="" name="retirar"> Retirar </button>
                 </form>

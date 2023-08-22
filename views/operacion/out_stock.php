@@ -2,6 +2,7 @@
 <?php
 include("../../php/dbconn.php");
 
+$stockid = $_GET['stockid'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +28,7 @@ include("../../php/dbconn.php");
                 <div class="flex-element">
                     <label for="" class="form-label">Codigo:</label>
                     <div class="flex-item">
-                        <input type="tex" class="form-control" name="codigo" id="">
+                        <input type="tex" class="form-control" value="<?php echo $stockid ?>" name="codigo" id="">
                     </div>
                     <div class="flex-item">
                         <input type="submit" class="btn-style-1 margin-left" value="buscar" name="buscar">

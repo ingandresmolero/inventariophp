@@ -62,10 +62,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                         <th scope="col">Nombre</th>
                         <th scope="col">Descripcion</th>
                         <th scope="col">Existencia</th>
-                        <th scope="col">Unidad</th>
                        
-                        <th scope="col">Precio $ PVP</th>
-                        <th scope="col">Precio PVP</th>
                         <th scope="col">Accion</th>
 
 
@@ -108,10 +105,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                                 <td><?php echo $stock['nombre']; ?></td>
                                 <td><?php echo $stock['descripcion']; ?></td>
                                 <td><?php echo $stock['existencia']; ?></td>
-                                <td><?php echo $stock['unidades']; ?></td>
-                              
-                                <td><?php echo $stock['precio_1']; ?></td>
-                                <td><?php echo $variable ?>Bs.S</td>
+                               
                                 <td class="action"><a class="table-btn" href="operacion/editarstock.php?stockid=<?php echo $id ?>">Detalles </a></td>
 
                             </tr>
@@ -121,7 +115,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                             $busqueda = $_POST['campo'];
                             $iniciar = ($_GET['pagina'] - 1) * $stock_x_pagina;
 
-                            $sql_stock = "SELECT * FROM stock WHERE (nombre = '$busqueda') OR (codigo='$busqueda') LIMIT :iniciar,:nusuarios";
+                            $sql_stock = "SELECT * FROM stock WHERE (nombre LIKE '%$busqueda%') OR (codigo LIKE '%$busqueda%') LIMIT :iniciar,:nusuarios";
                             $stm_stock = $conn->prepare($sql_stock);
                             $stm_stock->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
                             $stm_stock->bindParam(':nusuarios', $stock_x_pagina, PDO::PARAM_INT);
@@ -145,10 +139,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                                     <td><?php echo $stock['nombre']; ?></td>
                                     <td><?php echo $stock['descripcion']; ?></td>
                                     <td><?php echo $stock['existencia']; ?></td>
-                                    <td><?php echo $stock['unidades']; ?></td>
-                                  
-                                    <td><?php echo $stock['precio_1']; ?></td>
-                                    <td><?php echo $variable ?>Bs.S</td>
+                                
                                     <td class="action"><a class="table-btn" href="operacion/editarstock.php?stockid=<?php echo $id ?>">Detalles </a></td>
 
                                 </tr>
