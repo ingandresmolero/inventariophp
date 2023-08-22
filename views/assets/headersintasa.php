@@ -8,18 +8,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="http://localhost/inventariophp/views/dashboard.php">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="192.168.1.88/inventariophp/views/dashboard.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost/inventariophp/views/stock.php?pagina=1">Inventario</a>
+          <a class="nav-link" href="192.168.1.88/inventariophp/views/stock.php?pagina=1">Inventario</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Opciones
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="http://localhost/inventariophp/views/operaciones.php">Operaciones</a></li>
-            <li><a class="dropdown-item" href="http://localhost/inventariophp/views/reportes.php">Reportes</a></li>
+            <li><a class="dropdown-item" href="192.168.1.88/inventariophp/views/operaciones.php">Operaciones</a></li>
+            <li><a class="dropdown-item" href="192.168.1.88/inventariophp/views/reportes.php">Reportes</a></li>
             <li><hr class="dropdown-divider"></li>
             <!-- <li><a class="dropdown-item" href="../views/configuracion.php">Configuracion</a></li> -->
             <form action="../php/functions/logout.php" method="post">
