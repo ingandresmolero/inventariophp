@@ -35,7 +35,17 @@
                 </div>
                 <div class="input-item">
                     <label class="form-label">Tecnico</label>
-                    <input class="form-control" value= "" placeholder="Tecnico..." name="repres_retiro">
+
+                    <select name="repres_retiro" id="descripcion" class="form-select">
+                    <option value="deposito1">Deposito 1</option>
+                                <option value="deposito2">Deposito 2</option>
+                                <option value="LuisD">Luis Duran</option>
+                                <option value="Dave">Dave Querales</option>
+                                <option value="Jhon">Jhon Chacon</option>
+                                <option value="Camion">Camion</option>
+                                <option value="herramienta">Herramienta</option>
+                                <option value="otro">Otro</option>
+                    </select>
                 </div>
                    
                   

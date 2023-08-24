@@ -65,6 +65,11 @@ $resultado = $stmt->fetchAll();
                                 <label for="" class="form-label">Cantidad Ingreso:</label>
                                 <input type="tex" class="form-control" name="nombre" id="" disabled value="<?php echo $stock['ingreso'] ?>" placeholder="<?php echo $stock['ingreso'] ?>">
                             </div>
+
+                            <div class="input-item">
+                                <label for="" class="form-label">Cantidad Traslado:</label>
+                                <input type="tex" class="form-control" name="nombre" id="" disabled value="<?php echo $stock['traslado'] ?>" placeholder="<?php echo $stock['traslado'] ?>">
+                            </div>
                         
                             <div class="input-item">
                                 <label for="" class="form-label">Usuario:</label>
@@ -73,7 +78,11 @@ $resultado = $stmt->fetchAll();
                             <div class="input-item">
                                 <label for="" class="form-label">Tecnico Asignado:</label>
                                 <input type="number" class="form-control" name="existencia" id="" disabled value="<?php echo $stock['representante'] ?>" placeholder="<?php echo $stock['representante'] ?>...">
-                            </div>   
+                            </div>  
+                            <div class="input-item">
+                                <label for="" class="form-label">Deposito:</label>
+                                <input type="number" class="form-control" name="existencia" id="" disabled value="<?php echo $stock['representante'] ?>" placeholder="<?php echo $stock['representante'] ?>...">
+                            </div>    
                             
 
                             <div class="input-item">

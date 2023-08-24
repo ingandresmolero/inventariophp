@@ -26,22 +26,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../views/dashboard.php">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="http://192.168.1.88/inventariophp/views/dashboard.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../views/stock.php">Inventario</a>
+          <a class="nav-link" href="http://192.168.1.88/inventariophp/views/stock.php">Inventario</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Opciones
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="../views/operaciones.php">Operaciones</a></li>
-            <li><a class="dropdown-item" href="../views/reportes.php">Reportes</a></li>
+            <li><a class="dropdown-item" href="http://192.168.1.88/inventariophp/views/operaciones.php">Operaciones</a></li>
+            <li><a class="dropdown-item" href="http://192.168.1.88/inventariophp/views/reportes.php">Reportes</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="../views/configuracion.php">Configuracion</a></li>
+            <li><a class="dropdown-item" href="http://192.168.1.88/inventariophp/views/configuracion.php">Configuracion</a></li>
             <li>
 
             <!-- DATO PARA HACER LA VALIDACION DE USUARIO -->
