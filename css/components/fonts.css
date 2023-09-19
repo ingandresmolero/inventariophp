@@ -1,0 +1,17 @@
+.page-heading {
+  padding: 3rem 0 2rem;
+  text-align: center;
+  color: #af0848;
+}
+
+.module-title {
+  text-align: center;
+  padding: 10px 0 20px;
+}
+
+p.alert-error {
+  margin-top: 2rem;
+  font-weight: bold;
+} 
+
+/*# sourceMappingURL=fonts.css.map */

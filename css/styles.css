@@ -412,7 +412,7 @@ p.alert-error {
 
 #login-page {
   background: rgb(47, 49, 72);
-  background: linear-gradient(90deg, rgb(182, 186, 228) 4%, rgb(88, 112, 153) 50%, rgb(47, 49, 72) 94%);
+  background: linear-gradient(90deg, rgb(2, 19, 207) 4%, rgb(88, 112, 153) 50%, rgb(47, 49, 72) 94%);
   position: relative;
   background-color: #eee;
   height: 200px;
@@ -422,7 +422,6 @@ p.alert-error {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: -moz-fit-content;
   width: fit-content;
   min-width: 270px;
   margin: 0 auto;
@@ -441,7 +440,6 @@ p.alert-error {
 }
 #login-page .box form {
   margin-bottom: 0 !important;
-  width: -moz-fit-content;
   width: fit-content;
 }
 #login-page .box form .user input,
@@ -565,7 +563,6 @@ body {
   margin: 3rem 0;
 }
 #tasa main .form-elements {
-  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
   background-color: #fff;
@@ -618,4 +615,6 @@ body {
   width: 50%;
   margin: 25px 0 0 auto;
   display: block;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */
