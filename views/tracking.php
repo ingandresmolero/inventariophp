@@ -4,8 +4,12 @@ include("../php/functions/tasa.php");
 ?>
 <?php
 include("../php/dbconn.php");
-$sql = 'SELECT * FROM stock';
-$stmt = $conn->prepare($sql);
+include("../php/con_bd.php");
+
+$sql = 'SELECT A.[CodMeca], A.[Descrip], B.[NROORDENS],B.[TIPOEQUIPO],B.[FECHARECEPCION_SQL],B.[LINEAEQUIPO],B.[SITUACION], A.[REGION]  FROM [innovaDB].[dbo].[SAMECA] A 
+INNER JOIN [innovaDB].[dbo].[T_H_ORDENESSERVICIO] B 
+    ON A.[CodMeca]=B.[CODMECA]  WHERE  SITUACION="EN REVISION" and REGION="MARACAIBO" ORDER BY FECHARECEPCION_SQL DESC';
+$stmt = $connsqlsrv->prepare($sql);
 $stmt->execute();
 
 $resultado = $stmt->fetchAll();
@@ -28,7 +32,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Inventario</title>
+    <title>Tracking</title>
     <link rel="icon" type="image/x-icon" href="../img/favicon.png">
 
 </head>
@@ -38,7 +42,7 @@ $paginas = ceil($total_stock / $stock_x_pagina);
 
 
     <section class="container">
-        <h1 class="page-heading">Inventario</h1>
+        <h1 class="page-heading">Tracking</h1>
         <!-- Button trigger modal -->
 
         <div class="col-auto ">
@@ -83,7 +87,9 @@ $paginas = ceil($total_stock / $stock_x_pagina);
 
                         $iniciar = ($_GET['pagina'] - 1) * $stock_x_pagina;
 
-                        $sql_stock = "SELECT * FROM stock LIMIT :iniciar,:nusuarios";
+                        $sql_stock = "SELECT A.[CodMeca], A.[Descrip], B.[NROORDENS],B.[TIPOEQUIPO],B.[FECHARECEPCION_SQL],B.[LINEAEQUIPO],B.[SITUACION], A.[REGION]  FROM [innovaDB].[dbo].[SAMECA] A 
+                        INNER JOIN [innovaDB].[dbo].[T_H_ORDENESSERVICIO] B 
+                            ON A.[CodMeca]=B.[CODMECA]  WHERE  SITUACION='EN REVISION' and REGION='MARACAIBO' ORDER BY FECHARECEPCION_SQL DESC";
                         $stm_stock = $conn->prepare($sql_stock);
                         $stm_stock->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
                         $stm_stock->bindParam(':nusuarios', $stock_x_pagina, PDO::PARAM_INT);
@@ -115,7 +121,9 @@ $paginas = ceil($total_stock / $stock_x_pagina);
                             $busqueda = $_POST['campo'];
                             $iniciar = ($_GET['pagina'] - 1) * $stock_x_pagina;
 
-                            $sql_stock = "SELECT * FROM stock WHERE (nombre LIKE '%$busqueda%') OR (codigo LIKE '%$busqueda%') LIMIT :iniciar,:nusuarios";
+                            $sql_stock = "SELECT A.[CodMeca], A.[Descrip], B.[NROORDENS],B.[TIPOEQUIPO],B.[FECHARECEPCION_SQL],B.[LINEAEQUIPO],B.[SITUACION], A.[REGION]  FROM [innovaDB].[dbo].[SAMECA] A 
+                            INNER JOIN [innovaDB].[dbo].[T_H_ORDENESSERVICIO] B 
+                                ON A.[CodMeca]=B.[CODMECA]  WHERE  SITUACION='EN REVISION' and REGION='MARACAIBO' ORDER BY FECHARECEPCION_SQL DESC";
                             $stm_stock = $conn->prepare($sql_stock);
                             $stm_stock->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
                             $stm_stock->bindParam(':nusuarios', $stock_x_pagina, PDO::PARAM_INT);
