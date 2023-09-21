@@ -10,19 +10,18 @@
   transition: 0.3s;
   font-weight: normal;
 }
-
 .table-btn:hover, .table-btn:active {
   color: #fff;
   background-color: transparent;
   color: #af0848;
 }
-
 @media only screen and (max-width: 767px) {
   .table-btn {
     padding: 5px 14px;
     font-size: 14px;
   }
 }
+
 .btn-style-1 {
   background-color: #af0848;
   border: 1px solid #af0848;
@@ -34,7 +33,6 @@
   margin-bottom: 12px;
   line-height: 22px;
 }
-
 .btn-style-1:hover, .btn-style-1:active {
   border: 1px solid #af0848;
   background-color: transparent;
@@ -54,7 +52,6 @@
   margin-bottom: 12px;
   line-height: 22px;
 }
-
 .submit-btn:hover, .submit-btn:active {
   border: 1px solid #af0848;
   background-color: transparent;
@@ -75,7 +72,6 @@
   line-height: 22px;
   display: block;
 }
-
 .submit-btn-2:hover, .submit-btn-2:active {
   border: 1px solid #af0848;
   background-color: transparent;
@@ -96,7 +92,6 @@
   line-height: 22px;
   display: block;
 }
-
 .submit-invert:hover, .submit-invert:active {
   background-color: #af0848;
   border: 1px solid #af0848;
@@ -114,7 +109,6 @@
   margin-bottom: 12px;
   line-height: 22px;
 }
-
 .btn-invert-1:hover, .btn-invert-1:active {
   border: 1px solid #af0848;
   background-color: #af0848;
@@ -132,18 +126,15 @@
   margin-bottom: 12px;
   line-height: 22px;
 }
-
 .btn-invert:hover, .btn-invert:active {
   background-color: #af0848;
   color: #fff;
 }
-
 .btn-invert.collapsed {
   background-color: transparent;
   border: 1px solid #af0848;
   color: #af0848;
 }
-
 .btn-invert[aria-expanded=true] {
   background-color: #af0848;
   color: #fff;
@@ -161,16 +152,14 @@
   line-height: 22px;
   margin-top: 10px;
 }
-
 .btn-menu:hover, .btn-menu:active {
   background-color: transparent;
   color: #af0848;
 }
-
 @media only screen and (max-width: 991px) {
   .btn-menu {
     width: 125px;
   }
-} 
+}
 
 /*# sourceMappingURL=buttons.css.map */

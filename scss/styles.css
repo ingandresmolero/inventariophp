@@ -412,7 +412,7 @@ p.alert-error {
 
 #login-page {
   background: rgb(47, 49, 72);
-  background: linear-gradient(90deg, rgb(182, 186, 228) 4%, rgb(88, 112, 153) 50%, rgb(47, 49, 72) 94%);
+  background: linear-gradient(90deg, rgb(199, 201, 228) 4%, rgb(88, 112, 153) 50%, rgb(47, 49, 72) 94%);
   position: relative;
   background-color: #eee;
   height: 200px;
@@ -450,7 +450,7 @@ p.alert-error {
 }
 
 body {
-  background-color: #d46767;
+  background-color: #292929;
 }
 
 .form-style-1 .flex-element {

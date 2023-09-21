@@ -16,7 +16,7 @@ include("../php/functions/tasa.php");
     <title>Pingus Sys</title>
     <link rel="icon" type="image/x-icon" href="../img/favicon.png">
 
-    <link rel="stylesheet" href="../css/styles.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
 </head>
 <body id="dashboard">
@@ -27,23 +27,44 @@ include("../php/functions/tasa.php");
 if ($rol != 'master') { ?>
 <!-- OTRO USUARIO -->
 <section class="container">
+
         <div class="elements">
-            <a href="stock.php" class="item">
+
+            <a href="tracking.php" class="item">
 
                 <img src="../img/icons/inventario.png">
-                <p class="card-title">Inventario</p>
+                <p class="card-title">Tracking</p>
             </a>
-            <!-- <a href="tasa.php" class="item">
-
-                <img src="../img/icons/tasa.png">
-                <p class="card-title">Actualizar Tasa</p>
-            </a> -->
-
+            <a href="busqueda.php" class="item">
+                <img src="../img/icons/operaciones.png">
+                <p class="card-title">Busqueda</p>
+    
+            </a>
+            <a href="reportes.php" class="item">
+    
+                <img src="../img/icons/inventario.png">
+                <p class="card-title">Reportes</p>
+            </a>
+        </div>
+        
+        <div class="elements">
+            
+            <a href="vista_tecnica.php" class="item">
+                <img src="../img/icons/operaciones.png">
+                <p class="card-title">Vistas Tecnicas</p>
+    
+            </a>
             <a href="operaciones.php" class="item">
                 <img src="../img/icons/operaciones.png">
                 <p class="card-title">Operaciones</p>
+    
+            </a>
+            <a href="mantenimiento.php" class="item">
+                <img src="../img/icons/operaciones.png">
+                <p class="card-title">Mantenimiento</p>
 
             </a>
+           
         </div>
        
 
@@ -60,12 +81,12 @@ if ($rol != 'master') { ?>
                 <img src="../img/icons/inventario.png">
                 <p class="card-title">Inventario</p>
             </a>
-            <!-- <a href="tasa.php" class="item">
+            
+            <a href="operaciones.php" class="item">
+                <img src="../img/icons/operaciones.png">
+                <p class="card-title">Operaciones</p>
 
-                <img src="../img/icons/tasa.png">
-                <p class="card-title">Actualizar Tasa</p>
-            </a> -->
-
+            </a>
             <a href="operaciones.php" class="item">
                 <img src="../img/icons/operaciones.png">
                 <p class="card-title">Operaciones</p>

@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../scss/components/estadisticas.css"],"names":[],"mappings":"AAAA;EACE;EACA;;;AAEF;EACE;IACE;;EAEH","file":"estadisticas.css"}
+{"version":3,"sourceRoot":"","sources":["../../scss/components/estadisticas.scss","../../scss/components/variables.scss"],"names":[],"mappings":"AAIQ;EACI,kBCHE;EDIF;;AAEJ;EALJ;IAMQ","file":"estadisticas.css"}

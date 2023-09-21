@@ -2,19 +2,15 @@
   display: flex;
   align-items: baseline;
 }
-
 .form-style-1 .flex-element .flex-item .form-control {
   border-radius: initial;
 }
-
 .form-style-1 .flex-element .flex-item:first-child {
   margin-right: 10px;
 }
-
 .form-style-1 .flex-element .form-label {
   margin-right: 10px;
 }
-
 .form-style-1 .flex-element .margin-left {
   margin-left: 10px;
 }
@@ -22,17 +18,14 @@
 .form-style-2 {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
-
 .form-style-2 .card {
   margin-bottom: 2rem;
 }
-
 .form-style-2 .submit-btn {
   height: 40px;
   width: 160px;
   margin: 20px auto 0;
 }
-
 .form-style-2 .submit-btn:hover, .form-style-2 .submit-btn:active {
   border: 1px solid #af0848;
   background-color: transparent;
@@ -44,23 +37,18 @@
   -webkit-appearance: none;
   margin: 0;
 }
-
 .form-style-3 input[type=number] {
   -moz-appearance: textfield;
 }
-
 .form-style-3 label {
   margin: 10px 0px;
 }
-
 .form-style-3 .product-price {
   margin-top: 3rem;
 }
-
 .form-style-3 .row > div {
   margin-bottom: 20px;
 }
-
 .form-style-3 span.separador {
   font-size: 14px;
 }
@@ -68,7 +56,6 @@
 .input-item input.form-control {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
 }
-
 @media only screen and (min-width: 479px) {
   .input-item {
     display: grid;
@@ -76,6 +63,7 @@
     margin-bottom: 10px;
   }
 }
+
 .box-bg {
   background-color: #fff;
   padding: 40px;
@@ -83,7 +71,6 @@
   width: 75%;
   margin: 0 auto;
 }
-
 @media only screen and (max-width: 767px) {
   .box-bg {
     width: auto;
@@ -103,7 +90,6 @@
   width: auto;
   margin: 0 auto;
 }
-
 @media only screen and (max-width: 767px) {
   .box-bg-2 {
     width: auto;
@@ -118,6 +104,6 @@
 .medium-sz {
   width: 88.5%;
   margin: 20px auto 40px;
-} 
+}
 
 /*# sourceMappingURL=formularios.css.map */

@@ -6,24 +6,19 @@
   margin-top: 2rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
-
 .table-style thead {
   background-color: #af0848;
 }
-
 .table-style thead tr th {
   width: 22px;
   max-width: 95px;
 }
-
 .table-style thead tr th:first-child {
   border-top-left-radius: 10px;
 }
-
 .table-style thead tr th:last-child {
   border-top-right-radius: 10px;
 }
-
 @media only screen and (max-width: 767px) {
   .table-style thead tr th {
     font-size: 14px;
@@ -34,48 +29,40 @@
   color: #fff;
   line-height: 35px;
 }
-
 .table-style tbody {
   background-color: #fff;
   font-weight: bold;
 }
-
 .table-style tbody th {
   color: #af0848;
   padding: 12px 10px;
 }
-
 .table-style tbody tr {
   border-radius: unset;
   color: #995871;
 }
-
 .table-style tbody tr:hover {
   background-color: #f3f3f3;
   color: #af0848;
   transition: 0.3s;
 }
-
 .table-style tbody tr:hover th {
   color: #af0848;
   transition: 0.3s;
 }
-
 .table-style tbody tr .action {
   padding: 12px 0;
 }
-
 .table-style tbody td {
   padding: 12px 10px;
   line-height: 22px;
   vertical-align: baseline;
 }
-
 @media only screen and (max-width: 767px) {
   .table-style tbody td {
     text-align: center;
     font-size: 14px;
   }
-} 
+}
 
 /*# sourceMappingURL=table-style.css.map */

@@ -1,17 +1,15 @@
 #login-page {
   background: rgb(47, 49, 72);
-  background: linear-gradient(90deg, rgb(2, 19, 207) 4%, rgb(88, 112, 153) 50%, rgb(47, 49, 72) 94%);
+  background: linear-gradient(90deg, rgb(199, 201, 228) 4%, rgb(88, 112, 153) 50%, rgb(47, 49, 72) 94%);
   position: relative;
   background-color: #eee;
   height: 200px;
 }
-
 #login-page .box {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: -moz-fit-content;
   width: fit-content;
   min-width: 270px;
   margin: 0 auto;
@@ -24,21 +22,17 @@
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
 #login-page .box p {
   font-size: 18px;
   color: white;
 }
-
 #login-page .box form {
   margin-bottom: 0 !important;
-  width: -moz-fit-content;
   width: fit-content;
 }
-
 #login-page .box form .user input,
 #login-page .box form .password input {
   margin-bottom: 20px;
-} 
+}
 
 /*# sourceMappingURL=login-page.css.map */

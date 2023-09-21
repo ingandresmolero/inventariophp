@@ -4,7 +4,6 @@
   justify-content: center;
   flex-direction: column;
 }
-
 @media (min-width: 767px) {
   .elements {
     flex-direction: row;
@@ -23,19 +22,16 @@
   background: rgb(255, 255, 255);
   text-decoration: none;
 }
-
 .elements .item:hover {
   transform: scale(1.1);
   box-shadow: rgba(71, 75, 255, 0.075) 0px 8px 12px;
 }
-
 .elements .item p {
   color: #af0848;
   font-size: 16px;
   font-weight: bold;
   padding-top: 10px;
 }
-
 @media only screen and (min-width: 768px) and (max-width: 979px) {
   .elements .item {
     text-align: center;
@@ -56,6 +52,6 @@
   .elements .item img {
     width: 50px;
   }
-} 
+}
 
 /*# sourceMappingURL=elements.css.map */

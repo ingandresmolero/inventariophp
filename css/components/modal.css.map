@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../scss/components/modal.css"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;;;AAEF;EACE;EACA;EACA;;;AAEF;EACE;EACD","file":"modal.css"}
+{"version":3,"sourceRoot":"","sources":["../../scss/components/modal.scss","../../scss/components/variables.scss"],"names":[],"mappings":"AAGI;EACI;EACA,OCHM;EDIN;;AAGJ;EACI;EACA;EACA;;AAGJ;EACI","file":"modal.css"}

@@ -16,7 +16,7 @@ include("../php/functions/tasa.php");
     <title>Pingus Sys</title>
     <link rel="icon" type="image/x-icon" href="../img/favicon.png">
 
-    <link rel="stylesheet" href="../css/styles.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
 </head>
 

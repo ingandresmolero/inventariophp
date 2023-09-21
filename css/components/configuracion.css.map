@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../scss/components/configuracion.css"],"names":[],"mappings":"AAAA;EACE;;;AAEF;EACE;;;AAEF;EACE;IACE;IACA;;;AAGJ;EACE;EACA;EACA;EACD","file":"configuracion.css"}
+{"version":3,"sourceRoot":"","sources":["../../scss/components/configuracion.scss"],"names":[],"mappings":"AAEA;EACI;;AACA;EACI;;AACA;EAFJ;IAGQ;IACA;;;AAIR;EACI;EACA;EACA","file":"configuracion.css"}

@@ -2,11 +2,10 @@
   background-color: #af0848;
   color: #fff;
 }
-
 @media only screen and (max-width: 767px) {
   #estadisticas .options {
     text-align: center;
   }
-} 
+}
 
 /*# sourceMappingURL=estadisticas.css.map */
